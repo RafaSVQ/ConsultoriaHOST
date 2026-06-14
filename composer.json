@@ -1,0 +1,17 @@
+{
+    "name": "consultoriahost/web",
+    "description": "Sitio web de Consultoría HOST — Consultoría e Ingeniería 3.0",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.0",
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform": {
+            "php": "8.5"
+        }
+    }
+}

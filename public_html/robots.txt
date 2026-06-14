@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Carpetas internas — sin acceso a rastreadores
+Disallow: /api/
+Disallow: /config/
+Disallow: /includes/
+
+# Mapa del sitio
+Sitemap: https://consultoriahost.es/sitemap.xml

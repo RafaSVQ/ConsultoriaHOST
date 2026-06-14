@@ -1,0 +1,144 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║       CONSULTORÍA HOST — Estado de Despliegue               ║
+║       Última revisión: 2026-06-13                           ║
+╚══════════════════════════════════════════════════════════════╝
+
+Leyenda:  ✅ Completado   ⬜ Pendiente   ⚠️ Requiere atención
+
+Completado hasta aquí:
+  ✅ Código local listo (15 páginas + includes + .htaccess + assets)
+  ✅ Dominio consultoriahost.es en IONOS → nameservers apuntan a Hostinger
+  ✅ DNS propagado
+  ✅ SSL activo (Hostinger lo incluye de serie automáticamente)
+  ✅ Archivos subidos — estructura en servidor (u671378533/):
+       ├── config/        ← fuera de public_html — no accesible desde web ✓
+       ├── includes/      ← fuera de public_html — no accesible desde web ✓
+       ├── public_html/   ← raíz web pública
+       └── .env           ← fuera de public_html — seguro ✓
+
+
+═══════════════════════════════════════════════════════════════
+BLOQUE 2 — CONFIGURACIÓN PHP EN HOSTINGER
+═══════════════════════════════════════════════════════════════
+
+⬜  hPanel → PHP → Versión: PHP 8.5
+⬜  Activar extensiones: sodium, sysvsem, ldap
+⬜  Ajustar OPcache:
+    opcache.memory_consumption      = 256   (actual: 128)
+    opcache.interned_strings_buffer = 16    (actual: 8)
+    opcache.max_accelerated_files   = 20000 (actual: 10000)
+    opcache.validate_timestamps     = 0
+⬜  max_execution_time  = 60    (actual: 300)
+⬜  memory_limit        = 256M  (actual: 512M)
+⬜  file_uploads        = 1     (actual: 0 — necesario para subir archivos)
+⬜  disable_functions → añadir: proc_open, proc_close, proc_terminate,
+                                proc_get_status, phpinfo
+    (ver lista completa en PHP_disponible.md → Sección 3.5)
+
+
+═══════════════════════════════════════════════════════════════
+BLOQUE 3 — CONFIGURACIÓN HOSTINGER (hPanel)
+═══════════════════════════════════════════════════════════════
+
+⬜  Caché → Activar LiteSpeed Cache
+    TTL páginas estáticas: 3600s
+    Excluir de caché: /checkout/*, /cart/*, /my-account/*
+
+⬜  Protección Hotlink → Activar
+    (evita que otros sitios consuman tu ancho de banda con tus imágenes)
+
+⬜  Índice de carpetas → Desactivar (Directory Listing OFF)
+
+⬜  Correo electrónico → Crear cuenta info@consultoriahost.es
+    → Probar que recibe correos antes de usar el formulario de contacto
+    → En api/contacto.php: EMAIL_DESTINO debe ser @consultoriahost.es (no Gmail)
+
+⬜  GIT → Configurar deploy automático
+    Rama: main  |  Directorio destino: public_html/
+
+
+═══════════════════════════════════════════════════════════════
+BLOQUE 4 — VERIFICACIÓN FUNCIONAL
+═══════════════════════════════════════════════════════════════
+
+Hacer cuando archivos + PHP + hPanel estén configurados.
+
+⬜  https://consultoriahost.es carga correctamente con candado
+⬜  http://consultoriahost.es redirige a https:// (301)
+⬜  URLs limpias funcionan: /consultoria, /servicios/humano, etc.
+⬜  Página 404 personalizada aparece en rutas inexistentes
+⬜  Formulario de contacto: envía email y muestra confirmación en pantalla
+⬜  Banner de cookies: aparece al entrar, desaparece al aceptar, no vuelve
+⬜  Menú responsive: hamburguesa abre y cierra en móvil
+⬜  4 departamentos HOST: /servicios/humano|organizacional|social|tecnologico
+⬜  Blog carga en /blog
+⬜  Activar HSTS en .htaccess (solo después de confirmar que HTTPS es estable)
+    → Descomentar en public_html/.htaccess:
+      Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    → ⚠️ Irreversible durante 1 año — activar solo cuando todo funcione
+
+
+═══════════════════════════════════════════════════════════════
+BLOQUE 5 — SEO / ANALÍTICA
+═══════════════════════════════════════════════════════════════
+
+Hacer cuando el sitio esté online y verificado.
+
+⬜  Google Search Console → verificar dominio
+    Meta tag ya en head.php:
+    <meta name="google-site-verification" content="vqXm3DVGvRmgJkZabNJoSgUXKbBpvnYZp6_-RlcYB6M">
+
+⬜  Enviar sitemap: https://consultoriahost.es/sitemap.xml
+    → Search Console → Índice → Sitemaps
+
+⬜  Google Analytics → añadir script en head.php (si se usa)
+
+⬜  Bing Webmaster Tools → verificar dominio (recomendado para GEO/AEO)
+
+⬜  PageSpeed Insights: https://pagespeed.web.dev/
+    Objetivo inicial: 90+ móvil, 95+ escritorio
+
+
+═══════════════════════════════════════════════════════════════
+BLOQUE 6 — CONTENIDO PENDIENTE
+═══════════════════════════════════════════════════════════════
+
+⬜  og-image.jpg en assets/img/ (1200×630px) — para compartir en redes
+✅  Datos legales reales en privacidad.php y aviso-legal.php (NIF/CIF)
+    Red de Redes Tecnológica S.L.U. · B73326811
+⬜  Número de teléfono real (aparece en: nav.php, footer.php, contacto.php,
+    metodo-host.php, index.php)
+⬜  Artículos reales en blog/
+⬜  Imágenes reales en secciones con gradiente como placeholder
+⬜  HSTS preload a largo plazo: https://hstspreload.org
+
+
+═══════════════════════════════════════════════════════════════
+RESOLUCIÓN DE PROBLEMAS COMUNES
+═══════════════════════════════════════════════════════════════
+
+PROBLEMA: La web carga pero sin estilos
+CAUSA:    Rutas CSS incorrectas según profundidad de directorio
+ACCIÓN:   Con $depth=0 → assets/css/main.css
+          Con $depth=1 → ../assets/css/main.css
+
+PROBLEMA: Candado roto / recursos mixtos
+CAUSA:    Alguna URL en el código usa http:// explícito dentro de HTTPS
+ACCIÓN:   Buscar en el código referencias a http:// y cambiar a https://
+          o usar URLs relativas al protocolo (//ejemplo.com/recurso)
+
+PROBLEMA: URLs limpias dan error 404
+CAUSA:    .htaccess no subido o mod_rewrite inactivo
+ACCIÓN:   Verificar que .htaccess está en public_html/ (activar "mostrar ocultos").
+          Si persiste: hPanel → Avanzado → Configuración Apache.
+
+PROBLEMA: Formulario de contacto no envía email
+CAUSA:    mail() en Hostinger requiere FROM del mismo dominio del hosting
+ACCIÓN:   EMAIL_RESPUESTA debe ser noreply@consultoriahost.es (no Gmail).
+          Si sigue fallando, usar SMTP con PHPMailer.
+
+PROBLEMA: Error 500
+CAUSA:    Error en .htaccess o PHP
+ACCIÓN:   Revisar hPanel → Logs de errores.
+          Renombrar .htaccess → .htaccess_bak para aislar si es de .htaccess.
