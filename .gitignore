@@ -41,3 +41,7 @@ desktop.ini
 # Archivos de despliegue locales (no van al repo)
 *.zip
 CONSULTORISHOT-*.zip
+
+# Scripts de diagnóstico — solo para uso local, nunca a producción
+test-smtp.php
+test-*.php
