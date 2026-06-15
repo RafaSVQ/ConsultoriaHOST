@@ -152,11 +152,13 @@ include APP_ROOT . '/includes/nav.php';
             'color' => 'var(--color-orange)',
             'badge' => 'badge--orange',
             'tag'   => 'Emprendimiento',
+            'anchor'=> 'emprender',
           ],
         ];
         foreach ($prog_personas as $i => $p): ?>
 
         <article class="card reveal <?= $i>0?'reveal--delay-'.min($i,2):'' ?>"
+                 <?= isset($p['anchor']) ? 'id="' . $p['anchor'] . '"' : '' ?>
                  style="box-shadow:var(--shadow-card);border-top:4px solid <?= $p['color'] ?>;">
           <div class="card__body" style="display:flex;flex-direction:column;height:100%;">
             <div style="
@@ -216,6 +218,7 @@ include APP_ROOT . '/includes/nav.php';
           [
             'icono' => icon('search', size: 36),
             'titulo'=> 'Publica una oferta en HOST',
+            'anchor'=> 'ofertas',
             'tag'   => 'Ofertas de empleo',
             'tcolor'=> 'badge--blue',
             'desc'  => 'HOST dispone de una red de candidatos cualificados en diferentes perfiles. Si necesitas incorporar talento a tu equipo, publica tu oferta con HOST y accede a candidatos que ya conocemos y hemos valorado.',
@@ -249,6 +252,7 @@ include APP_ROOT . '/includes/nav.php';
         foreach ($prog_empresas as $i => $p): ?>
 
         <article class="card reveal <?= $i>0?'reveal--delay-'.min($i,3):'' ?>"
+                 <?= isset($p['anchor']) ? 'id="' . $p['anchor'] . '"' : '' ?>
                  style="box-shadow:var(--shadow-card);border-top:4px solid var(--color-blue);">
           <div class="card__body">
             <div style="
