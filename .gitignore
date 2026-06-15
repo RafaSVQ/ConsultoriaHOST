@@ -45,3 +45,5 @@ CONSULTORISHOT-*.zip
 # Scripts de diagnóstico — solo para uso local, nunca a producción
 test-smtp.php
 test-*.php
+link_checker.php
+*_checker.php
