@@ -66,6 +66,7 @@
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
   margin-bottom: var(--space-6);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
@@ -118,6 +119,7 @@
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-xl);
   padding: var(--space-6) var(--space-5);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   transition: background var(--transition-base), transform var(--transition-bounce);
 }
@@ -304,6 +306,7 @@
   color: var(--service-color, var(--color-blue));
   opacity: 0.05;
   pointer-events: none;
+  -webkit-user-select: none;
   user-select: none;
   transition: opacity var(--transition-base);
 }
@@ -511,6 +514,7 @@
   font-size: 9rem;
   color: rgba(255, 255, 255, 0.08);
   letter-spacing: -0.05em;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -760,6 +764,7 @@
   position: absolute;
   top: var(--space-4);
   left: var(--space-6);
+  -webkit-user-select: none;
   user-select: none;
 }
 
