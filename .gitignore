@@ -42,6 +42,9 @@ desktop.ini
 *.zip
 CONSULTORISHOT-*.zip
 
+# Carpeta de distribución — copia local lista para subir a Hostinger por FTP
+/DIST/
+
 # Scripts de diagnóstico — solo para uso local, nunca a producción
 test-smtp.php
 test-*.php
