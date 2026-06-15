@@ -301,7 +301,7 @@ const ContactFormModule = (() => {
   /** Reglas de validación por campo */
   const RULES = {
     nombre: { required: true, minLength: 2 },
-    telefono: { required: false, pattern: /^[+\d\s\-()]{6,20}$/ },
+    telefono: { required: false, pattern: /^(\+34[\s-]?)?[6-9]\d{2}[\s-]?\d{3}[\s-]?\d{3}$/ },
     email: { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
     mensaje: { required: true, minLength: 10 }
   };
@@ -422,7 +422,16 @@ const ContactFormModule = (() => {
           successMsg?.setAttribute('tabindex', '-1');
           successMsg?.focus();
         } else {
-          throw new Error(json.message || 'Error al enviar.');
+          let serverErr = form.querySelector('.form-server-error');
+          if (!serverErr) {
+            serverErr = document.createElement('p');
+            serverErr.className = 'form-server-error';
+            serverErr.setAttribute('role', 'alert');
+            serverErr.style.cssText = 'color:#DC2626;font-size:.875rem;margin-top:.75rem;';
+            submitBtn.insertAdjacentElement('afterend', serverErr);
+          }
+          serverErr.textContent = json.message || 'Error al enviar el mensaje.';
+          serverErr.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       } catch (err) {
         console.error('Error contacto:', err);

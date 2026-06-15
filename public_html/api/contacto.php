@@ -59,8 +59,12 @@ function validarEmail(string $email): bool
 function validarTelefono(string $telefono): bool
 {
     if (empty($telefono)) return true;
-    $clean = preg_replace('/[\s\-\(\)]/', '', $telefono);
-    return (bool) preg_match('/^(\+34|0034)?[6789]\d{8}$/', $clean);
+    $clean = preg_replace('/[\s\-\(\)\+]/', '', $telefono);
+    // Admitir prefijo +34/0034 → queda 9 dígitos
+    if (str_starts_with($clean, '34') && strlen($clean) === 11) {
+        $clean = substr($clean, 2);
+    }
+    return ctype_digit($clean) && strlen($clean) === 9;
 }
 
 /**
@@ -134,7 +138,7 @@ function plantillaConfirmacion(string $nombre): string
   <div class="header"><h1>Mensaje recibido</h1></div>
   <div class="body">
     <p>Hola <strong>{$nombre}</strong>,</p>
-    <p>Hemos recibido tu mensaje correctamente. <span class="highlight">Te contactaremos lo antes posible</span>, normalmente en menos de 24 horas laborables.</p>
+    <p>Hemos recibido tu mensaje correctamente. <span class="highlight">Te contactaremos lo antes posible.</span></p>
     <p>Si tienes algo urgente, puedes llamarnos directamente:</p>
     <p style="font-size:1.2em;"><a href="{$phoneLink}"><strong>{$phone}</strong></a></p>
     <p style="font-size:.85em;color:#94A3B8;">{$horas}</p>

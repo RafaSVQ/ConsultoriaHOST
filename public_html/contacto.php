@@ -7,6 +7,8 @@
  * horario de atención y sección "Unirse al HOST".
  */
 
+require_once __DIR__ . '/bootstrap.php';
+
 $depth            = 0;
 $nav_active       = 'contacto';
 $page_title       = 'Contacto — Habla con Consultoría HOST';
@@ -14,7 +16,6 @@ $page_description = 'Contacta con ' . SITE_NAME . '. Teléfono: ' . SITE_PHONE .
 $page_keywords    = 'contacto consultoría HOST, teléfono, formulario contacto, Sevilla, España';
 $page_canonical   = 'https://consultoriahost.es/contacto';
 
-require_once __DIR__ . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';
 include APP_ROOT . '/includes/nav.php';
 ?>

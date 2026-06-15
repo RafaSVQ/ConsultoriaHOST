@@ -55,3 +55,8 @@ if (!defined('_ENV_LOADED')) {
     define('_ENV_LOADED', true);
     unset($__env, $__line, $__k, $__v, $__len, $__first, $__last);
 }
+
+// Cargar constantes globales del sitio una sola vez
+if (!defined('SITE_NAME')) {
+    require_once APP_ROOT . '/config/site.php';
+}
