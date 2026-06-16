@@ -25,9 +25,10 @@ $page_extra_head  = '
   "datePublished": "2024-10-28",
   "dateModified":  "2024-10-28",
   "author": {
-    "@type": "Organization",
-    "name": "Consultoría HOST",
-    "url":  "https://consultoriahost.es"
+    "@type": "Person",
+    "name": "Rafael Comesaña",
+    "jobTitle": "Director, Consultoría HOST",
+    "url": "https://consultoriahost.es/que-es-host"
   },
   "publisher": {
     "@type": "Organization",

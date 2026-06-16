@@ -26,6 +26,8 @@ function navActive(string $key): string {
 }
 ?>
 
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
 <header role="banner">
   <nav class="nav" role="navigation" aria-label="Navegación principal">
     <div class="container">
@@ -61,7 +63,7 @@ function navActive(string $key): string {
           <li class="nav__item">
             <a href="<?= $base_path ?>servicios/"
                class="nav__link<?= navActive('servicios') ?>"
-               aria-haspopup="true" aria-expanded="false">
+               aria-expanded="false">
               Qué hacemos
               <svg class="nav__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -106,6 +108,13 @@ function navActive(string $key): string {
             <a href="<?= $base_path ?>empleo.php"
                class="nav__link<?= navActive('empleo') ?>">
               Empleo 3.0
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="<?= $base_path ?>networking.php"
+               class="nav__link<?= navActive('networking') ?>">
+              Networking
             </a>
           </li>
 

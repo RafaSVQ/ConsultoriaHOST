@@ -34,8 +34,8 @@ include APP_ROOT . '/includes/nav.php';
       <h1 class="page-header__title">H · O · S · T</h1>
       <p class="page-header__subtitle">
         Cuatro letras. Cuatro compromisos. Una sola forma de trabajar:
-        orientada a las <strong style="color:var(--color-amber);">personas</strong>
-        y al <strong style="color:var(--color-amber);">desarrollo sostenible</strong>.
+        orientada a las <strong class="text-amber">personas</strong>
+        y al <strong class="text-amber">desarrollo sostenible</strong>.
       </p>
     </div>
   </div>
@@ -73,43 +73,18 @@ include APP_ROOT . '/includes/nav.php';
 
         <!-- Visual acrónimo animado -->
         <div class="reveal reveal--delay-1" aria-hidden="true">
-          <div style="
-            background: var(--gradient-hero);
-            border-radius: var(--radius-2xl);
-            padding: var(--space-10);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-4);
-          ">
+          <div class="host-letters-grid">
             <?php
             $letras = [
-              ['letra'=>'H','color'=>'var(--color-amber)','palabra'=>'Humana'],
-              ['letra'=>'O','color'=>'#7DD3FC','palabra'=>'Organizacional'],
-              ['letra'=>'S','color'=>'#86EFAC','palabra'=>'Social'],
-              ['letra'=>'T','color'=>'#FCA5A5','palabra'=>'Tecnológica'],
+              ['letra'=>'H','palabra'=>'Humana'],
+              ['letra'=>'O','palabra'=>'Organizacional'],
+              ['letra'=>'S','palabra'=>'Social'],
+              ['letra'=>'T','palabra'=>'Tecnológica'],
             ];
             foreach ($letras as $item): ?>
-            <div class="hover-glass" style="
-              background: rgba(255,255,255,.08);
-              border: 1px solid rgba(255,255,255,.15);
-              border-radius: var(--radius-xl);
-              padding: var(--space-6) var(--space-5);
-              text-align: center;
-            "
-            >
-              <div style="
-                font-family: var(--font-display);
-                font-weight: 800;
-                font-size: 3rem;
-                line-height: 1;
-                color: <?= $item['color'] ?>;
-                margin-bottom: var(--space-2);
-              "><?= $item['letra'] ?></div>
-              <div style="
-                font-size: var(--text-sm);
-                font-weight: 600;
-                color: white;
-              "><?= $item['palabra'] ?></div>
+            <div class="host-letter-card">
+              <div class="host-letter-card__letter"><?= $item['letra'] ?></div>
+              <div class="host-letter-card__word"><?= $item['palabra'] ?></div>
             </div>
             <?php endforeach; ?>
           </div>

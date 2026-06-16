@@ -35,8 +35,8 @@ include APP_ROOT . '/includes/nav.php';
       <h1 class="page-header__title">La consultoría que necesitas.</h1>
       <p class="page-header__subtitle">
         Profesionales al servicio de la sociedad y del desarrollo.
-        Un servicio que <strong style="color:var(--color-amber);">"hace"</strong>
-        más que <strong style="color:var(--color-amber);">"dice"</strong>.
+        Un servicio que <strong class="text-amber">"hace"</strong>
+        más que <strong class="text-amber">"dice"</strong>.
       </p>
     </div>
   </div>
@@ -76,15 +76,8 @@ include APP_ROOT . '/includes/nav.php';
 
         <!-- Panel de perfiles -->
         <div class="reveal reveal--delay-1">
-          <div style="
-            background: var(--color-off-white);
-            border-radius: var(--radius-2xl);
-            padding: var(--space-8);
-            border: 1px solid var(--color-border);
-          ">
-            <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-6);color:var(--color-navy);">
-              ¿Para quién es HOST?
-            </h3>
+          <div class="sidebar-panel">
+            <h3 class="sidebar-panel__heading">¿Para quién es HOST?</h3>
             <?php
             $perfiles = [
               ['icon'=>'🏪', 'titulo'=>'Microempresas y autónomos',
@@ -99,24 +92,11 @@ include APP_ROOT . '/includes/nav.php';
                'desc'=>'Para personal docente, administrativo y cargos políticos que quieran resultados reales.'],
             ];
             foreach ($perfiles as $p): ?>
-            <div class="hover-shadow-md" style="
-              display: flex;
-              gap: var(--space-4);
-              padding: var(--space-4);
-              border-radius: var(--radius-lg);
-              margin-bottom: var(--space-3);
-              background: white;
-              border: 1px solid var(--color-border);
-            "
-            >
-              <div style="flex-shrink:0;color:var(--color-orange);"><?= icon($p['icon'], size: 28) ?></div>
+            <div class="profile-card hover-shadow-md">
+              <div class="profile-card__icon"><?= icon($p['icon'], size: 28) ?></div>
               <div>
-                <div style="font-weight:600;font-size:var(--text-sm);color:var(--color-text-primary);margin-bottom:2px;">
-                  <?= $p['titulo'] ?>
-                </div>
-                <div style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.5;">
-                  <?= $p['desc'] ?>
-                </div>
+                <div class="profile-card__title"><?= $p['titulo'] ?></div>
+                <div class="profile-card__desc"><?= $p['desc'] ?></div>
               </div>
             </div>
             <?php endforeach; ?>
@@ -191,63 +171,16 @@ include APP_ROOT . '/includes/nav.php';
       ];
       foreach ($errores as $i => $error): ?>
 
-      <article class="reveal hover-card-raise <?= $i > 0 ? 'reveal--delay-'.min($i,4) : '' ?>" style="
-        background: white;
-        border-radius: var(--radius-2xl);
-        padding: var(--space-6) var(--space-8);
-        margin-bottom: var(--space-4);
-        border: 1px solid var(--color-border);
-        display: grid;
-        grid-template-columns: 80px 1fr;
-        gap: var(--space-6);
-        align-items: start;
-        box-shadow: var(--shadow-sm);
-      "
-      >
-        <!-- Número de error -->
-        <div style="
-          width: 64px;
-          height: 64px;
-          border-radius: var(--radius-xl);
-          background: <?= $error['color'] ?>;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-family: var(--font-display);
-          font-weight: 800;
-          font-size: var(--text-xl);
-          color: white;
-          flex-shrink: 0;
-        " aria-hidden="true"><?= $error['num'] ?></div>
-
+      <article class="error-card reveal hover-card-raise <?= $i > 0 ? 'reveal--delay-'.min($i,4) : '' ?>"
+               style="--error-color: <?= $error['color'] ?>">
+        <div class="error-card__badge" aria-hidden="true"><?= $error['num'] ?></div>
         <div>
-          <!-- Error (en rojo suave) -->
-          <div style="
-            font-size: var(--text-base);
-            font-weight: 600;
-            color: #991B1B;
-            background: #FEF2F2;
-            border-radius: var(--radius-md);
-            padding: var(--space-3) var(--space-4);
-            margin-bottom: var(--space-3);
-            border-left: 3px solid #DC2626;
-          ">
-            <span style="font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#DC2626;display:block;margin-bottom:4px;">
-              Error común
-            </span>
+          <div class="error-card__problem">
+            <span class="error-card__problem-label">Error común</span>
             <?= htmlspecialchars($error['titulo'], ENT_QUOTES, 'UTF-8') ?>
           </div>
-          <!-- Respuesta HOST -->
-          <div style="
-            font-size: var(--text-sm);
-            color: var(--color-text-secondary);
-            line-height: var(--line-height-loose);
-            padding-left: var(--space-4);
-            border-left: 3px solid <?= $error['color'] ?>;
-          ">
-            <span style="font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:<?= $error['color'] ?>;display:block;margin-bottom:4px;">
-              Realidad HOST
-            </span>
+          <div class="error-card__solution">
+            <span class="error-card__solution-label">Realidad HOST</span>
             <?= htmlspecialchars($error['resp'], ENT_QUOTES, 'UTF-8') ?>
           </div>
         </div>

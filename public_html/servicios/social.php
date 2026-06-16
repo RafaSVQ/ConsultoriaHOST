@@ -44,7 +44,7 @@ include APP_ROOT . '/includes/nav.php';
       <h1 class="page-header__title">Impacto positivo en la sociedad.</h1>
       <p class="page-header__subtitle">
         Toda actividad tiene repercusión social.
-        Eso no es opcional: es una <strong style="color:var(--color-amber);">responsabilidad</strong>
+        Eso no es opcional: es una <strong class="text-amber">responsabilidad</strong>
         que toda empresa debe asumir.
       </p>
     </div>

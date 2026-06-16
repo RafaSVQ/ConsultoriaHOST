@@ -25,9 +25,10 @@ $page_extra_head  = '
   "datePublished": "2025-03-10",
   "dateModified":  "2025-03-10",
   "author": {
-    "@type": "Organization",
-    "name": "Consultoría HOST",
-    "url":  "https://consultoriahost.es"
+    "@type": "Person",
+    "name": "Rafael Comesaña",
+    "jobTitle": "Director, Consultoría HOST",
+    "url": "https://consultoriahost.es/que-es-host"
   },
   "publisher": {
     "@type": "Organization",
@@ -122,7 +123,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: ¿Qué significa el "3.0"? -->
-          <h2 style="<?= $h2 ?>">¿Qué significa el "3.0"?</h2>
+          <h2 id="que-significa-30" style="<?= $h2 ?>">¿Qué significa el "3.0"?</h2>
 
           <p style="<?= $p ?>">
             No es una etiqueta de marketing. Es una forma de distinguir tres modelos
@@ -177,7 +178,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Por qué el modelo 1.0 y 2.0 no funcionan para la mayoría -->
-          <h2 style="<?= $h2 ?>">Por qué los modelos anteriores no funcionan<br>para la mayoría</h2>
+          <h2 id="por-que-modelos-anteriores" style="<?= $h2 ?>">Por qué los modelos anteriores no funcionan<br>para la mayoría</h2>
 
           <p style="<?= $p ?>">
             Una empresa grande puede permitirse contratar a un consultor que le entregue
@@ -231,7 +232,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Cómo funciona en la práctica -->
-          <h2 style="<?= $h2 ?>">Cómo funciona en la práctica</h2>
+          <h2 id="como-funciona" style="<?= $h2 ?>">Cómo funciona en la práctica</h2>
 
           <p style="<?= $p ?>">
             La Consultoría 3.0 no tiene un proceso único. Cada cliente tiene su situación,
@@ -274,7 +275,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: El concepto "solución-solución" -->
-          <h2 style="<?= $h2 ?>">El concepto "solución-solución"</h2>
+          <h2 id="solucion-solucion" style="<?= $h2 ?>">El concepto "solución-solución"</h2>
 
           <p style="<?= $p ?>">
             En HOST usamos este término para describir algo que parece obvio pero que
@@ -297,7 +298,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: ¿Para quién es la Consultoría 3.0? -->
-          <h2 style="<?= $h2 ?>">¿Para quién es la Consultoría 3.0?</h2>
+          <h2 id="para-quien" style="<?= $h2 ?>">¿Para quién es la Consultoría 3.0?</h2>
 
           <p style="<?= $p ?>">
             Para quien tenga un problema real y quiera resolverlo de verdad.
@@ -338,7 +339,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: La pregunta que hay que hacerse -->
-          <h2 style="<?= $h2 ?>">La pregunta que hay que hacerse</h2>
+          <h2 id="la-pregunta" style="<?= $h2 ?>">La pregunta que hay que hacerse</h2>
 
           <p style="<?= $p ?>">
             Antes de contratar cualquier servicio de consultoría, hay una pregunta
@@ -362,7 +363,7 @@ include APP_ROOT . '/includes/nav.php';
               margin:0 0 var(--space-4);
             ">
               ¿Cuándo acaba tu trabajo con nosotros?<br>
-              <span style="color:var(--color-amber);">¿Cuándo entregues el informe, o cuando el problema esté resuelto?</span>
+              <span class="text-amber">¿Cuándo entregues el informe, o cuando el problema esté resuelto?</span>
             </p>
             <p style="color:rgba(255,255,255,.65);font-size:var(--text-base);max-width:none;margin:0;">
               La respuesta a esa pregunta lo dice todo sobre el modelo de consultoría
@@ -377,7 +378,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- Conclusión -->
-          <h2 style="<?= $h2 ?>">En resumen</h2>
+          <h2 id="en-resumen" style="<?= $h2 ?>">En resumen</h2>
 
           <p style="<?= $p ?>">
             La Consultoría 3.0 no es mejor que la 1.0 o la 2.0 en abstracto.
@@ -506,14 +507,15 @@ include APP_ROOT . '/includes/nav.php';
               <ul style="display:flex;flex-direction:column;gap:var(--space-2);">
                 <?php
                 $indice = [
-                  '¿Qué significa el "3.0"?',
-                  'Por qué los modelos anteriores no funcionan',
-                  'Cómo funciona en la práctica',
-                  'El concepto "solución-solución"',
-                  '¿Para quién es la Consultoría 3.0?',
-                  'La pregunta que hay que hacerse',
+                  ['¿Qué significa el "3.0"?',                  'que-significa-30'],
+                  ['Por qué los modelos anteriores no funcionan', 'por-que-modelos-anteriores'],
+                  ['Cómo funciona en la práctica',               'como-funciona'],
+                  ['El concepto "solución-solución"',            'solucion-solucion'],
+                  ['¿Para quién es la Consultoría 3.0?',         'para-quien'],
+                  ['La pregunta que hay que hacerse',             'la-pregunta'],
+                  ['En resumen',                                 'en-resumen'],
                 ];
-                foreach ($indice as $item):
+                foreach ($indice as [$label, $anchor]):
                 ?>
                 <li style="
                   font-size:var(--text-sm);
@@ -523,8 +525,12 @@ include APP_ROOT . '/includes/nav.php';
                   border-bottom:1px solid var(--color-border);
                   display:flex;gap:var(--space-2);align-items:flex-start;
                 ">
-                  <span style="color:var(--color-orange);flex-shrink:0;font-weight:700;">›</span>
-                  <?= htmlspecialchars($item, ENT_QUOTES, 'UTF-8') ?>
+                  <span style="color:var(--color-orange);flex-shrink:0;font-weight:700;" aria-hidden="true">›</span>
+                  <a href="#<?= $anchor ?>" style="color:inherit;text-decoration:none;"
+                     onmouseover="this.style.color='var(--color-navy)';this.style.textDecoration='underline'"
+                     onmouseout="this.style.color='';this.style.textDecoration='none'">
+                    <?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?>
+                  </a>
                 </li>
                 <?php endforeach; ?>
               </ul>

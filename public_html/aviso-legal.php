@@ -8,6 +8,7 @@
 
 $depth            = 0;
 $nav_active       = '';
+$page_robots      = 'noindex, follow';
 $page_title       = 'Aviso Legal';
 $page_description = 'Aviso legal de Consultoría HOST. Información legal conforme a la LSSI-CE.';
 $page_canonical   = 'https://consultoriahost.es/aviso-legal';

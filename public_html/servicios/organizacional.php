@@ -45,7 +45,7 @@ include APP_ROOT . '/includes/nav.php';
       <p class="page-header__subtitle">
         Un desarrollo organizado garantiza más éxito.
         Procesos efectivos, recursos optimizados y resultados reales,
-        <strong style="color:var(--color-amber);">incluso con pocos medios</strong>.
+        <strong class="text-amber">incluso con pocos medios</strong>.
       </p>
     </div>
   </div>

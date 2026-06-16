@@ -45,7 +45,7 @@ include APP_ROOT . '/includes/nav.php';
       <p class="page-header__subtitle">
         Tecnología e ingeniería al servicio del desarrollo humano y sostenible.
         Proyectos que generan riqueza, empleo y beneficios para el medioambiente,
-        <strong style="color:var(--color-amber);">no a su costa</strong>.
+        <strong class="text-amber">no a su costa</strong>.
       </p>
     </div>
   </div>
@@ -128,7 +128,7 @@ include APP_ROOT . '/includes/nav.php';
                 font-size:var(--text-sm);color:rgba(255,255,255,.8);
                 max-width:none;margin:0;line-height:1.6;
               ">
-                <strong style="color:var(--color-amber);">Todos nuestros proyectos</strong>
+                <strong class="text-amber">Todos nuestros proyectos</strong>
                 son de innovación, desarrollo e investigación (I+D+i) con el "concepto HOST"
                 integrado: sostenibles, viables y rentables.
               </p>

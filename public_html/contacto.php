@@ -16,6 +16,56 @@ $page_description = 'Contacta con ' . SITE_NAME . '. Teléfono: ' . SITE_PHONE .
 $page_keywords    = 'contacto consultoría HOST, teléfono, formulario contacto, Sevilla, España';
 $page_canonical   = 'https://consultoriahost.es/contacto';
 
+$page_extra_head  = '
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta una consultoría HOST?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cada situación es diferente y los costes se ajustan a las necesidades y posibilidades de cada cliente. La primera consulta es siempre gratuita y sin compromiso. Llámanos o escríbenos y te informamos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Atienden a distancia o solo en Sevilla?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consultoría HOST atiende tanto de forma presencial en Sevilla como a distancia en toda España. Muchos de nuestros servicios son perfectamente ejecutables de forma telemática."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Para qué tamaño de empresa es HOST?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HOST está especialmente orientada a microempresas, autónomos y pymes (empresas de menos de 50 personas), aunque también trabajamos con organizaciones más grandes y con personas en búsqueda de empleo o reinserción profesional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo tarda en verse resultados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la situación, pero HOST trabaja siempre con el objetivo de reducir al mínimo los tiempos. En situaciones urgentes la actuación es inmediata. El objetivo siempre es: la solución más rápida y efectiva posible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es el Método HOST exactamente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es un método de evaluación de la viabilidad de un proyecto empresarial en 3 pasos (identificación, evaluación y planificación). Se realiza en talleres grupales de 3 jornadas de 5 horas. Puede acogerse a ayudas económicas."
+      }
+    }
+  ]
+}
+</script>';
+
 include APP_ROOT . '/includes/head.php';
 include APP_ROOT . '/includes/nav.php';
 ?>
@@ -36,7 +86,7 @@ include APP_ROOT . '/includes/nav.php';
       <p class="page-header__subtitle">
         Sin compromisos. Sin papeleos.
         Cuéntanos tu situación y valoramos
-        <strong style="color:var(--color-amber);">juntos la mejor solución</strong>.
+        <strong class="text-amber">juntos la mejor solución</strong>.
       </p>
     </div>
   </div>
@@ -173,10 +223,12 @@ include APP_ROOT . '/includes/nav.php';
               ¡Mensaje enviado! Te contactaremos lo antes posible.
             </div>
 
-            <form id="contact-form" action="api/contacto.php" method="POST" novalidate>
+            <form id="contact-form" action="api/contacto.php" method="POST" novalidate data-phone="<?= SITE_PHONE ?>"
+                  data-success="form-success">
 
               <!-- Honeypot antispam -->
               <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+              <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
 
               <div class="contact-form__grid">
 
@@ -323,9 +375,11 @@ include APP_ROOT . '/includes/nav.php';
               ¡Solicitud recibida! Te contactaremos pronto.
             </div>
 
-            <form id="unirse-form" action="api/contacto.php" method="POST" novalidate>
+            <form id="unirse-form" action="api/contacto.php" method="POST" novalidate data-phone="<?= SITE_PHONE ?>"
+                  data-success="form-success-unirse">
               <input type="hidden" name="asunto" value="Solicitud unirse al HOST">
               <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+              <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
 
               <div style="display:flex;flex-direction:column;gap:var(--space-4);">
 
@@ -403,40 +457,14 @@ include APP_ROOT . '/includes/nav.php';
       ];
       foreach ($faqs as $i => $faq): ?>
 
-      <details class="reveal <?= $i>0?'reveal--delay-1':'' ?>" style="
-        background: white;
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-xl);
-        margin-bottom: var(--space-3);
-        overflow: hidden;
-      ">
-        <summary class="hover-bg-offwhite" style="
-          padding: var(--space-5) var(--space-6);
-          font-weight: 600;
-          font-size: var(--text-base);
-          color: var(--color-text-primary);
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: var(--space-4);
-          list-style: none;
-          user-select: none;
-        "
-        >
+      <details class="faq-item reveal <?= $i>0?'reveal--delay-1':'' ?>">
+        <summary class="faq-item__summary hover-bg-offwhite">
           <?= htmlspecialchars($faq[0], ENT_QUOTES, 'UTF-8') ?>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-               style="flex-shrink:0;transition:transform var(--transition-base);"
-               aria-hidden="true">
+          <svg class="faq-item__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </summary>
-        <div style="
-          padding: 0 var(--space-6) var(--space-5);
-          font-size: var(--text-sm);
-          color: var(--color-text-secondary);
-          line-height: var(--line-height-loose);
-        ">
+        <div class="faq-item__body">
           <?= htmlspecialchars($faq[1], ENT_QUOTES, 'UTF-8') ?>
         </div>
       </details>
@@ -450,12 +478,3 @@ include APP_ROOT . '/includes/nav.php';
 
 <?php include APP_ROOT . '/includes/footer.php'; ?>
 
-<!-- Script adicional para animación de los details/FAQ -->
-<script>
-  document.querySelectorAll('details').forEach(details => {
-    const arrow = details.querySelector('summary svg');
-    details.addEventListener('toggle', () => {
-      if (arrow) arrow.style.transform = details.open ? 'rotate(180deg)' : 'rotate(0)';
-    });
-  });
-</script>

@@ -41,7 +41,7 @@ include APP_ROOT . '/includes/nav.php';
       <p class="page-header__subtitle" style="max-width:640px;">
         Cuatro departamentos. Cuatro perspectivas.
         Un único objetivo: que las cosas cambien de verdad
-        para <strong style="color:var(--color-amber);">personas y empresas</strong>.
+        para <strong class="text-amber">personas y empresas</strong>.
       </p>
 
     </div>
@@ -393,7 +393,7 @@ include APP_ROOT . '/includes/nav.php';
             pointer-events:none;
           " aria-hidden="true"></div>
           <div style="position:relative;z-index:1;">
-            <span class="eyebrow" style="color:var(--color-amber);">
+            <span class="eyebrow text-amber">
               ¿Tienes un proyecto?
             </span>
             <h3 style="

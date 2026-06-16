@@ -22,9 +22,27 @@ const NavModule = (() => {
   const toggle = document.querySelector('.nav__toggle');
   const mobileMenu = document.querySelector('.nav__mobile');
   const mobileOverlay = document.querySelector('.nav__mobile-overlay');
-  const dropdownItems = document.querySelectorAll('.nav__item');
+  const dropdownItems = [...document.querySelectorAll('.nav__item')]
+    .filter(item => item.querySelector('.nav__dropdown'));
 
   let isMenuOpen = false;
+
+  /* --- Dropdowns escritorio --- */
+  const setupDropdowns = () => {
+    dropdownItems.forEach(item => {
+      const trigger = item.querySelector('[aria-expanded]');
+      if (!trigger) return;
+
+      const setExpanded = (val) => trigger.setAttribute('aria-expanded', String(val));
+
+      item.addEventListener('mouseenter', () => setExpanded(true));
+      item.addEventListener('mouseleave', () => setExpanded(false));
+      item.addEventListener('focusin',    () => setExpanded(true));
+      item.addEventListener('focusout',   (e) => {
+        if (!item.contains(e.relatedTarget)) setExpanded(false);
+      });
+    });
+  };
 
   /**
    * Añade clase --scrolled cuando el usuario ha bajado más de 20px.
@@ -106,6 +124,9 @@ const NavModule = (() => {
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && isMenuOpen) closeMenu();
     });
+
+    // Dropdowns escritorio (aria-expanded sync)
+    setupDropdowns();
 
     // Marcar activo
     setActiveLink();
@@ -253,96 +274,42 @@ const CountUpModule = (() => {
 })();
 
 
-/* ============================================================
-   MÓDULO: MobileDropdowns
-   Responsabilidad: gestionar acordeones en el menú móvil
-   para los submenús de departamentos.
-   ============================================================ */
-const MobileDropdownsModule = (() => {
-
-  const init = () => {
-    document.querySelectorAll('.nav__mobile-toggle').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const panel = document.getElementById(trigger.dataset.target);
-        if (!panel) return;
-
-        const isOpen = panel.style.maxHeight && panel.style.maxHeight !== '0px';
-
-        // Cierra todos los paneles abiertos primero
-        document.querySelectorAll('.nav__mobile-panel').forEach(p => {
-          p.style.maxHeight = '0px';
-          p.setAttribute('aria-hidden', 'true');
-        });
-        document.querySelectorAll('.nav__mobile-toggle').forEach(t => {
-          t.setAttribute('aria-expanded', 'false');
-        });
-
-        // Abre el pulsado si estaba cerrado
-        if (!isOpen) {
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-          panel.setAttribute('aria-hidden', 'false');
-          trigger.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-  };
-
-  return { init };
-})();
-
 
 /* ============================================================
    MÓDULO: Contacto — Formulario con validación y envío AJAX
    Responsabilidad: validar campos, mostrar errores inline,
-   enviar a contacto.php y mostrar confirmación.
+   enviar a api/contacto.php y mostrar confirmación.
+   Soporta múltiples formularios en la misma página.
    ============================================================ */
 const ContactFormModule = (() => {
 
   /** Reglas de validación por campo */
   const RULES = {
-    nombre: { required: true, minLength: 2 },
+    nombre:   { required: true,  minLength: 2 },
     telefono: { required: false, pattern: /^(\+34[\s-]?)?[6-9]\d{2}[\s-]?\d{3}[\s-]?\d{3}$/ },
-    email: { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
-    mensaje: { required: true, minLength: 10 }
+    email:    { required: true,  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+    mensaje:  { required: true,  minLength: 10 }
   };
 
-  /**
-   * Valida un campo según sus reglas.
-   * @returns {string|null} Mensaje de error o null si válido.
-   */
   const validateField = (name, value) => {
     const rule = RULES[name];
     if (!rule) return null;
-
     const trimmed = value.trim();
-
-    if (rule.required && !trimmed)
-      return 'Este campo es obligatorio.';
-
+    if (rule.required && !trimmed)              return 'Este campo es obligatorio.';
     if (trimmed && rule.minLength && trimmed.length < rule.minLength)
-      return `Mínimo ${rule.minLength} caracteres.`;
-
+                                                return `Mínimo ${rule.minLength} caracteres.`;
     if (trimmed && rule.pattern && !rule.pattern.test(trimmed))
-      return name === 'email'
-        ? 'Introduce un email válido.'
-        : 'Formato no válido.';
-
+                                                return name === 'email' ? 'Introduce un email válido.' : 'Formato no válido.';
     return null;
   };
 
-  /**
-   * Muestra u oculta el error de un campo.
-   */
   const setFieldError = (input, message) => {
     const group = input.closest('.form-group');
-    let errorEl = group?.querySelector('.form-error');
-
     if (!group) return;
-
+    let errorEl = group.querySelector('.form-error');
     if (message) {
       input.setAttribute('aria-invalid', 'true');
       input.style.borderColor = '#DC2626';
-
       if (!errorEl) {
         errorEl = document.createElement('span');
         errorEl.className = 'form-error';
@@ -357,63 +324,38 @@ const ContactFormModule = (() => {
     }
   };
 
-  /**
-   * Inicializa el formulario de contacto si existe en la página.
-   */
-  const init = () => {
-    const form = document.getElementById('contact-form');
+  const initForm = (form) => {
     if (!form) return;
 
-    const successMsg = document.getElementById('form-success');
-    const submitBtn = form.querySelector('[type="submit"]');
+    const successId = form.dataset.success;
+    const successMsg = successId ? document.getElementById(successId) : null;
+    const submitBtn  = form.querySelector('[type="submit"]');
 
-    // Validación en tiempo real (al salir de cada campo)
     form.querySelectorAll('input, textarea').forEach(input => {
-      input.addEventListener('blur', () => {
-        const error = validateField(input.name, input.value);
-        setFieldError(input, error);
-      });
-
-      // Limpiar error al escribir
+      input.addEventListener('blur', () => setFieldError(input, validateField(input.name, input.value)));
       input.addEventListener('input', () => {
-        if (input.getAttribute('aria-invalid')) {
-          const error = validateField(input.name, input.value);
-          setFieldError(input, error);
-        }
+        if (input.getAttribute('aria-invalid'))
+          setFieldError(input, validateField(input.name, input.value));
       });
     });
 
-    // Envío
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Validar todos los campos
       let hasErrors = false;
       form.querySelectorAll('input, textarea').forEach(input => {
         const error = validateField(input.name, input.value);
         setFieldError(input, error);
         if (error) hasErrors = true;
       });
+      if (hasErrors) { form.querySelector('[aria-invalid="true"]')?.focus(); return; }
 
-      if (hasErrors) {
-        // Focus en el primer campo con error
-        form.querySelector('[aria-invalid="true"]')?.focus();
-        return;
-      }
-
-      // Estado de carga
       const originalText = submitBtn.textContent;
       submitBtn.disabled = true;
       submitBtn.textContent = 'Enviando…';
 
       try {
-        const data = new FormData(form);
-
-        const res = await fetch('api/contacto.php', {
-          method: 'POST',
-          body: data
-        });
-
+        const res  = await fetch(form.getAttribute('action'), { method: 'POST', body: new FormData(form) });
         const json = await res.json();
 
         if (json.success) {
@@ -435,12 +377,17 @@ const ContactFormModule = (() => {
         }
       } catch (err) {
         console.error('Error contacto:', err);
-        alert('Ha ocurrido un error al enviar el mensaje. Por favor, llámenos directamente al 95 418 25 08.');
+        const phone = form.dataset.phone || '95 418 25 08';
+        alert(`Ha ocurrido un error al enviar el mensaje. Por favor, llámenos directamente al ${phone}.`);
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
       }
     });
+  };
+
+  const init = () => {
+    document.querySelectorAll('form[data-success]').forEach(initForm);
   };
 
   return { init };
@@ -456,6 +403,5 @@ document.addEventListener('DOMContentLoaded', () => {
   ScrollRevealModule.init();
   SmoothScrollModule.init();
   CountUpModule.init();
-  MobileDropdownsModule.init();
   ContactFormModule.init();
 });

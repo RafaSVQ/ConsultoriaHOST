@@ -23,7 +23,8 @@ Dominio: [consultoriahost.es](https://consultoriahost.es)
 consultoriahost/
 ├── config/            ← Configuración global (fuera del webroot)
 │   ├── site.php       ← Punto único de verdad: datos del sitio, constantes
-│   └── icons.php      ← Función icon() para SVG inline
+│   ├── icons.php      ← Función icon() para SVG inline
+│   └── articulos.php  ← Catálogo del blog (fuente única para index y sitemap)
 ├── includes/          ← Fragmentos PHP reutilizables (fuera del webroot)
 │   ├── head.php
 │   ├── nav.php
@@ -48,6 +49,46 @@ consultoriahost/
 ├── DEPLOY.txt         ← Estado y checklist de despliegue
 └── AUDITORIA.md       ← Auditoría forense del proyecto
 ```
+
+---
+
+## Publicar un artículo de blog
+
+### Pasos
+
+1. **Crear el archivo** `public_html/blog/<slug>.php`
+   - Copiar la estructura de cualquier artículo existente
+   - Actualizar `$page_title`, `$page_description`, `$page_canonical` y el schema JSON-LD
+   - Cambiar `"author"` a `{"@type":"Person","name":"Rafael Comesaña",...}` (ya lo tienen los existentes)
+
+2. **Añadir la entrada en `config/articulos.php`** con `'publicado' => false` mientras está en borrador:
+   ```php
+   [
+     'slug'      => 'mi-nuevo-articulo',
+     'titulo'    => 'Título del artículo',
+     'extracto'  => 'Resumen de una o dos frases.',
+     'categoria' => 'Consultoría',
+     'catcolor'  => 'badge--orange',   // orange · blue · green · navy
+     'fecha'     => '2026-06-16',
+     'lectura'   => '5 min',
+     'destacado' => false,
+     'publicado' => false,             // ← cambiar a true al publicar
+   ],
+   ```
+
+3. **Cuando esté listo:** cambiar `'publicado' => false` → `'publicado' => true`
+   - Aparece automáticamente en el índice del blog (`/blog/`)
+   - Aparece automáticamente en el sitemap (`/sitemap.xml`)
+   - No hay que tocar ningún otro archivo
+
+### Valores de `catcolor`
+
+| Clase | Color |
+|---|---|
+| `badge--orange` | Naranja (Consultoría) |
+| `badge--blue` | Azul (Emprendimiento, Empresas) |
+| `badge--green` | Verde (Medioambiente, Social) |
+| `badge--navy` | Azul marino (Networking) |
 
 ---
 
@@ -132,5 +173,6 @@ MAIL_TO_NAME=Consultoría HOST Web
 |---|---|
 | `DEPLOY.txt` | Estado actual del despliegue y checklist de producción |
 | `AUDITORIA.md` | Auditoría forense completa — errores, soluciones y mejoras |
+| `POSIBLES_ESTRATEGIAS.md` | Hoja de ruta comercial en 3 fases: lanzamiento, captación y escala |
 | `PHP_disponible.md` | Extensiones PHP disponibles en Hostinger y configuración OPcache |
 | `INSTALAR_SMTP.md` | Guía de configuración SMTP con PHPMailer |

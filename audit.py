@@ -150,6 +150,10 @@ def check_anchors(php_files: list[Path]) -> list[str]:
 
     for fp in php_files:
         text = fp.read_text(encoding='utf-8', errors='ignore')
+        # Los archivos de includes/ usan href="#anchor" para anclas del documento
+        # padre que los incluye — no es posible verificarlos en aislamiento.
+        is_partial = 'includes' in fp.relative_to(ROOT).parts
+
         for m in href_pattern.finditer(text):
             href = m.group(1)
 
@@ -162,6 +166,10 @@ def check_anchors(php_files: list[Path]) -> list[str]:
                 continue
 
             target_resolved = target_path.resolve()
+
+            # href="#anchor" en un include apunta al padre — omitir
+            if is_partial and target_resolved == fp.resolve():
+                continue
 
             if not target_resolved.exists():
                 # El archivo destino no existe — es un 404, no un anclaje roto

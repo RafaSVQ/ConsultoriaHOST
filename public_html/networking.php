@@ -8,7 +8,7 @@
  */
 
 $depth            = 0;
-$nav_active       = '';
+$nav_active       = 'networking';
 $page_title       = 'Networking efectivo — Conecta con quien importa';
 $page_description = 'Networking efectivo con HOST: no se trata de coleccionar tarjetas, sino de construir relaciones de valor real. Jornadas, eventos y metodología HOST. Sevilla, España.';
 $page_keywords    = 'networking efectivo, jornadas emprendedores, eventos empresariales, red contactos, Sevilla, HOST';
@@ -33,7 +33,7 @@ include APP_ROOT . '/includes/nav.php';
       <p class="page-header__subtitle">
         No se trata de coleccionar tarjetas ni de hablar con todo el mundo.
         Se trata de construir
-        <strong style="color:var(--color-amber);">relaciones de valor real</strong>.
+        <strong class="text-amber">relaciones de valor real</strong>.
       </p>
     </div>
   </div>

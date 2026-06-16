@@ -25,9 +25,10 @@ $page_extra_head  = '
   "datePublished": "2025-01-22",
   "dateModified":  "2025-01-22",
   "author": {
-    "@type": "Organization",
-    "name": "Consultoría HOST",
-    "url":  "https://consultoriahost.es"
+    "@type": "Person",
+    "name": "Rafael Comesaña",
+    "jobTitle": "Director, Consultoría HOST",
+    "url": "https://consultoriahost.es/que-es-host"
   },
   "publisher": {
     "@type": "Organization",
@@ -74,7 +75,7 @@ include APP_ROOT . '/includes/nav.php';
 
       <h1 class="page-header__title" style="max-width:860px;">
         El vertedero de Seseña<br>tiene solución.<br>
-        <span style="color:var(--color-amber);">Y es gratuita para<br>las arcas públicas.</span>
+        <span class="text-amber">Y es gratuita para<br>las arcas públicas.</span>
       </h1>
       <p class="page-header__subtitle" style="max-width:640px;">
         El mayor vertedero de neumáticos de Europa lleva décadas

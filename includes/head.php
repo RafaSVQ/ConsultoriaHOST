@@ -31,16 +31,7 @@ $page_canon   = $page_canonical   ?? SITE_URL . '/';
 $page_og_img  = $page_og_image    ?? SITE_OG_IMAGE;
 $full_title   = $page_full_title  ?? ($page_title . ' — ' . SITE_NAME);
 
-/**
- * Cache-busting con filemtime().
- *
- * Calcula la ruta física a /assets/ desde __DIR__ (/includes/),
- * subiendo exactamente un nivel. Funciona igual para páginas
- * en raíz (depth=0) y en subcarpetas (depth=1).
- *
- * Uso: assets/css/main.css<?= asset_v('css/main.css') ?>
- */
-$_assets_root = realpath(__DIR__ . '/../public_html/assets');
+$_assets_root = APP_ROOT . '/public_html/assets';
 
 /**
  * Devuelve el querystring de versión para un activo estático.
@@ -64,7 +55,7 @@ function asset_v(string $rel): string {
   <meta name="description" content="<?= htmlspecialchars($page_desc, ENT_QUOTES, 'UTF-8') ?>">
   <meta name="keywords"    content="<?= htmlspecialchars($page_keys, ENT_QUOTES, 'UTF-8') ?>">
   <meta name="author"      content="<?= SITE_NAME ?>">
-  <meta name="robots"      content="index, follow">
+  <meta name="robots"      content="<?= htmlspecialchars($page_robots ?? 'index, follow', ENT_QUOTES, 'UTF-8') ?>">
   <link rel="canonical"    href="<?= htmlspecialchars($page_canon, ENT_QUOTES, 'UTF-8') ?>">
 
   <!-- Open Graph -->
@@ -84,10 +75,9 @@ function asset_v(string $rel): string {
 
   <meta name="google-site-verification" content="vqXm3DVGvRmgJkZabNJoSgUXKbBpvnYZp6_-RlcYB6M">
 
-  <!-- Tipografías -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Tipografías self-hosted: preload antes del CSS para evitar FOIT -->
+  <link rel="preload" href="<?= $base_path ?>assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="<?= $base_path ?>assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Estilos con cache-busting automático -->
   <link rel="stylesheet" href="<?= $base_path ?>assets/css/main.css<?= asset_v('css/main.css') ?>">

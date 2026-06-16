@@ -10,6 +10,7 @@
 
 $depth            = 0;
 $nav_active       = '';
+$page_robots      = 'noindex, follow';
 $page_title       = 'Política de Privacidad';
 $page_description = 'Política de privacidad de Consultoría HOST. Información sobre el tratamiento de datos personales conforme al RGPD.';
 $page_canonical   = 'https://consultoriahost.es/privacidad';

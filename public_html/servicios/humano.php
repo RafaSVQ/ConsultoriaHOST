@@ -45,7 +45,7 @@ include APP_ROOT . '/includes/nav.php';
       <p class="page-header__subtitle">
         Porque toda empresa es, ante todo, un grupo de personas.
         Y el desarrollo de las personas y el de sus proyectos
-        están <strong style="color:var(--color-amber);">profundamente unidos</strong>.
+        están <strong class="text-amber">profundamente unidos</strong>.
       </p>
     </div>
   </div>

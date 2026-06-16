@@ -34,7 +34,7 @@ include APP_ROOT . '/includes/nav.php';
       <p class="page-header__subtitle">
         El empleo ha cambiado. Las formas de buscarlo, de conseguirlo
         y de gestionarlo también. HOST lo aborda con una visión
-        <strong style="color:var(--color-amber);">moderna, humana y efectiva</strong>.
+        <strong class="text-amber">moderna, humana y efectiva</strong>.
       </p>
     </div>
   </div>

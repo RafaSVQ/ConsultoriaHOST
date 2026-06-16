@@ -60,3 +60,19 @@ if (!defined('_ENV_LOADED')) {
 if (!defined('SITE_NAME')) {
     require_once APP_ROOT . '/config/site.php';
 }
+
+// Sesión con cookie segura (necesaria para CSRF)
+if (session_status() === PHP_SESSION_NONE) {
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'httponly' => true,
+        'samesite' => 'Lax',
+        'secure'   => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+    ]);
+    session_start();
+}
+
+// Generar token CSRF por sesión si aún no existe
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}

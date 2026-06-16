@@ -12,6 +12,10 @@
 
 declare(strict_types=1);
 
+header('Content-Type: application/json; charset=utf-8');
+header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
+
 require_once dirname(__DIR__) . '/bootstrap.php';
 require_once APP_ROOT . '/config/site.php';
 require_once APP_ROOT . '/includes/Mailer.php';
@@ -28,10 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     jsonResponse(false, 'Método no permitido.');
 }
-
-header('Content-Type: application/json; charset=utf-8');
-header('X-Content-Type-Options: nosniff');
-header('X-Frame-Options: DENY');
 
 /* ============================================================
    FUNCIONES AUXILIARES
@@ -70,13 +70,23 @@ function validarTelefono(string $telefono): bool
 /**
  * Plantilla HTML del correo que recibe HOST con el mensaje del cliente.
  */
-function plantillaAviso(string $nombreCompleto, string $email, string $telefono, string $mensaje, string $fecha): string
+function plantillaAviso(string $nombreCompleto, string $email, string $telefono, string $mensaje, string $fecha, string $asunto = '', string $perfil = ''): string
 {
-    $dominio   = SITE_DOMAIN;
-    $telBloque = '';
+    $dominio      = SITE_DOMAIN;
+    $telBloque    = '';
+    $asuntoBloque = '';
+    $perfilBloque = '';
     if (!empty($telefono)) {
         $telBloque = '<div class="field"><div class="label">Teléfono</div>'
             . '<div class="value"><a href="tel:' . $telefono . '">' . $telefono . '</a></div></div>';
+    }
+    if (!empty($asunto)) {
+        $asuntoBloque = '<div class="field"><div class="label">Asunto</div>'
+            . '<div class="value">' . htmlspecialchars($asunto, ENT_QUOTES, 'UTF-8') . '</div></div>';
+    }
+    if (!empty($perfil)) {
+        $perfilBloque = '<div class="field"><div class="label">Perfil profesional</div>'
+            . '<div class="value">' . htmlspecialchars($perfil, ENT_QUOTES, 'UTF-8') . '</div></div>';
     }
 
     return <<<HTML
@@ -103,6 +113,8 @@ function plantillaAviso(string $nombreCompleto, string $email, string $telefono,
     <div class="field"><div class="label">Nombre</div><div class="value">{$nombreCompleto}</div></div>
     <div class="field"><div class="label">Email</div><div class="value"><a href="mailto:{$email}">{$email}</a></div></div>
     {$telBloque}
+    {$asuntoBloque}
+    {$perfilBloque}
     <div class="field"><div class="label">Mensaje</div><div class="value msg">{$mensaje}</div></div>
   </div>
   <div class="footer">Enviado desde el formulario de contacto de <a href="https://{$dominio}">{$dominio}</a></div>
@@ -158,6 +170,8 @@ $apellidos = sanitize($_POST['apellidos'] ?? '');
 $telefono  = sanitize($_POST['telefono']  ?? '');
 $email     = sanitize($_POST['email']     ?? '');
 $mensaje   = sanitize($_POST['mensaje']   ?? '');
+$asunto    = sanitize($_POST['asunto']    ?? '');
+$perfil    = sanitize($_POST['perfil']    ?? '');
 $honeypot  = trim((string) ($_POST['website'] ?? ''));
 
 /* ============================================================
@@ -166,6 +180,22 @@ $honeypot  = trim((string) ($_POST['website'] ?? ''));
 if ($honeypot !== '') {
     jsonResponse(true, 'Mensaje enviado correctamente.');  // Simular éxito al bot
 }
+
+// Validar token CSRF
+if (!hash_equals((string) ($_SESSION['csrf_token'] ?? ''), (string) ($_POST['csrf_token'] ?? ''))) {
+    jsonResponse(false, 'Solicitud no válida.');
+}
+
+// Rate limiting: máximo 3 envíos por IP cada 5 minutos (SEG-03)
+$ip_hash   = hash('sha256', $_SERVER['REMOTE_ADDR']);
+$rate_file = sys_get_temp_dir() . '/host_rate_' . $ip_hash;
+$now       = time();
+$attempts  = file_exists($rate_file) ? (int) file_get_contents($rate_file) : 0;
+if ($attempts >= 3 && ($now - filemtime($rate_file)) < 300) {
+    http_response_code(429);
+    jsonResponse(false, 'Demasiados intentos. Espera unos minutos e inténtalo de nuevo.');
+}
+file_put_contents($rate_file, $attempts >= 3 ? '1' : $attempts + 1);
 
 if (empty($nombre))                                    jsonResponse(false, 'El nombre es obligatorio.');
 if (empty($email))                                     jsonResponse(false, 'El email es obligatorio.');
@@ -191,11 +221,13 @@ $toAddress = trim((string) ($_ENV['MAIL_TO_ADDRESS'] ?? '')) ?: SITE_EMAIL;
 $toName    = trim((string) ($_ENV['MAIL_TO_NAME'] ?? '')) ?: SITE_NAME;
 
 // 1) Aviso a HOST (con Reply-To al cliente, para responder directamente)
+$emailSubject = $asunto ? '[HOST Web] ' . $asunto : ASUNTO_EMAIL;
+
 $enviado = $mailer->send(
     toAddress: $toAddress,
     toName:    $toName,
-    subject:   ASUNTO_EMAIL,
-    htmlBody:  plantillaAviso($nombreCompleto, $email, $telefono, $mensaje, $fechaEnvio),
+    subject:   $emailSubject,
+    htmlBody:  plantillaAviso($nombreCompleto, $email, $telefono, $mensaje, $fechaEnvio, $asunto, $perfil),
     replyTo:   $email,
     replyName: $nombreCompleto
 );

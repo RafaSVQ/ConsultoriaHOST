@@ -733,6 +733,7 @@ include APP_ROOT . '/includes/nav.php';
 
             <!-- Honeypot antispam (oculto) -->
             <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
 
             <div class="contact-form__grid">
 

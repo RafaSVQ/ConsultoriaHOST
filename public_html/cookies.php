@@ -10,6 +10,7 @@
 
 $depth            = 0;
 $nav_active       = '';
+$page_robots      = 'noindex, follow';
 $page_title       = 'Política de Cookies';
 $page_description = 'Política de cookies de Consultoría HOST. Información sobre las cookies utilizadas en el sitio web.';
 $page_canonical   = 'https://consultoriahost.es/cookies';

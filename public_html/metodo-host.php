@@ -34,7 +34,7 @@ include APP_ROOT . '/includes/nav.php';
       <h1 class="page-header__title">Método HOST</h1>
       <p class="page-header__subtitle">
         Revisa la viabilidad de tu empresa o negocio
-        <strong style="color:var(--color-amber);">antes de arriesgar</strong>.
+        <strong class="text-amber">antes de arriesgar</strong>.
         Un método dinámico, ameno y muy instructivo en 3 pasos.
       </p>
     </div>
