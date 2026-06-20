@@ -75,7 +75,7 @@ include APP_ROOT . '/includes/nav.php';
 
       <h1 class="page-header__title" style="max-width:860px;">
         El vertedero de Seseña<br>tiene solución.<br>
-        <span class="text-amber">Y es gratuita para<br>las arcas públicas.</span>
+        <span style="color:var(--color-amber);">Y es gratuita para<br>las arcas públicas.</span>
       </h1>
       <p class="page-header__subtitle" style="max-width:640px;">
         El mayor vertedero de neumáticos de Europa lleva décadas
@@ -120,7 +120,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: El problema en números -->
-          <h2 style="<?= $h2 ?>">El problema en números</h2>
+          <h2 id="problema-numeros" style="<?= $h2 ?>">El problema en números</h2>
 
           <p style="<?= $p ?>">
             El vertedero ilegal de Seseña acumula aproximadamente
@@ -179,7 +179,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Las "soluciones" que no son soluciones -->
-          <h2 style="<?= $h2 ?>">Las «soluciones» que no son soluciones</h2>
+          <h2 id="falsas-soluciones" style="<?= $h2 ?>">Las «soluciones» que no son soluciones</h2>
 
           <p style="<?= $p ?>">
             A lo largo de los años se han barajado varias opciones para
@@ -246,7 +246,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: La solución real -->
-          <h2 style="<?= $h2 ?>">La solución real</h2>
+          <h2 id="solucion-real" style="<?= $h2 ?>">La solución real</h2>
 
           <p style="<?= $p ?>">
             Los neumáticos fuera de uso no son basura sin valor. Son una
@@ -331,7 +331,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Por qué sigue sin resolverse -->
-          <h2 style="<?= $h2 ?>">Por qué sigue sin resolverse</h2>
+          <h2 id="por-que-sin-resolver" style="<?= $h2 ?>">Por qué sigue sin resolverse</h2>
 
           <p style="<?= $p ?>">
             Si la solución existe y no cuesta dinero público, la pregunta
@@ -392,7 +392,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Seseña no es un caso aislado -->
-          <h2 style="<?= $h2 ?>">Seseña no es un caso aislado</h2>
+          <h2 id="caso-aislado" style="<?= $h2 ?>">Seseña no es un caso aislado</h2>
 
           <p style="<?= $p ?>">
             El planteamiento HOST para el tratamiento de neumáticos fuera de uso
@@ -418,7 +418,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Qué puede hacer quien lee esto -->
-          <h2 style="<?= $h2 ?>">Qué puede hacer quien lee esto</h2>
+          <h2 id="que-puedes-hacer" style="<?= $h2 ?>">Qué puede hacer quien lee esto</h2>
 
           <p style="<?= $p ?>">
             Si eres responsable de una administración pública — municipal,
@@ -590,13 +590,13 @@ include APP_ROOT . '/includes/nav.php';
             <nav aria-label="Índice del artículo">
               <ul style="display:flex;flex-direction:column;gap:var(--space-2);padding:0;list-style:none;">
                 <?php foreach ([
-                  'El problema en números',
-                  'Las «soluciones» que no lo son',
-                  'La solución real',
-                  'Por qué sigue sin resolverse',
-                  'Seseña no es un caso aislado',
-                  'Qué puede hacer quien lee esto',
-                ] as $item): ?>
+                  ['El problema en números', 'problema-numeros'],
+                  ['Las «soluciones» que no lo son', 'falsas-soluciones'],
+                  ['La solución real', 'solucion-real'],
+                  ['Por qué sigue sin resolverse', 'por-que-sin-resolver'],
+                  ['Seseña no es un caso aislado', 'caso-aislado'],
+                  ['Qué puede hacer quien lee esto', 'que-puedes-hacer'],
+                ] as [$label, $aid]): ?>
                 <li style="
                   font-size:var(--text-sm);color:var(--color-text-secondary);
                   line-height:1.4;padding:var(--space-1) 0;
@@ -604,7 +604,7 @@ include APP_ROOT . '/includes/nav.php';
                   display:flex;gap:var(--space-2);align-items:flex-start;
                 ">
                   <span style="color:var(--color-green);flex-shrink:0;font-weight:700;">›</span>
-                  <?= htmlspecialchars($item, ENT_QUOTES, 'UTF-8') ?>
+                  <a href="#<?= $aid ?>" style="color:inherit;text-decoration:none;transition:color var(--transition-fast);" onmouseover="this.style.color='var(--color-blue)'" onmouseout="this.style.color='inherit'"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></a>
                 </li>
                 <?php endforeach; ?>
               </ul>

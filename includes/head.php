@@ -51,6 +51,18 @@ function asset_v(string $rel): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Consent Mode v2 — denegado por defecto hasta aceptación del usuario -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+
   <title><?= htmlspecialchars($full_title, ENT_QUOTES, 'UTF-8') ?></title>
   <meta name="description" content="<?= htmlspecialchars($page_desc, ENT_QUOTES, 'UTF-8') ?>">
   <meta name="keywords"    content="<?= htmlspecialchars($page_keys, ENT_QUOTES, 'UTF-8') ?>">

@@ -1,10 +1,13 @@
 /**
- * CONSULTORÍA HOST — Banner de Consentimiento de Cookies
+ * CONSULTORÍA HOST — Banner de Consentimiento de Cookies + Google Analytics 4
  * Archivo: assets/js/cookies.js
  *
  * Muestra el banner si el usuario aún no ha tomado una decisión.
  * Guarda la preferencia en localStorage durante 1 año.
  * Accesible: gestión de foco y tecla Escape.
+ *
+ * GA4 (gtag.js) solo se carga si el usuario pulsa "Aceptar" — nunca antes.
+ * Usa Google Consent Mode v2 (consent default 'denied' definido en head.php).
  *
  * Integración: añadir <script src="/assets/js/cookies.js" defer></script>
  * en includes/footer.php (ya referenciado).
@@ -16,6 +19,7 @@ const CookiesBanner = (() => {
 
   const STORAGE_KEY = 'host_cookie_consent';
   const EXPIRY_DAYS = 365;
+  const GA_ID        = 'G-DWMM3SZQR8';
 
   /**
    * Guarda la decisión del usuario con marca de tiempo.
@@ -31,18 +35,45 @@ const CookiesBanner = (() => {
   };
 
   /**
+   * Recupera la decisión guardada si sigue vigente.
+   * @returns {{decision: 'accepted'|'rejected', timestamp: number, expiry: number}|null}
+   */
+  const obtenerDatos = () => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      const datos = JSON.parse(raw);
+      return datos.expiry > Date.now() ? datos : null;
+    } catch {
+      return null;
+    }
+  };
+
+  /**
    * Comprueba si ya existe una decisión válida (no caducada).
    * @returns {boolean}
    */
-  const tieneDecision = () => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return false;
-      const datos = JSON.parse(raw);
-      return datos.expiry > Date.now();
-    } catch {
-      return false;
-    }
+  const tieneDecision = () => obtenerDatos() !== null;
+
+  /**
+   * Activa Google Analytics 4 únicamente tras consentimiento explícito.
+   * Inyecta gtag.js de forma asíncrona — no se carga nunca por defecto,
+   * por lo que no afecta a las métricas de rendimiento (PageSpeed/Lighthouse)
+   * en una carga sin consentimiento previo (p. ej. en auditorías automatizadas).
+   */
+  const cargarAnalytics = () => {
+    if (document.getElementById('ga4-script')) return;
+
+    gtag('consent', 'update', { 'analytics_storage': 'granted' });
+
+    const script = document.createElement('script');
+    script.id    = 'ga4-script';
+    script.async = true;
+    script.src   = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
+
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
   };
 
   /**
@@ -95,8 +126,9 @@ const CookiesBanner = (() => {
           margin:0;
           max-width:none;
         ">
-          🍪 Usamos solo <strong>cookies técnicas</strong> necesarias para el funcionamiento
-          del sitio. Sin rastreo, sin publicidad.
+          🍪 Usamos <strong>cookies técnicas</strong> necesarias para el funcionamiento
+          del sitio y, si lo aceptas, <strong>cookies analíticas</strong> (Google Analytics)
+          para entender cómo se usa la web. Sin publicidad.
           <a href="/cookies.php"
              style="color:#1A56A8;font-weight:600;"
              target="_blank" rel="noopener">
@@ -145,6 +177,7 @@ const CookiesBanner = (() => {
     /* Eventos de los botones */
     document.getElementById('cookie-aceptar').addEventListener('click', () => {
       guardarDecision('accepted');
+      cargarAnalytics();
       ocultarBanner(banner);
     });
 
@@ -168,7 +201,11 @@ const CookiesBanner = (() => {
    * Solo muestra el banner si no hay decisión previa válida.
    */
   const init = () => {
-    if (tieneDecision()) return;
+    const datos = obtenerDatos();
+    if (datos) {
+      if (datos.decision === 'accepted') cargarAnalytics();
+      return;
+    }
     /* Pequeño retraso para no bloquear el pintado inicial */
     setTimeout(crearBanner, 1200);
   };

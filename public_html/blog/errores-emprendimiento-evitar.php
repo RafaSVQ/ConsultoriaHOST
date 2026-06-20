@@ -156,6 +156,7 @@ include APP_ROOT . '/includes/nav.php';
           $errores = [
             [
               'num'   => '01',
+              'id'    => 'error-01',
               'color' => 'var(--color-orange)',
               'icono' => 'lightbulb',
               'titulo'=> 'Confundir ilusión con viabilidad',
@@ -165,6 +166,7 @@ include APP_ROOT . '/includes/nav.php';
             ],
             [
               'num'   => '02',
+              'id'    => 'error-02',
               'color' => 'var(--color-blue)',
               'icono' => 'chart-bar',
               'titulo'=> 'Infraestimar los costes iniciales',
@@ -174,6 +176,7 @@ include APP_ROOT . '/includes/nav.php';
             ],
             [
               'num'   => '03',
+              'id'    => 'error-03',
               'color' => 'var(--color-green)',
               'icono' => 'users',
               'titulo'=> 'Sobreestimar la velocidad de captación de clientes',
@@ -183,6 +186,7 @@ include APP_ROOT . '/includes/nav.php';
             ],
             [
               'num'   => '04',
+              'id'    => 'error-04',
               'color' => 'var(--color-navy)',
               'icono' => 'target',
               'titulo'=> 'No conocer realmente a la competencia',
@@ -192,6 +196,7 @@ include APP_ROOT . '/includes/nav.php';
             ],
             [
               'num'   => '05',
+              'id'    => 'error-05',
               'color' => 'var(--color-orange)',
               'icono' => 'briefcase',
               'titulo'=> 'Emprender solos algo que requiere equipo',
@@ -201,6 +206,7 @@ include APP_ROOT . '/includes/nav.php';
             ],
             [
               'num'   => '06',
+              'id'    => 'error-06',
               'color' => 'var(--color-blue)',
               'icono' => 'sprout',
               'titulo'=> 'Confundir el producto con el negocio',
@@ -210,6 +216,7 @@ include APP_ROOT . '/includes/nav.php';
             ],
             [
               'num'   => '07',
+              'id'    => 'error-07',
               'color' => 'var(--color-green)',
               'icono' => 'refresh',
               'titulo'=> 'No tener plan B — ni plan de salida',
@@ -221,7 +228,7 @@ include APP_ROOT . '/includes/nav.php';
           ?>
 
           <?php foreach ($errores as $i => $e): ?>
-          <div style="
+          <div id="<?= $c['id'] ?? ('error-' . $c['num']) ?>" style="
             margin-bottom:var(--space-10);
             padding-bottom:var(--space-10);
             border-bottom:1px solid var(--color-border);
@@ -483,7 +490,7 @@ include APP_ROOT . '/includes/nav.php';
                     font-weight:800;font-size:var(--text-xs);
                     min-width:20px;margin-top:1px;
                   "><?= $e['num'] ?></span>
-                  <?= htmlspecialchars($e['titulo'], ENT_QUOTES, 'UTF-8') ?>
+                  <a href="#<?= $e['id'] ?? ('error-' . $e['num']) ?>" style="color:inherit;text-decoration:none;transition:color var(--transition-fast);" onmouseover="this.style.color='var(--color-blue)'" onmouseout="this.style.color='inherit'"><?= htmlspecialchars($e['titulo'], ENT_QUOTES, 'UTF-8') ?></a>
                 </li>
                 <?php endforeach; ?>
               </ol>

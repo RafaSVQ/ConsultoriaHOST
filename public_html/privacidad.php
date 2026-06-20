@@ -211,7 +211,9 @@ $fecha_actualizacion = 'junio de 2026';
         <h2 style="<?= $h2_style ?>">6. Cookies</h2>
         <p style="<?= $p_style ?>">
           Esta web utiliza cookies técnicas estrictamente necesarias para su funcionamiento.
-          No utilizamos cookies de seguimiento ni analíticas de terceros sin tu consentimiento.
+          Solo si das tu consentimiento explícito activamos también Google Analytics 4
+          (Google Ireland Limited) con fines estadísticos. Puedes aceptar, rechazar o
+          retirar tu consentimiento en cualquier momento.
           Consulta nuestra <a href="cookies.php">política de cookies</a> para más información.
         </p>
 

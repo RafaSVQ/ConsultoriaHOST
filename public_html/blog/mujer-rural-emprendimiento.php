@@ -120,7 +120,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: La brecha que nadie mide bien -->
-          <h2 style="<?= $h2 ?>">La brecha que nadie mide bien</h2>
+          <h2 id="la-brecha" style="<?= $h2 ?>">La brecha que nadie mide bien</h2>
 
           <p style="<?= $p ?>">
             Cuando se habla de la brecha de género en el emprendimiento,
@@ -211,7 +211,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Las ventajas que la ciudad no tiene -->
-          <h2 style="<?= $h2 ?>">Las ventajas que la ciudad no tiene</h2>
+          <h2 id="las-ventajas" style="<?= $h2 ?>">Las ventajas que la ciudad no tiene</h2>
 
           <p style="<?= $p ?>">
             Hay características del entorno rural que, bien identificadas
@@ -278,7 +278,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Lo que impide verlo -->
-          <h2 style="<?= $h2 ?>">Lo que impide verlo</h2>
+          <h2 id="lo-que-impide" style="<?= $h2 ?>">Lo que impide verlo</h2>
 
           <p style="<?= $p ?>">
             Si las ventajas existen, ¿por qué no se aprovechan más?
@@ -336,7 +336,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Tipos de negocio con alta viabilidad en entornos rurales -->
-          <h2 style="<?= $h2 ?>">Tipos de negocio con alta viabilidad<br>en entornos rurales</h2>
+          <h2 id="negocios-viables" style="<?= $h2 ?>">Tipos de negocio con alta viabilidad<br>en entornos rurales</h2>
 
           <p style="<?= $p ?>">
             No todos los negocios funcionan igual en todos los contextos.
@@ -384,7 +384,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: El programa #MujerRural de HOST -->
-          <h2 style="<?= $h2 ?>">El programa #MujerRural de HOST</h2>
+          <h2 id="programa-mujer-rural" style="<?= $h2 ?>">El programa #MujerRural de HOST</h2>
 
           <p style="<?= $p ?>">
             En HOST hemos desarrollado un programa específico de acompañamiento
@@ -556,12 +556,12 @@ include APP_ROOT . '/includes/nav.php';
             <nav aria-label="Índice del artículo">
               <ul style="display:flex;flex-direction:column;gap:var(--space-2);padding:0;list-style:none;">
                 <?php foreach ([
-                  'La brecha que nadie mide bien',
-                  'Las ventajas que la ciudad no tiene',
-                  'Lo que impide verlo',
-                  'Negocios con alta viabilidad rural',
-                  'El programa #MujerRural de HOST',
-                ] as $item): ?>
+                  ['La brecha que nadie mide bien', 'la-brecha'],
+                  ['Las ventajas que la ciudad no tiene', 'las-ventajas'],
+                  ['Lo que impide verlo', 'lo-que-impide'],
+                  ['Negocios con alta viabilidad rural', 'negocios-viables'],
+                  ['El programa #MujerRural de HOST', 'programa-mujer-rural'],
+                ] as [$label, $aid]): ?>
                 <li style="
                   font-size:var(--text-sm);color:var(--color-text-secondary);
                   line-height:1.4;padding:var(--space-1) 0;
@@ -569,7 +569,7 @@ include APP_ROOT . '/includes/nav.php';
                   display:flex;gap:var(--space-2);align-items:flex-start;
                 ">
                   <span style="color:var(--color-green);flex-shrink:0;font-weight:700;">›</span>
-                  <?= htmlspecialchars($item, ENT_QUOTES, 'UTF-8') ?>
+                  <a href="#<?= $aid ?>" style="color:inherit;text-decoration:none;transition:color var(--transition-fast);" onmouseover="this.style.color='var(--color-blue)'" onmouseout="this.style.color='inherit'"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></a>
                 </li>
                 <?php endforeach; ?>
               </ul>

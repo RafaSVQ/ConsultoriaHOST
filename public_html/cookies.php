@@ -56,7 +56,7 @@ include APP_ROOT . '/includes/nav.php';
         </p>
 
         <h2 style="<?= $h2 ?>">Cookies que usamos</h2>
-        <p style="<?= $p ?>">Esta web utiliza únicamente las siguientes cookies:</p>
+        <p style="<?= $p ?>">Esta web utiliza las siguientes cookies:</p>
 
         <div style="overflow-x:auto;margin-bottom:var(--space-6);">
           <table style="
@@ -76,6 +76,8 @@ include APP_ROOT . '/includes/nav.php';
               $cookies = [
                 ['host_cookie_consent','Propia / Funcional','1 año','Guarda tu decisión sobre las cookies para no volverte a preguntar.'],
                 ['PHPSESSID','Propia / Técnica','Sesión','Cookie técnica de PHP necesaria para el funcionamiento del sitio.'],
+                ['_ga','Tercero / Analítica (opcional)','2 años','Google Analytics 4 — distingue usuarios únicos. Solo se instala si aceptas cookies analíticas.'],
+                ['_ga_*','Tercero / Analítica (opcional)','2 años','Google Analytics 4 — mantiene el estado de la sesión. Solo se instala si aceptas cookies analíticas.'],
               ];
               foreach ($cookies as $i => $c): ?>
               <tr style="background:<?= $i % 2 === 0 ? 'var(--color-off-white)' : 'white' ?>;">
@@ -94,11 +96,24 @@ include APP_ROOT . '/includes/nav.php';
           border-radius:var(--radius-lg);padding:var(--space-5);margin-bottom:var(--space-6);
         ">
           <p style="<?= $p ?> margin:0;color:var(--color-green);font-weight:600;">
-            ✅ Esta web <strong>no usa</strong> cookies de publicidad, rastreo o analítica
-            de terceros. No compartimos datos de navegación con Google Analytics, Facebook
-            ni ninguna otra plataforma sin tu consentimiento explícito.
+            ✅ Esta web <strong>no usa</strong> cookies de publicidad. Solo utilizamos
+            Google Analytics 4 con fines estadísticos, y únicamente si das tu consentimiento
+            explícito pulsando "Aceptar" en el aviso de cookies — nunca antes. Puedes rechazarlo
+            o retirarlo en cualquier momento desde esta página.
           </p>
         </div>
+
+        <h2 style="<?= $h2 ?>">Google Analytics 4</h2>
+        <p style="<?= $p ?>">
+          Si aceptas las cookies analíticas, usamos Google Analytics 4 (Google Ireland Limited)
+          para conocer de forma agregada y anónima cómo se usa el sitio: páginas visitadas,
+          tiempo de permanencia y origen del tráfico. Activamos la anonimización de IP.
+          Google puede transferir estos datos a servidores en Estados Unidos bajo las
+          cláusulas contractuales tipo de la UE. Más información en la
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+            política de privacidad de Google
+          </a>.
+        </p>
 
         <h2 style="<?= $h2 ?>">Cómo gestionar las cookies</h2>
         <p style="<?= $p ?>">
