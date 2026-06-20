@@ -604,7 +604,11 @@ include APP_ROOT . '/includes/nav.php';
                   display:flex;gap:var(--space-2);align-items:flex-start;
                 ">
                   <span style="color:var(--color-green);flex-shrink:0;font-weight:700;">›</span>
-                  <a href="#<?= $aid ?>" style="color:inherit;text-decoration:none;transition:color var(--transition-fast);" onmouseover="this.style.color='var(--color-blue)'" onmouseout="this.style.color='inherit'"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></a>
+                  <a href="#<?= $aid ?>" style="color:inherit;text-decoration:none;"
+                     onmouseover="this.style.color='var(--color-navy)';this.style.textDecoration='underline'"
+                     onmouseout="this.style.color='';this.style.textDecoration='none'">
+                    <?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?>
+                  </a>
                 </li>
                 <?php endforeach; ?>
               </ul>

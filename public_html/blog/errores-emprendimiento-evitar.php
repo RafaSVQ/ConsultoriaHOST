@@ -490,7 +490,11 @@ include APP_ROOT . '/includes/nav.php';
                     font-weight:800;font-size:var(--text-xs);
                     min-width:20px;margin-top:1px;
                   "><?= $e['num'] ?></span>
-                  <a href="#<?= $e['id'] ?? ('error-' . $e['num']) ?>" style="color:inherit;text-decoration:none;transition:color var(--transition-fast);" onmouseover="this.style.color='var(--color-blue)'" onmouseout="this.style.color='inherit'"><?= htmlspecialchars($e['titulo'], ENT_QUOTES, 'UTF-8') ?></a>
+                  <a href="#<?= $e['id'] ?? ('error-' . $e['num']) ?>" style="color:inherit;text-decoration:none;"
+                     onmouseover="this.style.color='var(--color-navy)';this.style.textDecoration='underline'"
+                     onmouseout="this.style.color='';this.style.textDecoration='none'">
+                    <?= htmlspecialchars($e['titulo'], ENT_QUOTES, 'UTF-8') ?>
+                  </a>
                 </li>
                 <?php endforeach; ?>
               </ol>
