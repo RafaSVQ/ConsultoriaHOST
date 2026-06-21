@@ -14,6 +14,17 @@
 
 $articulos = [
   [
+    'slug'      => 'formacion-ia-obligatoria-articulo-4',
+    'titulo'    => 'Formación en IA obligatoria: lo que exige el Artículo 4 del Reglamento Europeo',
+    'extracto'  => 'Desde febrero de 2025 existe obligación legal de formar en IA a todo el personal que la use en el trabajo. Qué exige la ley, desde cuándo se sanciona y cómo cumplir sin perder tiempo ni dinero.',
+    'categoria' => 'Formación',
+    'catcolor'  => 'badge--amber',
+    'fecha'     => '2026-06-22',
+    'lectura'   => '8 min',
+    'destacado' => true,
+    'publicado' => true,
+  ],
+  [
     'slug'      => 'que-es-la-consultoria-3-0',
     'titulo'    => '¿Qué es la Consultoría 3.0 y por qué importa?',
     'extracto'  => 'La consultoría tradicional llena cajones de informes. La consultoría 3.0 de HOST sale a la calle y genera resultados reales. Te explicamos la diferencia.',

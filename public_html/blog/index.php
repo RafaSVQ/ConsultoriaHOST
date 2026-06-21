@@ -76,7 +76,7 @@ function formatearFecha(string $fecha): string {
                  aria-labelledby="blog-dest-<?= $i ?>">
           <!-- Imagen placeholder con gradiente según categoría -->
           <div class="blog-card__image" style="<?php
-            $grads = ['Consultoría'=>'var(--gradient-orange)','Emprendimiento'=>'var(--gradient-card)','Medioambiente'=>'var(--gradient-green)','Networking'=>'linear-gradient(135deg,#1E293B,#334155)','Social'=>'var(--gradient-green)','Empresas'=>'var(--gradient-card)'];
+            $grads = ['Consultoría'=>'var(--gradient-orange)','Emprendimiento'=>'var(--gradient-card)','Medioambiente'=>'var(--gradient-green)','Networking'=>'linear-gradient(135deg,#1E293B,#334155)','Social'=>'var(--gradient-green)','Empresas'=>'var(--gradient-card)','Formación'=>'linear-gradient(135deg,#B07800,#F5A623)'];
             $grad = $grads[$art['categoria']] ?? 'var(--gradient-card)';
             echo "background:$grad;";
           ?> display:flex;align-items:center;justify-content:center;">
@@ -132,14 +132,14 @@ function formatearFecha(string $fecha): string {
         <div>
           <span class="eyebrow">Todos los artículos</span>
           <h2 id="todos-title" style="margin-top:var(--space-2);">
-            <?= count($articulos) ?> artículos publicados
+            <?= count($publicados) ?> artículos publicados
           </h2>
         </div>
         <!-- Filtro de categorías (decorativo — para funcionalidad completa
              se necesitaría JS o una nueva página por categoría) -->
         <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);">
           <?php
-          $categorias = array_unique(array_column($articulos, 'categoria'));
+          $categorias = array_unique(array_column($publicados, 'categoria'));
           foreach ($categorias as $cat): ?>
           <span class="badge badge--navy" style="cursor:default;"><?= $cat ?></span>
           <?php endforeach; ?>
@@ -147,11 +147,11 @@ function formatearFecha(string $fecha): string {
       </div>
 
       <div class="grid grid-3 gap-6">
-        <?php foreach ($articulos as $i => $art): ?>
+        <?php foreach ($publicados as $i => $art): ?>
         <article class="blog-card reveal <?= $i>0?'reveal--delay-'.min($i%3,3):'' ?>"
                  aria-labelledby="blog-art-<?= $i ?>">
           <div class="blog-card__image" style="<?php
-            $grads = ['Consultoría'=>'var(--gradient-orange)','Emprendimiento'=>'var(--gradient-card)','Medioambiente'=>'var(--gradient-green)','Networking'=>'linear-gradient(135deg,#1E293B,#334155)','Social'=>'var(--gradient-green)','Empresas'=>'var(--gradient-card)'];
+            $grads = ['Consultoría'=>'var(--gradient-orange)','Emprendimiento'=>'var(--gradient-card)','Medioambiente'=>'var(--gradient-green)','Networking'=>'linear-gradient(135deg,#1E293B,#334155)','Social'=>'var(--gradient-green)','Empresas'=>'var(--gradient-card)','Formación'=>'linear-gradient(135deg,#B07800,#F5A623)'];
             $grad = $grads[$art['categoria']] ?? 'var(--gradient-card)';
             echo "background:$grad;";
           ?> display:flex;align-items:center;justify-content:center;aspect-ratio:16/7;">

@@ -422,11 +422,11 @@ include APP_ROOT . '/includes/nav.php';
                  'badge--blue',
                  '7 errores de emprendimiento que puedes evitar con el Método HOST',
                  '7 min'],
-                ['interim-management-espana.php',
-                 'Empresas',
-                 'badge--blue',
-                 'Interim Management: el servicio que España aún no conoce bien',
-                 '6 min'],
+                ['formacion-ia-obligatoria-articulo-4.php',
+                 'Formación',
+                 'badge--amber',
+                 'Formación en IA obligatoria: lo que exige el Artículo 4',
+                 '8 min'],
               ];
               foreach ($relacionados as [$href, $cat, $catcss, $titulo, $lectura]):
               ?>

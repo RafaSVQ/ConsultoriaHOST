@@ -497,11 +497,11 @@ include APP_ROOT . '/includes/nav.php';
                   '5 min',
                 ],
                 [
-                  'errores-emprendimiento-evitar.php',
-                  'Emprendimiento',
-                  'badge--blue',
-                  '7 errores de emprendimiento que puedes evitar con el Método HOST',
-                  '7 min',
+                  'formacion-ia-obligatoria-articulo-4.php',
+                  'Formación',
+                  'badge--amber',
+                  'Formación en IA obligatoria: lo que exige el Artículo 4',
+                  '8 min',
                 ],
               ];
               foreach ($relacionados as [$href, $cat, $catcss, $titulo, $lectura]):
