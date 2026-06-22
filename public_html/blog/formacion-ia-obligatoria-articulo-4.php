@@ -520,18 +520,18 @@ include APP_ROOT . '/includes/nav.php';
               <?php
               $relacionados = [
                 [
+                  'gobernanza-inteligencia-artificial.php',
+                  'Formación',
+                  'badge--amber',
+                  '¿Sabes qué es la gobernanza de la Inteligencia Artificial?',
+                  '7 min',
+                ],
+                [
                   'que-es-la-consultoria-3-0.php',
                   'Consultoría',
                   'badge--orange',
                   '¿Qué es la Consultoría 3.0 y por qué importa?',
                   '5 min',
-                ],
-                [
-                  'interim-management-espana.php',
-                  'Empresas',
-                  'badge--blue',
-                  'Interim Management: el servicio que España aún no conoce bien',
-                  '6 min',
                 ],
               ];
               foreach ($relacionados as [$href, $cat, $catcss, $titulo, $lectura]):

@@ -14,6 +14,17 @@
 
 $articulos = [
   [
+    'slug'      => 'gobernanza-inteligencia-artificial',
+    'titulo'    => '¿Sabes qué es la gobernanza de la Inteligencia Artificial?',
+    'extracto'  => 'La gobernanza de la IA es el conjunto de políticas, normas y controles que garantizan un uso seguro, transparente y responsable de la inteligencia artificial. Pilares, marcos de referencia y cómo aplicarla en tu empresa.',
+    'categoria' => 'Formación',
+    'catcolor'  => 'badge--amber',
+    'fecha'     => '2026-06-22',
+    'lectura'   => '7 min',
+    'destacado' => false,
+    'publicado' => true,
+  ],
+  [
     'slug'      => 'formacion-ia-obligatoria-articulo-4',
     'titulo'    => 'Formación en IA obligatoria: lo que exige el Artículo 4 del Reglamento Europeo',
     'extracto'  => 'Desde febrero de 2025 existe obligación legal de formar en IA a todo el personal que la use en el trabajo. Qué exige la ley, desde cuándo se sanciona y cómo cumplir sin perder tiempo ni dinero.',
