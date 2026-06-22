@@ -21,7 +21,7 @@ Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
 # ── 1. config/ ──────────────────────────────────────────────
-Write-Host "[ 1/4 ] Sincronizando config/..." -ForegroundColor Yellow
+Write-Host "[ 1/5 ] Sincronizando config/..." -ForegroundColor Yellow
 $src = Join-Path $root "config"
 $dst = Join-Path $dist "config"
 if (Test-Path $src) {
@@ -32,7 +32,7 @@ if (Test-Path $src) {
 }
 
 # ── 2. includes/ ────────────────────────────────────────────
-Write-Host "[ 2/4 ] Sincronizando includes/..." -ForegroundColor Yellow
+Write-Host "[ 2/5 ] Sincronizando includes/..." -ForegroundColor Yellow
 $src = Join-Path $root "includes"
 $dst = Join-Path $dist "includes"
 if (Test-Path $src) {
@@ -42,8 +42,23 @@ if (Test-Path $src) {
     Write-Host "        AVISO: includes/ no encontrado" -ForegroundColor Red
 }
 
-# ── 3. public_html/ (excluyendo scripts de diagnóstico) ─────
-Write-Host "[ 3/4 ] Sincronizando public_html/..." -ForegroundColor Yellow
+# ── 3. docs/ (solo PDF finales — los .docx/.md de trabajo no se suben) ──
+Write-Host "[ 3/5 ] Sincronizando docs/ (solo *.pdf)..." -ForegroundColor Yellow
+$src = Join-Path $root "docs"
+$dst = Join-Path $dist "docs"
+if (Test-Path $src) {
+    New-Item -ItemType Directory -Force -Path $dst | Out-Null
+    $pdfs = Get-ChildItem -Path $src -Filter "*.pdf" -File
+    foreach ($pdf in $pdfs) {
+        Copy-Item -Path $pdf.FullName -Destination $dst -Force
+    }
+    Write-Host "        OK — docs/ ($($pdfs.Count) PDF)" -ForegroundColor Green
+} else {
+    Write-Host "        (sin docs/ — nada que sincronizar)" -ForegroundColor DarkGray
+}
+
+# ── 4. public_html/ (excluyendo scripts de diagnóstico) ─────
+Write-Host "[ 4/5 ] Sincronizando public_html/..." -ForegroundColor Yellow
 $src = Join-Path $root "public_html"
 $dst = Join-Path $dist "public_html"
 if (Test-Path $src) {
@@ -59,8 +74,8 @@ if (Test-Path $src) {
     Write-Host "        AVISO: public_html/ no encontrado" -ForegroundColor Red
 }
 
-# ── 4. vendor/ ──────────────────────────────────────────────
-Write-Host "[ 4/4 ] Sincronizando vendor/..." -ForegroundColor Yellow
+# ── 5. vendor/ ──────────────────────────────────────────────
+Write-Host "[ 5/5 ] Sincronizando vendor/..." -ForegroundColor Yellow
 $src = Join-Path $root "vendor"
 $dst = Join-Path $dist "vendor"
 if (Test-Path $src) {

@@ -45,6 +45,9 @@ CONSULTORISHOT-*.zip
 # Carpeta de distribución — copia local lista para subir a Hostinger por FTP
 /DIST/
 
+# Documentos de trabajo (contratos, propuestas) — solo local, fuera del repo
+/docs/
+
 # Scripts de diagnóstico — solo para uso local, nunca a producción
 test-smtp.php
 test-*.php

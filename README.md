@@ -30,6 +30,8 @@ consultoriahost/
 │   ├── nav.php
 │   ├── footer.php
 │   └── Mailer.php     ← Wrapper PHPMailer (lee .env)
+├── docs/              ← Documentos de trabajo (fuera del webroot, NUNCA accesibles por URL)
+│   └── *.docx / *.md / *.pdf  ← Borradores y versiones de trabajo (contratos, propuestas...)
 ├── public_html/       ← Raíz web pública
 │   ├── assets/
 │   │   ├── css/       ← main.css, components.css
@@ -40,6 +42,7 @@ consultoriahost/
 │   ├── blog/
 │   ├── servicios/
 │   ├── bootstrap.php  ← Carga .env + config/site.php (incluir en cada página)
+│   ├── descargas.php  ← Descarga controlada de PDF finales desde /docs/ (whitelist por id)
 │   └── *.php          ← Páginas del sitio
 ├── vendor/            ← Composer (gitignored — subir manualmente)
 ├── DIST/              ← Copia lista para FTP a Hostinger (gitignored)
@@ -89,6 +92,27 @@ consultoriahost/
 | `badge--blue` | Azul (Emprendimiento, Empresas) |
 | `badge--green` | Verde (Medioambiente, Social) |
 | `badge--navy` | Azul marino (Networking) |
+
+---
+
+## Publicar un documento descargable (contratos, propuestas, PDF)
+
+Los documentos de trabajo (`.docx`, `.md`) viven en `docs/`, **fuera del webroot** —
+nunca son accesibles por URL. Solo el PDF final, una vez listo, se sirve de forma
+controlada:
+
+1. Trabajar el documento en `docs/` (Word o Markdown, lo que sea más cómodo)
+2. Exportar/convertir a PDF y guardarlo también en `docs/`
+3. Añadir una entrada en el array `$DOCUMENTOS` de `public_html/descargas.php`:
+   ```php
+   $DOCUMENTOS = [
+       'contrato-desarrollo-ia' => 'Contrato_Desarrollo_Implementacion_IA.pdf',
+   ];
+   ```
+4. El enlace de descarga (web o email) es: `https://consultoriahost.es/descargas.php?id=contrato-desarrollo-ia`
+
+El script solo sirve archivos `.pdf` que estén en la whitelist — los `.docx`/`.md` de
+`docs/` nunca se exponen, ni siquiera por error de ruta.
 
 ---
 
