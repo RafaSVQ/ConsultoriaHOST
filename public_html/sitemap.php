@@ -37,7 +37,8 @@ $paginas = [
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
 <?php foreach ($paginas as [$path, $lastmod, $freq, $prio]): ?>
   <url>
@@ -54,6 +55,12 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     <lastmod><?= htmlspecialchars($art['fecha'], ENT_XML1, 'UTF-8') ?></lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+<?php if (!empty($art['imagen'])): ?>
+    <image:image>
+      <image:loc><?= $base ?>/assets/img/<?= htmlspecialchars($art['imagen'], ENT_XML1, 'UTF-8') ?></image:loc>
+      <image:title><?= htmlspecialchars($art['titulo'], ENT_XML1, 'UTF-8') ?></image:title>
+    </image:image>
+<?php endif; ?>
   </url>
 <?php endforeach; ?>
 

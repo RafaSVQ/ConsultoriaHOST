@@ -16,6 +16,7 @@ $page_title       = 'Formación en IA obligatoria: lo que exige el Artículo 4 d
 $page_description = 'Desde el 2 de febrero de 2025 existe obligación legal de formar en IA a todo el personal que la use en el trabajo. Qué exige el Artículo 4, desde cuándo se sanciona y cómo cumplir sin perder tiempo ni dinero.';
 $page_keywords    = 'formación IA obligatoria, formación inteligencia artificial empresas, artículo 4 AI Act, alfabetización inteligencia artificial, AESIA, sanciones IA empresas, HOST';
 $page_canonical   = 'https://consultoriahost.es/blog/formacion-ia-obligatoria-articulo-4';
+$page_og_image    = 'https://consultoriahost.es/assets/img/formacion-ia-microempresa-evita-sanciones-og.jpg';
 
 $page_extra_head  = '
 <script type="application/ld+json">
@@ -24,6 +25,13 @@ $page_extra_head  = '
   "@type": "BlogPosting",
   "headline": "Formación en IA obligatoria: lo que exige el Artículo 4 del Reglamento Europeo",
   "description": "Desde el 2 de febrero de 2025 existe obligación legal de formar en IA a todo el personal que la use en el trabajo. Qué exige el Artículo 4, desde cuándo se sanciona y cómo cumplir.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://consultoriahost.es/assets/img/formacion-ia-microempresa-evita-sanciones.jpg",
+    "width": 1200,
+    "height": 1200,
+    "caption": "Formación en Inteligencia Artificial obligatoria para microempresas — Ley de IA, Consultoría HOST Sevilla"
+  },
   "datePublished": "2026-06-22",
   "dateModified":  "2026-06-22",
   "author": {
@@ -120,6 +128,20 @@ include APP_ROOT . '/includes/nav.php';
             sus dispositivos personales — existe la obligación legal
             de formar a esa persona. A todas, sin excepción de tamaño.
           </p>
+
+          <figure style="margin:0 0 var(--space-8);">
+            <img
+              src="<?= $base_path ?>assets/img/formacion-ia-microempresa-evita-sanciones.jpg<?= asset_v('img/formacion-ia-microempresa-evita-sanciones.jpg') ?>"
+              alt="Formación en Inteligencia Artificial obligatoria para microempresas — cumple la Ley de IA y evita sanciones. Consultoría HOST, Sevilla."
+              title="Formación en Inteligencia Artificial en la microempresa — Ley de IA | Consultoría HOST Sevilla"
+              width="1200" height="1200"
+              loading="lazy" decoding="async"
+              style="width:100%;height:auto;border-radius:var(--radius-2xl);box-shadow:var(--shadow-card);"
+            >
+            <figcaption style="font-size:var(--text-sm);color:var(--color-text-muted);text-align:center;margin-top:var(--space-3);">
+              La formación en Inteligencia Artificial ya es obligatoria para microempresas y autónomos en España — Consultoría HOST, Sevilla.
+            </figcaption>
+          </figure>
 
           <p style="<?= $p ?>">
             ¿Tu primera reacción es pensar que esto es una exageración más,
