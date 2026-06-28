@@ -243,7 +243,7 @@ Cuando llegue el momento en que sí necesites algo — o en que ellos necesiten 
           ?>
 
           <?php foreach ($claves as $i => $c): ?>
-          <div style="
+          <div id="clave-<?= $c['num'] ?>" style="
             margin-bottom:var(--space-10);
             padding-bottom:var(--space-10);
             border-bottom:1px solid var(--color-border);
@@ -455,7 +455,11 @@ Cuando llegue el momento en que sí necesites algo — o en que ellos necesiten 
                   font-weight:800;font-size:var(--text-xs);
                   min-width:20px;margin-top:1px;
                 "><?= $c['num'] ?></span>
-                <?= htmlspecialchars($c['titulo'], ENT_QUOTES, 'UTF-8') ?>
+                <a href="#clave-<?= $c['num'] ?>" style="color:inherit;text-decoration:none;"
+                   onmouseover="this.style.color='var(--color-navy)';this.style.textDecoration='underline'"
+                   onmouseout="this.style.color='';this.style.textDecoration='none'">
+                  <?= htmlspecialchars($c['titulo'], ENT_QUOTES, 'UTF-8') ?>
+                </a>
               </li>
               <?php endforeach; ?>
             </ol>

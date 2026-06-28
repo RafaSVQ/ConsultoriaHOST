@@ -228,7 +228,7 @@ include APP_ROOT . '/includes/nav.php';
           ?>
 
           <?php foreach ($errores as $i => $e): ?>
-          <div id="<?= $c['id'] ?? ('error-' . $c['num']) ?>" style="
+          <div id="<?= $e['id'] ?? ('error-' . $e['num']) ?>" style="
             margin-bottom:var(--space-10);
             padding-bottom:var(--space-10);
             border-bottom:1px solid var(--color-border);
