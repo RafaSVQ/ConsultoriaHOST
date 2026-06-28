@@ -121,7 +121,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Qué es exactamente -->
-          <h2 style="<?= $h2 ?>">Qué es exactamente un Interim Manager</h2>
+          <h2 id="que-es-interim-manager" style="<?= $h2 ?>">Qué es exactamente un Interim Manager</h2>
 
           <p style="<?= $p ?>">
             Un Interim Manager es un directivo o profesional de alto nivel que
@@ -193,7 +193,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Cuándo se usa -->
-          <h2 style="<?= $h2 ?>">Cuándo tiene sentido recurrir a un Interim Manager</h2>
+          <h2 id="cuando-recurrir" style="<?= $h2 ?>">Cuándo tiene sentido recurrir a un Interim Manager</h2>
 
           <p style="<?= $p ?>">
             No es un recurso para situaciones ordinarias. Es para cuando la
@@ -255,7 +255,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Por qué en España no se conoce -->
-          <h2 style="<?= $h2 ?>">Por qué en España no se conoce</h2>
+          <h2 id="por-que-no-se-conoce" style="<?= $h2 ?>">Por qué en España no se conoce</h2>
 
           <p style="<?= $p ?>">
             En Reino Unido, el mercado de Interim Management mueve más de
@@ -317,7 +317,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Qué ventajas concretas aporta -->
-          <h2 style="<?= $h2 ?>">Qué ventajas concretas aporta</h2>
+          <h2 id="ventajas-concretas" style="<?= $h2 ?>">Qué ventajas concretas aporta</h2>
 
           <p style="<?= $p ?>">
             Más allá de resolver la situación inmediata, el Interim Management
@@ -367,7 +367,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: Un caso real para entenderlo -->
-          <h2 style="<?= $h2 ?>">Un caso real para entenderlo</h2>
+          <h2 id="caso-real" style="<?= $h2 ?>">Un caso real para entenderlo</h2>
 
           <p style="<?= $p ?>">
             Una empresa distribuidora con 18 empleados pierde a su director
@@ -443,7 +443,7 @@ include APP_ROOT . '/includes/nav.php';
 
 
           <!-- H2: El Interim Management en HOST -->
-          <h2 style="<?= $h2 ?>">El Interim Management en Consultoría HOST</h2>
+          <h2 id="interim-en-host" style="<?= $h2 ?>">El Interim Management en Consultoría HOST</h2>
 
           <p style="<?= $p ?>">
             En HOST ofrecemos el servicio de Interim Management como parte de
@@ -580,17 +580,17 @@ include APP_ROOT . '/includes/nav.php';
               En este artículo
             </h3>
             <nav aria-label="Índice del artículo">
-              <ul style="display:flex;flex-direction:column;gap:var(--space-2);">
+              <ul style="display:flex;flex-direction:column;gap:var(--space-2);padding:0;list-style:none;">
                 <?php
                 $indice = [
-                  'Qué es exactamente un Interim Manager',
-                  'Cuándo tiene sentido recurrir a uno',
-                  'Por qué en España no se conoce',
-                  'Qué ventajas concretas aporta',
-                  'Un caso real para entenderlo',
-                  'El Interim Management en HOST',
+                  ['Qué es exactamente un Interim Manager', 'que-es-interim-manager'],
+                  ['Cuándo tiene sentido recurrir a uno',   'cuando-recurrir'],
+                  ['Por qué en España no se conoce',        'por-que-no-se-conoce'],
+                  ['Qué ventajas concretas aporta',         'ventajas-concretas'],
+                  ['Un caso real para entenderlo',          'caso-real'],
+                  ['El Interim Management en HOST',         'interim-en-host'],
                 ];
-                foreach ($indice as $item):
+                foreach ($indice as [$label, $anchor]):
                 ?>
                 <li style="
                   font-size:var(--text-sm);
@@ -601,7 +601,11 @@ include APP_ROOT . '/includes/nav.php';
                   display:flex;gap:var(--space-2);align-items:flex-start;
                 ">
                   <span style="color:var(--color-blue);flex-shrink:0;font-weight:700;">›</span>
-                  <?= htmlspecialchars($item, ENT_QUOTES, 'UTF-8') ?>
+                  <a href="#<?= $anchor ?>" style="color:inherit;text-decoration:none;"
+                     onmouseover="this.style.color='var(--color-navy)';this.style.textDecoration='underline'"
+                     onmouseout="this.style.color='';this.style.textDecoration='none'">
+                    <?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?>
+                  </a>
                 </li>
                 <?php endforeach; ?>
               </ul>
