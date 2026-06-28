@@ -26,9 +26,9 @@ include APP_ROOT . '/includes/nav.php';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="../index.php#servicios">Servicios</a>
+        <a href="/#servicios">Servicios</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Departamento (H) Humano</span>
       </nav>
@@ -211,7 +211,7 @@ include APP_ROOT . '/includes/nav.php';
               </li>
               <?php endforeach; ?>
             </ul>
-            <a href="../contacto.php" class="btn btn--outline btn--sm">
+            <a href="../contacto" class="btn btn--outline btn--sm">
               Solicitar información
             </a>
           </div>
@@ -259,7 +259,7 @@ include APP_ROOT . '/includes/nav.php';
           </p>
         </div>
         <div style="position:relative;z-index:1;flex-shrink:0;" class="reveal reveal--delay-1">
-          <a href="../empleo.php" class="btn btn--primary btn--xl">
+          <a href="../empleo" class="btn btn--primary btn--xl">
             Ver Empleo 3.0
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -281,8 +281,8 @@ include APP_ROOT . '/includes/nav.php';
             Cuéntanosla. Sin etiquetas, sin juicios. Solo con ganas de encontrar el camino.
           </p>
           <div class="cta-banner__actions">
-            <a href="../contacto.php" class="btn btn--primary btn--xl">Contactar</a>
-            <a href="../que-es-host.php" class="btn btn--outline-white btn--xl">Conocer HOST</a>
+            <a href="../contacto" class="btn btn--primary btn--xl">Contactar</a>
+            <a href="../que-es-host" class="btn btn--outline-white btn--xl">Conocer HOST</a>
           </div>
         </div>
       </div>

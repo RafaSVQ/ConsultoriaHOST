@@ -78,7 +78,7 @@ include APP_ROOT . '/includes/nav.php';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Contacto</span>
       </nav>
@@ -294,7 +294,7 @@ include APP_ROOT . '/includes/nav.php';
               <div class="contact-form__submit">
                 <p class="contact-form__privacy">
                   Al enviar este formulario aceptas nuestra
-                  <a href="privacidad.php">política de privacidad</a>.
+                  <a href="privacidad">política de privacidad</a>.
                   Tus datos son tratados con total confidencialidad.
                 </p>
                 <button type="submit" class="btn btn--primary btn--lg">

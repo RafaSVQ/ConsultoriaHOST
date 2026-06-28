@@ -125,6 +125,15 @@ def resolve_href(src: Path, href: str) -> tuple[Path | None, str]:
         # Anclaje en la misma página
         return src, anchor
 
+    if page_part.startswith('/'):
+        # Ruta absoluta desde la raíz del webroot (p.ej. "/" o "/blog")
+        target = (WEBROOT / page_part.lstrip('/')).resolve()
+        if target.is_dir() or page_part == '/':
+            target = target / 'index.php'
+        elif not target.suffix:
+            target = target.with_suffix('.php')
+        return target, anchor
+
     # Resolver la ruta relativa desde el directorio del archivo fuente
     target = (src.parent / page_part).resolve()
 

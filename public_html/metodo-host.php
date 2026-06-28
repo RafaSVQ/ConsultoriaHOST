@@ -27,7 +27,7 @@ include APP_ROOT . '/includes/nav.php';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Método HOST</span>
       </nav>
@@ -149,7 +149,7 @@ include APP_ROOT . '/includes/nav.php';
               <div style="font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-3);">
                 3 jornadas · 5 horas cada una
               </div>
-              <a href="contacto.php" class="btn btn--primary" style="width:100%;justify-content:center;">
+              <a href="contacto" class="btn btn--primary" style="width:100%;justify-content:center;">
                 Solicitar información
               </a>
             </div>
@@ -431,7 +431,7 @@ include APP_ROOT . '/includes/nav.php';
             La actividad puede acogerse a ayudas económicas.
           </p>
           <div class="cta-banner__actions">
-            <a href="contacto.php" class="btn btn--primary btn--xl">
+            <a href="contacto" class="btn btn--primary btn--xl">
               Solicitar información
             </a>
             <a href="tel:<?= SITE_PHONE_E164 ?>" class="btn btn--outline-white btn--xl">

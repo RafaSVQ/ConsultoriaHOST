@@ -59,9 +59,9 @@ include APP_ROOT . '/includes/nav.php';
     <div class="container page-header__inner">
 
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="index.php">Blog</a>
+        <a href="/">Blog</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">7 errores de emprendimiento</span>
       </nav>
@@ -143,7 +143,7 @@ include APP_ROOT . '/includes/nav.php';
                 (identificación, evaluación y planificación) que verifica las
                 posibilidades reales de éxito de un negocio antes de comprometer
                 créditos, avales, contratos y relaciones personales.
-                <a href="../metodo-host.php" style="color:var(--color-blue);font-weight:600;">
+                <a href="../metodo-host" style="color:var(--color-blue);font-weight:600;">
                   Ver el Método HOST completo →
                 </a>
               </p>
@@ -367,10 +367,10 @@ include APP_ROOT . '/includes/nav.php';
             border-top:1px solid var(--color-border);
             flex-wrap:wrap;
           ">
-            <a href="../metodo-host.php" class="btn btn--primary btn--lg">
+            <a href="../metodo-host" class="btn btn--primary btn--lg">
               Conocer el Método HOST
             </a>
-            <a href="../contacto.php" class="btn btn--outline btn--lg">
+            <a href="../contacto" class="btn btn--outline btn--lg">
               Hablar de tu proyecto
             </a>
           </div>
@@ -524,10 +524,10 @@ include APP_ROOT . '/includes/nav.php';
               <p style="font-size:var(--text-sm);color:rgba(255,255,255,.85);line-height:1.5;max-width:none;margin-bottom:var(--space-5);">
                 El Método HOST evalúa la viabilidad real de tu negocio en 3 sesiones.
               </p>
-              <a href="../metodo-host.php" class="btn btn--outline-white btn--sm" style="width:100%;justify-content:center;margin-bottom:var(--space-3);">
+              <a href="../metodo-host" class="btn btn--outline-white btn--sm" style="width:100%;justify-content:center;margin-bottom:var(--space-3);">
                 Ver el Método HOST
               </a>
-              <a href="../contacto.php" class="btn btn--sm" style="
+              <a href="../contacto" class="btn btn--sm" style="
                 width:100%;justify-content:center;
                 background:white;color:var(--color-orange);border:none;
               ">
@@ -564,8 +564,8 @@ include APP_ROOT . '/includes/nav.php';
             que el mercado te la dé de la forma más cara.
           </p>
           <div class="cta-banner__actions">
-            <a href="../metodo-host.php" class="btn btn--primary btn--xl">Conocer el Método HOST</a>
-            <a href="../contacto.php" class="btn btn--outline-white btn--xl">Hablar de tu proyecto</a>
+            <a href="../metodo-host" class="btn btn--primary btn--xl">Conocer el Método HOST</a>
+            <a href="../contacto" class="btn btn--outline-white btn--xl">Hablar de tu proyecto</a>
           </div>
         </div>
       </div>

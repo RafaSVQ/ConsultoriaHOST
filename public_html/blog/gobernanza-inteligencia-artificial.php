@@ -59,9 +59,9 @@ include APP_ROOT . '/includes/nav.php';
     <div class="container page-header__inner">
 
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="index.php">Blog</a>
+        <a href="/">Blog</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Gobernanza de la IA</span>
       </nav>
@@ -417,10 +417,10 @@ include APP_ROOT . '/includes/nav.php';
             border-top:1px solid var(--color-border);
             flex-wrap:wrap;
           ">
-            <a href="../contacto.php" class="btn btn--primary btn--lg">
+            <a href="../contacto" class="btn btn--primary btn--lg">
               Solicitar diagnóstico de gobernanza de IA
             </a>
-            <a href="formacion-ia-obligatoria-articulo-4.php" class="btn btn--outline btn--lg">
+            <a href="formacion-ia-obligatoria-articulo-4" class="btn btn--outline btn--lg">
               Leer sobre la formación obligatoria en IA
             </a>
           </div>
@@ -613,10 +613,10 @@ include APP_ROOT . '/includes/nav.php';
                 Diagnóstico inicial sin compromiso: identificamos los
                 riesgos reales y diseñamos tu hoja de ruta de gobernanza.
               </p>
-              <a href="../contacto.php" class="btn btn--primary btn--sm" style="width:100%;justify-content:center;margin-bottom:var(--space-3);">
+              <a href="../contacto" class="btn btn--primary btn--sm" style="width:100%;justify-content:center;margin-bottom:var(--space-3);">
                 Solicitar diagnóstico
               </a>
-              <a href="../servicios/organizacional.php" class="btn btn--sm" style="
+              <a href="../servicios/organizacional" class="btn btn--sm" style="
                 width:100%;justify-content:center;
                 background:rgba(255,255,255,.1);color:white;
                 border:1px solid rgba(255,255,255,.25);
@@ -654,8 +654,8 @@ include APP_ROOT . '/includes/nav.php';
             hacia dónde quieres ir — con la ley de tu lado.
           </p>
           <div class="cta-banner__actions">
-            <a href="../contacto.php" class="btn btn--primary btn--xl">Hablar con HOST</a>
-            <a href="index.php" class="btn btn--outline-white btn--xl">Volver al blog</a>
+            <a href="../contacto" class="btn btn--primary btn--xl">Hablar con HOST</a>
+            <a href="/" class="btn btn--outline-white btn--xl">Volver al blog</a>
           </div>
         </div>
       </div>

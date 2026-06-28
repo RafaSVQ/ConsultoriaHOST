@@ -26,9 +26,9 @@ include APP_ROOT . '/includes/nav.php';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="../index.php#servicios">Servicios</a>
+        <a href="/#servicios">Servicios</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Departamento (T) Técnico</span>
       </nav>
@@ -331,7 +331,7 @@ include APP_ROOT . '/includes/nav.php';
                 <?php endforeach; ?>
               </ul>
             </div>
-            <a href="../contacto.php" class="btn btn--secondary" style="width:100%;justify-content:center;">
+            <a href="../contacto" class="btn btn--secondary" style="width:100%;justify-content:center;">
               Saber más sobre este proyecto
             </a>
           </div>
@@ -481,7 +481,7 @@ include APP_ROOT . '/includes/nav.php';
               <span style="font-size:var(--text-sm);color:rgba(255,255,255,.65);line-height:1.4;"><?= $d[1] ?></span>
             </div>
             <?php endforeach; ?>
-            <a href="../contacto.php" class="btn btn--primary" style="width:100%;justify-content:center;margin-top:var(--space-2);">
+            <a href="../contacto" class="btn btn--primary" style="width:100%;justify-content:center;margin-top:var(--space-2);">
               Consultar opciones de seguridad
             </a>
           </div>
@@ -506,7 +506,7 @@ include APP_ROOT . '/includes/nav.php';
             Hay soluciones esperando ser ejecutadas.
           </p>
           <div class="cta-banner__actions">
-            <a href="../contacto.php" class="btn btn--primary btn--xl">Solicitar reunión</a>
+            <a href="../contacto" class="btn btn--primary btn--xl">Solicitar reunión</a>
             <a href="tel:<?= SITE_PHONE_E164 ?>" class="btn btn--outline-white btn--xl">📞 <?= SITE_PHONE ?></a>
           </div>
         </div>

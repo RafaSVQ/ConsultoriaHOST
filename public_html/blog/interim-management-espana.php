@@ -59,9 +59,9 @@ include APP_ROOT . '/includes/nav.php';
     <div class="container page-header__inner">
 
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="index.php">Blog</a>
+        <a href="/">Blog</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Interim Management</span>
       </nav>
@@ -472,10 +472,10 @@ include APP_ROOT . '/includes/nav.php';
             border-top:1px solid var(--color-border);
             flex-wrap:wrap;
           ">
-            <a href="../contacto.php" class="btn btn--primary btn--lg">
+            <a href="../contacto" class="btn btn--primary btn--lg">
               Hablar sobre tu situación
             </a>
-            <a href="../servicios/organizacional.php" class="btn btn--outline btn--lg">
+            <a href="../servicios/organizacional" class="btn btn--outline btn--lg">
               Ver servicio completo
             </a>
           </div>
@@ -631,7 +631,7 @@ include APP_ROOT . '/includes/nav.php';
               <p style="font-size:var(--text-sm);color:rgba(255,255,255,.75);line-height:1.5;max-width:none;margin-bottom:var(--space-5);">
                 Cuéntanos la situación. Valoramos juntos si tiene sentido y cómo abordarlo.
               </p>
-              <a href="../contacto.php" class="btn btn--primary btn--sm" style="width:100%;justify-content:center;">
+              <a href="../contacto" class="btn btn--primary btn--sm" style="width:100%;justify-content:center;">
                 Contactar ahora
               </a>
               <p style="margin-top:var(--space-3);font-size:var(--text-xs);color:rgba(255,255,255,.5);">
@@ -665,8 +665,8 @@ include APP_ROOT . '/includes/nav.php';
             La primera consulta es gratuita y sin compromiso.
           </p>
           <div class="cta-banner__actions">
-            <a href="../contacto.php" class="btn btn--primary btn--xl">Hablar con HOST</a>
-            <a href="index.php" class="btn btn--outline-white btn--xl">Volver al blog</a>
+            <a href="../contacto" class="btn btn--primary btn--xl">Hablar con HOST</a>
+            <a href="/" class="btn btn--outline-white btn--xl">Volver al blog</a>
           </div>
         </div>
       </div>

@@ -23,6 +23,16 @@ RewriteRule ^sitemap\.xml$ sitemap.php [L]
 # =============================================================
 # 3. URLs LIMPIAS (sin extensión .php)
 # =============================================================
+# Redirigir /pagina.php → /pagina (canónica 301, evita contenido duplicado).
+# Debe ir ANTES de "servir archivo existente": si no, esa regla intercepta
+# la petición a pagina.php (que sí existe) y esta redirección nunca se evalúa.
+# Excluido /api/ — esos endpoints reciben POST y un 301 rompería el envío
+# del formulario (los navegadores no reenvían el body POST tras un 301).
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteCond %{THE_REQUEST} /([^.]+)\.php[\s?/] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
 # Servir archivo/directorio existente directamente
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
@@ -31,10 +41,6 @@ RewriteRule ^ - [L]
 # /pagina → /pagina.php (internamente)
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.+?)/?$ $1.php [L]
-
-# Redirigir /pagina.php → /pagina (canónica 301, evita contenido duplicado)
-RewriteCond %{THE_REQUEST} /([^.]+)\.php[\s?/] [NC]
-RewriteRule ^ /%1 [R=301,L,NE]
 
 # =============================================================
 # 3. DOCUMENTO POR DEFECTO Y ERROR 404

@@ -26,7 +26,7 @@ include APP_ROOT . '/includes/nav.php';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Empleo 3.0</span>
       </nav>
@@ -183,7 +183,7 @@ include APP_ROOT . '/includes/nav.php';
               </li>
               <?php endforeach; ?>
             </ul>
-            <a href="contacto.php" class="btn btn--primary btn--sm" style="align-self:flex-start;">
+            <a href="contacto" class="btn btn--primary btn--sm" style="align-self:flex-start;">
               <?= $p['cta'] ?>
             </a>
           </div>
@@ -277,7 +277,7 @@ include APP_ROOT . '/includes/nav.php';
               </li>
               <?php endforeach; ?>
             </ul>
-            <a href="contacto.php" class="btn btn--ghost btn--sm" style="color:var(--color-blue);border:1px solid var(--color-blue);">
+            <a href="contacto" class="btn btn--ghost btn--sm" style="color:var(--color-blue);border:1px solid var(--color-blue);">
               Contactar para más información
             </a>
           </div>
@@ -317,7 +317,7 @@ include APP_ROOT . '/includes/nav.php';
             <div style="margin-bottom:var(--space-4);color:var(--color-orange);"><?= icon($o[0], size: 40) ?></div>
             <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-3);"><?= $o[1] ?></h3>
             <p style="font-size:var(--text-sm);margin-bottom:var(--space-5);"><?= $o[2] ?></p>
-            <a href="contacto.php#unirse" class="btn btn--outline btn--sm">
+            <a href="contacto#unirse" class="btn btn--outline btn--sm">
               <?= $o[3] ?>
             </a>
           </div>
@@ -339,7 +339,7 @@ include APP_ROOT . '/includes/nav.php';
             Da ese primer paso con HOST. Te acompañamos desde el principio.
           </p>
           <div class="cta-banner__actions">
-            <a href="contacto.php" class="btn btn--primary btn--xl">Contactar ahora</a>
+            <a href="contacto" class="btn btn--primary btn--xl">Contactar ahora</a>
             <a href="tel:<?= SITE_PHONE_E164 ?>" class="btn btn--outline-white btn--xl">📞 <?= SITE_PHONE ?></a>
           </div>
         </div>

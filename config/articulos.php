@@ -34,7 +34,7 @@ $articulos = [
     'lectura'   => '8 min',
     'destacado' => true,
     'publicado' => true,
-    'imagen'    => 'formacion-ia-microempresa-evita-sanciones.jpg',
+    'imagen'    => 'formacion-ia-microempresa-evita-sanciones-ConsultoriaHOST.webp',
   ],
   [
     'slug'      => 'que-es-la-consultoria-3-0',

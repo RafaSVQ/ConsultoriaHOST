@@ -47,7 +47,7 @@ function formatearFecha(string $fecha): string {
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Blog</span>
       </nav>
@@ -98,7 +98,7 @@ function formatearFecha(string $fecha): string {
               </span>
             </div>
             <h3 class="blog-card__title" id="blog-dest-<?= $i ?>">
-              <a href="<?= htmlspecialchars($art['slug'], ENT_QUOTES, 'UTF-8') ?>.php"
+              <a href="<?= htmlspecialchars($art['slug'], ENT_QUOTES, 'UTF-8') ?>"
                  style="color:inherit;text-decoration:none;">
                 <?= htmlspecialchars($art['titulo'], ENT_QUOTES, 'UTF-8') ?>
               </a>
@@ -106,7 +106,7 @@ function formatearFecha(string $fecha): string {
             <p class="blog-card__excerpt">
               <?= htmlspecialchars($art['extracto'], ENT_QUOTES, 'UTF-8') ?>
             </p>
-            <a href="<?= htmlspecialchars($art['slug'], ENT_QUOTES, 'UTF-8') ?>.php"
+            <a href="<?= htmlspecialchars($art['slug'], ENT_QUOTES, 'UTF-8') ?>"
                class="btn btn--ghost btn--sm" style="color:var(--color-blue);padding-left:0;">
               Leer artículo →
             </a>
@@ -180,7 +180,7 @@ function formatearFecha(string $fecha): string {
               </span>
             </div>
             <h3 class="blog-card__title" id="blog-art-<?= $i ?>">
-              <a href="<?= htmlspecialchars($art['slug'], ENT_QUOTES, 'UTF-8') ?>.php"
+              <a href="<?= htmlspecialchars($art['slug'], ENT_QUOTES, 'UTF-8') ?>"
                  style="color:inherit;text-decoration:none;">
                 <?= htmlspecialchars($art['titulo'], ENT_QUOTES, 'UTF-8') ?>
               </a>
@@ -192,7 +192,7 @@ function formatearFecha(string $fecha): string {
               display:flex;align-items:center;justify-content:space-between;
               margin-top:var(--space-3);
             ">
-              <a href="<?= htmlspecialchars($art['slug'], ENT_QUOTES, 'UTF-8') ?>.php"
+              <a href="<?= htmlspecialchars($art['slug'], ENT_QUOTES, 'UTF-8') ?>"
                  class="btn btn--ghost btn--sm" style="color:var(--color-blue);padding-left:0;">
                 Leer →
               </a>
@@ -234,7 +234,7 @@ function formatearFecha(string $fecha): string {
             Cuando publiquemos algo nuevo, puedes ser de los primeros en leerlo.
             Sin spam, sin frecuencia forzada. Solo cuando hay algo que vale la pena leer.
           </p>
-          <a href="../contacto.php" class="btn btn--primary btn--lg">
+          <a href="../contacto" class="btn btn--primary btn--lg">
             Contactar para suscribirse
           </a>
           <p style="
@@ -242,7 +242,7 @@ function formatearFecha(string $fecha): string {
             margin-top:var(--space-4);max-width:none;
           ">
             Puedes darte de baja en cualquier momento.
-            Consulta nuestra <a href="../privacidad.php" style="color:rgba(255,255,255,.5);">política de privacidad</a>.
+            Consulta nuestra <a href="../privacidad" style="color:rgba(255,255,255,.5);">política de privacidad</a>.
           </p>
         </div>
       </div>

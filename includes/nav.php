@@ -34,7 +34,7 @@ function navActive(string $key): string {
       <div class="nav__inner">
 
         <!-- Logo -->
-        <a href="<?= $base_path ?>index.php" class="nav__logo" aria-label="Consultoría HOST — Inicio">
+        <a href="/" class="nav__logo" aria-label="Consultoría HOST — Inicio">
           <div class="nav__logo-mark" aria-hidden="true">H</div>
           <div class="nav__logo-text">
             Consultoría <strong>HOST</strong>
@@ -46,14 +46,14 @@ function navActive(string $key): string {
         <ul class="nav__menu" role="list">
 
           <li class="nav__item">
-            <a href="<?= $base_path ?>que-es-host.php"
+            <a href="<?= $base_path ?>que-es-host"
                class="nav__link<?= navActive('que-es-host') ?>">
               ¿Qué es HOST?
             </a>
           </li>
 
           <li class="nav__item">
-            <a href="<?= $base_path ?>consultoria.php"
+            <a href="<?= $base_path ?>consultoria"
                class="nav__link<?= navActive('consultoria') ?>">
               Consultoría
             </a>
@@ -71,25 +71,25 @@ function navActive(string $key): string {
             </a>
             <ul class="nav__dropdown" role="list">
               <li>
-                <a href="<?= $base_path ?>servicios/humano.php"
+                <a href="<?= $base_path ?>servicios/humano"
                    class="nav__dropdown-link">
                   <span style="color:var(--color-orange);font-weight:700;">H</span> — Humano
                 </a>
               </li>
               <li>
-                <a href="<?= $base_path ?>servicios/organizacional.php"
+                <a href="<?= $base_path ?>servicios/organizacional"
                    class="nav__dropdown-link">
                   <span style="color:var(--color-blue);font-weight:700;">O</span> — Organizacional
                 </a>
               </li>
               <li>
-                <a href="<?= $base_path ?>servicios/social.php"
+                <a href="<?= $base_path ?>servicios/social"
                    class="nav__dropdown-link">
                   <span style="color:var(--color-green);font-weight:700;">S</span> — Social
                 </a>
               </li>
               <li>
-                <a href="<?= $base_path ?>servicios/tecnologico.php"
+                <a href="<?= $base_path ?>servicios/tecnologico"
                    class="nav__dropdown-link">
                   <span style="color:var(--color-navy);font-weight:700;">T</span> — Técnico
                 </a>
@@ -98,21 +98,21 @@ function navActive(string $key): string {
           </li>
 
           <li class="nav__item">
-            <a href="<?= $base_path ?>metodo-host.php"
+            <a href="<?= $base_path ?>metodo-host"
                class="nav__link<?= navActive('metodo') ?>">
               Método HOST
             </a>
           </li>
 
           <li class="nav__item">
-            <a href="<?= $base_path ?>empleo.php"
+            <a href="<?= $base_path ?>empleo"
                class="nav__link<?= navActive('empleo') ?>">
               Empleo 3.0
             </a>
           </li>
 
           <li class="nav__item">
-            <a href="<?= $base_path ?>networking.php"
+            <a href="<?= $base_path ?>networking"
                class="nav__link<?= navActive('networking') ?>">
               Networking
             </a>
@@ -129,7 +129,7 @@ function navActive(string $key): string {
 
         <!-- CTA escritorio -->
         <div class="nav__cta">
-          <a href="<?= $base_path ?>contacto.php" class="btn btn--primary btn--sm">
+          <a href="<?= $base_path ?>contacto" class="btn btn--primary btn--sm">
             Contactar
           </a>
         </div>
@@ -151,23 +151,23 @@ function navActive(string $key): string {
   <!-- Menú mobile drawer -->
   <nav id="mobile-menu" class="nav__mobile" aria-hidden="true" aria-label="Menú móvil">
     <ul class="nav__mobile-menu" role="list">
-      <li><a href="<?= $base_path ?>index.php"              class="nav__mobile-link">Inicio</a></li>
-      <li><a href="<?= $base_path ?>que-es-host.php"          class="nav__mobile-link">¿Qué es HOST?</a></li>
-      <li><a href="<?= $base_path ?>consultoria.php"          class="nav__mobile-link">Consultoría 3.0</a></li>
+      <li><a href="/"              class="nav__mobile-link">Inicio</a></li>
+      <li><a href="<?= $base_path ?>que-es-host"          class="nav__mobile-link">¿Qué es HOST?</a></li>
+      <li><a href="<?= $base_path ?>consultoria"          class="nav__mobile-link">Consultoría 3.0</a></li>
       <li class="nav__mobile-separator" role="separator"></li>
       <li><span class="nav__mobile-section-title">Qué hacemos</span></li>
-      <li><a href="<?= $base_path ?>servicios/humano.php"         class="nav__mobile-link">↳ (H) Humano</a></li>
-      <li><a href="<?= $base_path ?>servicios/organizacional.php" class="nav__mobile-link">↳ (O) Organizacional</a></li>
-      <li><a href="<?= $base_path ?>servicios/social.php"          class="nav__mobile-link">↳ (S) Social</a></li>
-      <li><a href="<?= $base_path ?>servicios/tecnologico.php"     class="nav__mobile-link">↳ (T) Técnico</a></li>
+      <li><a href="<?= $base_path ?>servicios/humano"         class="nav__mobile-link">↳ (H) Humano</a></li>
+      <li><a href="<?= $base_path ?>servicios/organizacional" class="nav__mobile-link">↳ (O) Organizacional</a></li>
+      <li><a href="<?= $base_path ?>servicios/social"          class="nav__mobile-link">↳ (S) Social</a></li>
+      <li><a href="<?= $base_path ?>servicios/tecnologico"     class="nav__mobile-link">↳ (T) Técnico</a></li>
       <li class="nav__mobile-separator" role="separator"></li>
-      <li><a href="<?= $base_path ?>metodo-host.php"  class="nav__mobile-link">Método HOST</a></li>
-      <li><a href="<?= $base_path ?>empleo.php"       class="nav__mobile-link">Empleo 3.0</a></li>
-      <li><a href="<?= $base_path ?>networking.php"   class="nav__mobile-link">Networking</a></li>
+      <li><a href="<?= $base_path ?>metodo-host"  class="nav__mobile-link">Método HOST</a></li>
+      <li><a href="<?= $base_path ?>empleo"       class="nav__mobile-link">Empleo 3.0</a></li>
+      <li><a href="<?= $base_path ?>networking"   class="nav__mobile-link">Networking</a></li>
       <li><a href="<?= $base_path ?>blog/"             class="nav__mobile-link">Blog</a></li>
     </ul>
     <div class="nav__mobile-cta">
-      <a href="<?= $base_path ?>contacto.php"
+      <a href="<?= $base_path ?>contacto"
          class="btn btn--primary"
          style="width:100%;justify-content:center;">
         Contactar ahora

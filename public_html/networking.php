@@ -25,7 +25,7 @@ include APP_ROOT . '/includes/nav.php';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Networking efectivo</span>
       </nav>
@@ -301,7 +301,7 @@ include APP_ROOT . '/includes/nav.php';
               "><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></span>
               <?php endforeach; ?>
             </div>
-            <a href="contacto.php" class="btn btn--outline btn--sm">
+            <a href="contacto" class="btn btn--outline btn--sm">
               Solicitar información
             </a>
           </div>
@@ -324,7 +324,7 @@ include APP_ROOT . '/includes/nav.php';
             formatos disponibles y cómo participar.
           </p>
           <div class="cta-banner__actions">
-            <a href="contacto.php" class="btn btn--primary btn--xl">Solicitar información</a>
+            <a href="contacto" class="btn btn--primary btn--xl">Solicitar información</a>
             <a href="tel:<?= SITE_PHONE_E164 ?>" class="btn btn--outline-white btn--xl">📞 <?= SITE_PHONE ?></a>
           </div>
         </div>

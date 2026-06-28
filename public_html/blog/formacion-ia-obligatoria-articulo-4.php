@@ -27,9 +27,9 @@ $page_extra_head  = '
   "description": "Desde el 2 de febrero de 2025 existe obligación legal de formar en IA a todo el personal que la use en el trabajo. Qué exige el Artículo 4, desde cuándo se sanciona y cómo cumplir.",
   "image": {
     "@type": "ImageObject",
-    "url": "https://consultoriahost.es/assets/img/formacion-ia-microempresa-evita-sanciones.jpg",
-    "width": 1200,
-    "height": 1200,
+    "url": "https://consultoriahost.es/assets/img/formacion-ia-microempresa-evita-sanciones-ConsultoriaHOST.webp",
+    "width": 1448,
+    "height": 1086,
     "caption": "Formación en Inteligencia Artificial obligatoria para microempresas — Ley de IA, Consultoría HOST Sevilla"
   },
   "datePublished": "2026-06-22",
@@ -69,9 +69,9 @@ include APP_ROOT . '/includes/nav.php';
     <div class="container page-header__inner">
 
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="index.php">Blog</a>
+        <a href="/">Blog</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Formación IA obligatoria</span>
       </nav>
@@ -131,10 +131,10 @@ include APP_ROOT . '/includes/nav.php';
 
           <figure style="margin:0 0 var(--space-8);">
             <img
-              src="<?= $base_path ?>assets/img/formacion-ia-microempresa-evita-sanciones.jpg<?= asset_v('img/formacion-ia-microempresa-evita-sanciones.jpg') ?>"
+              src="<?= $base_path ?>assets/img/formacion-ia-microempresa-evita-sanciones-ConsultoriaHOST.webp<?= asset_v('img/formacion-ia-microempresa-evita-sanciones-ConsultoriaHOST.webp') ?>"
               alt="Formación en Inteligencia Artificial obligatoria para microempresas — cumple la Ley de IA y evita sanciones. Consultoría HOST, Sevilla."
               title="Formación en Inteligencia Artificial en la microempresa — Ley de IA | Consultoría HOST Sevilla"
-              width="1200" height="1200"
+              width="1448" height="1086"
               loading="lazy" decoding="async"
               style="width:100%;height:auto;border-radius:var(--radius-2xl);box-shadow:var(--shadow-card);"
             >
@@ -524,10 +524,10 @@ include APP_ROOT . '/includes/nav.php';
             border-top:1px solid var(--color-border);
             flex-wrap:wrap;
           ">
-            <a href="../contacto.php" class="btn btn--primary btn--lg">
+            <a href="../contacto" class="btn btn--primary btn--lg">
               Solicitar diagnóstico de cumplimiento
             </a>
-            <a href="../servicios/organizacional.php" class="btn btn--outline btn--lg">
+            <a href="../servicios/organizacional" class="btn btn--outline btn--lg">
               Ver Departamento Organizacional
             </a>
           </div>
@@ -723,10 +723,10 @@ include APP_ROOT . '/includes/nav.php';
                 Diagnóstico inicial sin compromiso: te decimos exactamente
                 en qué punto estás respecto al Artículo 4.
               </p>
-              <a href="../contacto.php" class="btn btn--primary btn--sm" style="width:100%;justify-content:center;margin-bottom:var(--space-3);">
+              <a href="../contacto" class="btn btn--primary btn--sm" style="width:100%;justify-content:center;margin-bottom:var(--space-3);">
                 Solicitar diagnóstico
               </a>
-              <a href="../servicios/organizacional.php" class="btn btn--sm" style="
+              <a href="../servicios/organizacional" class="btn btn--sm" style="
                 width:100%;justify-content:center;
                 background:rgba(255,255,255,.1);color:white;
                 border:1px solid rgba(255,255,255,.25);
@@ -764,8 +764,8 @@ include APP_ROOT . '/includes/nav.php';
             y, además, mejora la productividad real de tu negocio desde ya.
           </p>
           <div class="cta-banner__actions">
-            <a href="../contacto.php" class="btn btn--primary btn--xl">Hablar con HOST</a>
-            <a href="index.php" class="btn btn--outline-white btn--xl">Volver al blog</a>
+            <a href="../contacto" class="btn btn--primary btn--xl">Hablar con HOST</a>
+            <a href="/" class="btn btn--outline-white btn--xl">Volver al blog</a>
           </div>
         </div>
       </div>

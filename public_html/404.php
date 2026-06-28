@@ -48,8 +48,8 @@ include APP_ROOT . '/includes/nav.php';
           display:flex;flex-wrap:wrap;gap:var(--space-4);
           justify-content:center;margin-bottom:var(--space-12);
         ">
-          <a href="index.php"       class="btn btn--primary btn--lg">Ir al inicio</a>
-          <a href="contacto.php"    class="btn btn--outline btn--lg">Contactar</a>
+          <a href="/"       class="btn btn--primary btn--lg">Ir al inicio</a>
+          <a href="contacto"    class="btn btn--outline btn--lg">Contactar</a>
           <a href="javascript:history.back()" class="btn btn--ghost btn--lg">← Volver atrás</a>
         </div>
 

@@ -27,7 +27,7 @@ $fecha_actualizacion = 'junio de 2026';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Política de privacidad</span>
       </nav>
@@ -214,7 +214,7 @@ $fecha_actualizacion = 'junio de 2026';
           Solo si das tu consentimiento explícito activamos también Google Analytics 4
           (Google Ireland Limited) con fines estadísticos. Puedes aceptar, rechazar o
           retirar tu consentimiento en cualquier momento.
-          Consulta nuestra <a href="cookies.php">política de cookies</a> para más información.
+          Consulta nuestra <a href="cookies">política de cookies</a> para más información.
         </p>
 
 
@@ -242,7 +242,7 @@ $fecha_actualizacion = 'junio de 2026';
         ">
           <p style="font-size:var(--text-sm);color:var(--color-text-muted);max-width:none;">
             ¿Tienes dudas sobre esta política?
-            <a href="contacto.php" style="color:var(--color-orange);font-weight:600;">
+            <a href="contacto" style="color:var(--color-orange);font-weight:600;">
               Escríbenos
             </a>
             o llámanos al

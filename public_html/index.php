@@ -51,13 +51,13 @@ include APP_ROOT . '/includes/nav.php';
           </p>
 
           <div class="hero__actions">
-            <a href="contacto.php" class="btn btn--primary btn--lg">
+            <a href="contacto" class="btn btn--primary btn--lg">
               Habla con nosotros
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </a>
-            <a href="consultoria.php" class="btn btn--outline-white btn--lg">
+            <a href="consultoria" class="btn btn--outline-white btn--lg">
               Conoce la consultoría
             </a>
           </div>
@@ -212,7 +212,7 @@ include APP_ROOT . '/includes/nav.php';
         </div>
 
         <div class="text-center" style="margin-top:var(--space-10);">
-          <a href="que-es-host.php" class="btn btn--secondary">
+          <a href="que-es-host" class="btn btn--secondary">
             Conoce HOST en profundidad
           </a>
         </div>
@@ -260,7 +260,7 @@ include APP_ROOT . '/includes/nav.php';
               <li class="service-card__list-item">Personas en situación de quemado (burnout)</li>
               <li class="service-card__list-item">Empleo 3.0 y reinserción laboral</li>
             </ul>
-            <a href="servicios/humano.php" class="service-card__link">
+            <a href="servicios/humano" class="service-card__link">
               Ver todos los servicios
               <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -288,7 +288,7 @@ include APP_ROOT . '/includes/nav.php';
               <li class="service-card__list-item">Interim Management (dirección temporal)</li>
               <li class="service-card__list-item">Grandes Soluciones para empresas</li>
             </ul>
-            <a href="servicios/organizacional.php" class="service-card__link">
+            <a href="servicios/organizacional" class="service-card__link">
               Ver todos los servicios
               <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -316,7 +316,7 @@ include APP_ROOT . '/includes/nav.php';
               <li class="service-card__list-item">Proyecto IRiS</li>
               <li class="service-card__list-item">Economía colaborativa y feminismo empresarial</li>
             </ul>
-            <a href="servicios/social.php" class="service-card__link">
+            <a href="servicios/social" class="service-card__link">
               Ver todos los servicios
               <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -344,7 +344,7 @@ include APP_ROOT . '/includes/nav.php';
               <li class="service-card__list-item">Generación de energía sostenible</li>
               <li class="service-card__list-item">Seguridad informática</li>
             </ul>
-            <a href="servicios/tecnologico.php" class="service-card__link">
+            <a href="servicios/tecnologico" class="service-card__link">
               Ver todos los servicios
               <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -516,7 +516,7 @@ include APP_ROOT . '/includes/nav.php';
         </div>
 
         <div class="text-center" style="margin-top:var(--space-12);">
-          <a href="metodo-host.php" class="btn btn--primary btn--lg">
+          <a href="metodo-host" class="btn btn--primary btn--lg">
             Descubrir el Método HOST completo
           </a>
         </div>
@@ -546,8 +546,8 @@ include APP_ROOT . '/includes/nav.php';
               con una visión 3.0: humana, organizada, social y tecnológica.
             </p>
             <div class="flex gap-4" style="flex-wrap:wrap;">
-              <a href="empleo.php" class="btn btn--primary">Ver Empleo 3.0</a>
-              <a href="empleo.php#ofertas" class="btn btn--outline">Ofertas de empleo</a>
+              <a href="empleo" class="btn btn--primary">Ver Empleo 3.0</a>
+              <a href="empleo#ofertas" class="btn btn--outline">Ofertas de empleo</a>
             </div>
           </div>
 
@@ -559,7 +559,7 @@ include APP_ROOT . '/includes/nav.php';
                   <div style="font-size:2rem;margin-bottom:var(--space-2);" aria-hidden="true">👤</div>
                   <h4 style="font-size:var(--text-base);margin-bottom:var(--space-2);">Para personas</h4>
                   <p style="font-size:var(--text-sm);margin-bottom:var(--space-3);">Taller de empleo, orientación y reinserción profesional.</p>
-                  <a href="empleo.php#personas" class="btn btn--ghost btn--sm">Ver más</a>
+                  <a href="empleo#personas" class="btn btn--ghost btn--sm">Ver más</a>
                 </div>
               </div>
 
@@ -568,7 +568,7 @@ include APP_ROOT . '/includes/nav.php';
                   <div style="font-size:2rem;margin-bottom:var(--space-2);" aria-hidden="true">🏢</div>
                   <h4 style="font-size:var(--text-base);margin-bottom:var(--space-2);">Para empresas</h4>
                   <p style="font-size:var(--text-sm);margin-bottom:var(--space-3);">Selección, outplacement y colaboraciones.</p>
-                  <a href="empleo.php#empresas" class="btn btn--ghost btn--sm">Ver más</a>
+                  <a href="empleo#empresas" class="btn btn--ghost btn--sm">Ver más</a>
                 </div>
               </div>
 
@@ -577,7 +577,7 @@ include APP_ROOT . '/includes/nav.php';
                   <div style="font-size:2rem;margin-bottom:var(--space-2);" aria-hidden="true">🌱</div>
                   <h4 style="font-size:var(--text-base);margin-bottom:var(--space-2);">Emprender</h4>
                   <p style="font-size:var(--text-sm);margin-bottom:var(--space-3);">Del concepto a la realidad con garantías.</p>
-                  <a href="empleo.php#emprender" class="btn btn--ghost btn--sm">Ver más</a>
+                  <a href="empleo#emprender" class="btn btn--ghost btn--sm">Ver más</a>
                 </div>
               </div>
 
@@ -586,7 +586,7 @@ include APP_ROOT . '/includes/nav.php';
                   <div style="font-size:2rem;margin-bottom:var(--space-2);" aria-hidden="true">🤝</div>
                   <h4 style="font-size:var(--text-base);margin-bottom:var(--space-2);">Colaboraciones</h4>
                   <p style="font-size:var(--text-sm);margin-bottom:var(--space-3);">Únete a la red HOST y multiplica tu impacto.</p>
-                  <a href="empleo.php#colaboraciones" class="btn btn--ghost btn--sm">Ver más</a>
+                  <a href="empleo#colaboraciones" class="btn btn--ghost btn--sm">Ver más</a>
                 </div>
               </div>
 
@@ -613,7 +613,7 @@ include APP_ROOT . '/includes/nav.php';
               Sin compromisos. Sin papeleos. Solo soluciones.
             </p>
             <div class="cta-banner__actions">
-              <a href="contacto.php" class="btn btn--primary btn--xl">
+              <a href="contacto" class="btn btn--primary btn--xl">
                 Contactar ahora
               </a>
               <a href="tel:+34954182508" class="btn btn--outline-white btn--xl">
@@ -692,7 +692,7 @@ include APP_ROOT . '/includes/nav.php';
         </div>
 
         <div class="text-center" style="margin-top:var(--space-10);">
-          <a href="servicios/tecnologico.php" class="btn btn--secondary">
+          <a href="servicios/tecnologico" class="btn btn--secondary">
             Ver proyectos medioambientales
           </a>
         </div>
@@ -801,7 +801,7 @@ include APP_ROOT . '/includes/nav.php';
             <div class="contact-form__submit">
               <p class="contact-form__privacy">
                 Al enviar este formulario aceptas nuestra
-                <a href="privacidad.php">política de privacidad</a>.
+                <a href="privacidad">política de privacidad</a>.
                 Tus datos serán tratados con la máxima confidencialidad.
               </p>
               <button type="submit" class="btn btn--primary btn--lg">

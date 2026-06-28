@@ -26,9 +26,9 @@ include APP_ROOT . '/includes/nav.php';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="../index.php#servicios">Servicios</a>
+        <a href="/#servicios">Servicios</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Departamento (O) Organizacional</span>
       </nav>
@@ -164,7 +164,7 @@ include APP_ROOT . '/includes/nav.php';
             poco conocido — y eso es precisamente la ventaja de quien lo usa
             antes que su competencia.
           </p>
-          <a href="../blog/interim-management-espana.php"
+          <a href="../blog/interim-management-espana"
              style="
                display:inline-flex;align-items:center;gap:var(--space-2);
                font-size:var(--text-sm);font-weight:600;color:var(--color-blue);
@@ -247,7 +247,7 @@ include APP_ROOT . '/includes/nav.php';
       </div>
 
       <div class="text-center" style="margin-top:var(--space-8);">
-        <a href="../contacto.php" class="btn btn--secondary btn--lg">
+        <a href="../contacto" class="btn btn--secondary btn--lg">
           Solicitar información sobre Interim Management
         </a>
       </div>
@@ -363,7 +363,7 @@ include APP_ROOT . '/includes/nav.php';
               </li>
               <?php endforeach; ?>
             </ul>
-            <a href="../contacto.php"
+            <a href="../contacto"
                class="btn btn--ghost btn--sm"
                style="color:var(--color-blue);border:1px solid var(--color-blue);">
               Solicitar información
@@ -445,7 +445,7 @@ include APP_ROOT . '/includes/nav.php';
             Cuéntanos la situación. La primera consulta es gratuita y sin compromiso.
           </p>
           <div class="cta-banner__actions">
-            <a href="../contacto.php" class="btn btn--primary btn--xl">Hablar con HOST</a>
+            <a href="../contacto" class="btn btn--primary btn--xl">Hablar con HOST</a>
             <a href="tel:<?= SITE_PHONE_E164 ?>" class="btn btn--outline-white btn--xl">
               📞 <?= SITE_PHONE ?>
             </a>

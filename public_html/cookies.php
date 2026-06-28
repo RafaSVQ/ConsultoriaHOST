@@ -25,7 +25,7 @@ include APP_ROOT . '/includes/nav.php';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Política de cookies</span>
       </nav>
@@ -157,8 +157,8 @@ include APP_ROOT . '/includes/nav.php';
           border-top:1px solid var(--color-border);text-align:center;
         ">
           <p style="font-size:var(--text-sm);color:var(--color-text-muted);max-width:none;">
-            <a href="privacidad.php" style="color:var(--color-orange);">Política de privacidad</a> ·
-            <a href="aviso-legal.php" style="color:var(--color-orange);">Aviso legal</a>
+            <a href="privacidad" style="color:var(--color-orange);">Política de privacidad</a> ·
+            <a href="aviso-legal" style="color:var(--color-orange);">Aviso legal</a>
           </p>
         </div>
 

@@ -27,7 +27,7 @@ include APP_ROOT . '/includes/nav.php';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">¿Qué es HOST?</span>
       </nav>
@@ -151,7 +151,7 @@ include APP_ROOT . '/includes/nav.php';
               position: relative;
               z-index: 1;
             ">H</span>
-            <a href="servicios/humano.php" class="btn btn--outline-white btn--sm" style="margin-top:var(--space-4);position:relative;z-index:1;">
+            <a href="servicios/humano" class="btn btn--outline-white btn--sm" style="margin-top:var(--space-4);position:relative;z-index:1;">
               Ver servicios
             </a>
           </div>
@@ -224,7 +224,7 @@ include APP_ROOT . '/includes/nav.php';
               position: relative;
               z-index: 1;
             ">O</span>
-            <a href="servicios/organizacional.php" class="btn btn--outline-white btn--sm" style="margin-top:var(--space-4);position:relative;z-index:1;">
+            <a href="servicios/organizacional" class="btn btn--outline-white btn--sm" style="margin-top:var(--space-4);position:relative;z-index:1;">
               Ver servicios
             </a>
           </div>
@@ -295,7 +295,7 @@ include APP_ROOT . '/includes/nav.php';
               position: relative;
               z-index: 1;
             ">S</span>
-            <a href="servicios/social.php" class="btn btn--outline-white btn--sm" style="margin-top:var(--space-4);position:relative;z-index:1;">
+            <a href="servicios/social" class="btn btn--outline-white btn--sm" style="margin-top:var(--space-4);position:relative;z-index:1;">
               Ver servicios
             </a>
           </div>
@@ -366,7 +366,7 @@ include APP_ROOT . '/includes/nav.php';
               position: relative;
               z-index: 1;
             ">T</span>
-            <a href="servicios/tecnologico.php" class="btn btn--outline-white btn--sm" style="margin-top:var(--space-4);position:relative;z-index:1;">
+            <a href="servicios/tecnologico" class="btn btn--outline-white btn--sm" style="margin-top:var(--space-4);position:relative;z-index:1;">
               Ver servicios
             </a>
           </div>
@@ -465,8 +465,8 @@ include APP_ROOT . '/includes/nav.php';
             Cuéntanos tu situación. La primera consulta es sin compromiso.
           </p>
           <div class="cta-banner__actions">
-            <a href="contacto.php" class="btn btn--primary btn--xl">Contactar</a>
-            <a href="consultoria.php" class="btn btn--outline-white btn--xl">Ver la Consultoría 3.0</a>
+            <a href="contacto" class="btn btn--primary btn--xl">Contactar</a>
+            <a href="consultoria" class="btn btn--outline-white btn--xl">Ver la Consultoría 3.0</a>
           </div>
         </div>
       </div>

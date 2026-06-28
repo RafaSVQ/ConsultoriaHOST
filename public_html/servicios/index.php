@@ -32,7 +32,7 @@ include APP_ROOT . '/includes/nav.php';
     <div class="container page-header__inner">
 
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Qué hacemos</span>
       </nav>
@@ -76,7 +76,7 @@ include APP_ROOT . '/includes/nav.php';
       <!-- Pilares H·O·S·T compactos como navegación visual -->
       <div class="host-pillars reveal" style="margin-top:var(--space-10);">
 
-        <a href="humano.php" class="host-pillar host-pillar--h"
+        <a href="humano" class="host-pillar host-pillar--h"
            style="text-decoration:none;cursor:pointer;"
            aria-label="Ir al Departamento Humano">
           <span class="host-pillar__bg-letter" aria-hidden="true">H</span>
@@ -99,7 +99,7 @@ include APP_ROOT . '/includes/nav.php';
           </span>
         </a>
 
-        <a href="organizacional.php" class="host-pillar host-pillar--o"
+        <a href="organizacional" class="host-pillar host-pillar--o"
            style="text-decoration:none;cursor:pointer;"
            aria-label="Ir al Departamento Organizacional">
           <span class="host-pillar__bg-letter" aria-hidden="true">O</span>
@@ -122,7 +122,7 @@ include APP_ROOT . '/includes/nav.php';
           </span>
         </a>
 
-        <a href="social.php" class="host-pillar host-pillar--s"
+        <a href="social" class="host-pillar host-pillar--s"
            style="text-decoration:none;cursor:pointer;"
            aria-label="Ir al Departamento Social">
           <span class="host-pillar__bg-letter" aria-hidden="true">S</span>
@@ -145,7 +145,7 @@ include APP_ROOT . '/includes/nav.php';
           </span>
         </a>
 
-        <a href="tecnologico.php" class="host-pillar host-pillar--t"
+        <a href="tecnologico" class="host-pillar host-pillar--t"
            style="text-decoration:none;cursor:pointer;"
            aria-label="Ir al Departamento Técnico">
           <span class="host-pillar__bg-letter" aria-hidden="true">T</span>
@@ -213,7 +213,7 @@ include APP_ROOT . '/includes/nav.php';
             <li class="service-card__list-item">Personas en situación de quemado (burnout)</li>
             <li class="service-card__list-item">Empleo 3.0 y reinserción laboral</li>
           </ul>
-          <a href="humano.php" class="service-card__link">
+          <a href="humano" class="service-card__link">
             Ver todos los servicios
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor"
@@ -244,7 +244,7 @@ include APP_ROOT . '/includes/nav.php';
             <li class="service-card__list-item">Interim Management (dirección temporal)</li>
             <li class="service-card__list-item">Grandes Soluciones para empresas</li>
           </ul>
-          <a href="organizacional.php" class="service-card__link">
+          <a href="organizacional" class="service-card__link">
             Ver todos los servicios
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor"
@@ -275,7 +275,7 @@ include APP_ROOT . '/includes/nav.php';
             <li class="service-card__list-item">Proyecto IRiS</li>
             <li class="service-card__list-item">Economía colaborativa y feminismo empresarial</li>
           </ul>
-          <a href="social.php" class="service-card__link">
+          <a href="social" class="service-card__link">
             Ver todos los servicios
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor"
@@ -306,7 +306,7 @@ include APP_ROOT . '/includes/nav.php';
             <li class="service-card__list-item">Generación de energía sostenible</li>
             <li class="service-card__list-item">Seguridad informática</li>
           </ul>
-          <a href="tecnologico.php" class="service-card__link">
+          <a href="tecnologico" class="service-card__link">
             Ver todos los servicios
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor"
@@ -405,7 +405,7 @@ include APP_ROOT . '/includes/nav.php';
               En 3 sesiones sabrás si tu proyecto tiene base real
               antes de comprometer dinero y tiempo.
             </p>
-            <a href="../metodo-host.php" class="btn btn--primary">
+            <a href="../metodo-host" class="btn btn--primary">
               Conocer el Método HOST
             </a>
           </div>
@@ -434,7 +434,7 @@ include APP_ROOT . '/includes/nav.php';
             </p>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);">
-            <a href="../contacto.php" class="btn btn--secondary">
+            <a href="../contacto" class="btn btn--secondary">
               Contactar ahora
             </a>
             <a href="tel:<?= SITE_PHONE_E164 ?>" class="btn btn--outline">

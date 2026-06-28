@@ -26,9 +26,9 @@ include APP_ROOT . '/includes/nav.php';
   <div class="page-header">
     <div class="container page-header__inner">
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="../index.php#servicios">Servicios</a>
+        <a href="/#servicios">Servicios</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Departamento (S) Social</span>
       </nav>
@@ -147,7 +147,7 @@ include APP_ROOT . '/includes/nav.php';
                 Hay una diferencia enorme entre publicar porque "hay que publicar"
                 y publicar porque tienes algo que decir. HOST te ayuda a cruzar esa línea.
               </p>
-              <a href="../contacto.php" class="btn btn--outline-white">
+              <a href="../contacto" class="btn btn--outline-white">
                 Solicitar auditoría gratuita
               </a>
             </div>
@@ -305,8 +305,8 @@ include APP_ROOT . '/includes/nav.php';
             de una forma auténtica y medible.
           </p>
           <div class="cta-banner__actions">
-            <a href="../contacto.php" class="btn btn--primary btn--xl">Contactar</a>
-            <a href="../que-es-host.php" class="btn btn--outline-white btn--xl">Conocer HOST</a>
+            <a href="../contacto" class="btn btn--primary btn--xl">Contactar</a>
+            <a href="../que-es-host" class="btn btn--outline-white btn--xl">Conocer HOST</a>
           </div>
         </div>
       </div>

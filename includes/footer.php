@@ -20,7 +20,7 @@ $base_path = str_repeat('../', $depth);
 
         <!-- Columna 1: Marca -->
         <div class="footer__brand">
-          <a href="<?= $base_path ?>index.php" class="nav__logo" aria-label="Consultoría HOST">
+          <a href="/" class="nav__logo" aria-label="Consultoría HOST">
             <div class="nav__logo-mark" style="background:var(--gradient-orange);" aria-hidden="true">H</div>
             <div class="nav__logo-text" style="color:white;">
               Consultoría <strong>HOST</strong>
@@ -40,12 +40,12 @@ $base_path = str_repeat('../', $depth);
         <nav aria-label="Servicios">
           <div class="footer__col-title">Servicios</div>
           <ul class="footer__links" role="list">
-            <li><a href="<?= $base_path ?>servicios/humano.php"        class="footer__link">Dpto. (H) Humano</a></li>
-            <li><a href="<?= $base_path ?>servicios/organizacional.php" class="footer__link">Dpto. (O) Organizacional</a></li>
-            <li><a href="<?= $base_path ?>servicios/social.php"         class="footer__link">Dpto. (S) Social</a></li>
-            <li><a href="<?= $base_path ?>servicios/tecnologico.php"    class="footer__link">Dpto. (T) Técnico</a></li>
-            <li><a href="<?= $base_path ?>metodo-host.php"              class="footer__link">Método HOST</a></li>
-            <li><a href="<?= $base_path ?>empleo.php"                   class="footer__link">Empleo 3.0</a></li>
+            <li><a href="<?= $base_path ?>servicios/humano"        class="footer__link">Dpto. (H) Humano</a></li>
+            <li><a href="<?= $base_path ?>servicios/organizacional" class="footer__link">Dpto. (O) Organizacional</a></li>
+            <li><a href="<?= $base_path ?>servicios/social"         class="footer__link">Dpto. (S) Social</a></li>
+            <li><a href="<?= $base_path ?>servicios/tecnologico"    class="footer__link">Dpto. (T) Técnico</a></li>
+            <li><a href="<?= $base_path ?>metodo-host"              class="footer__link">Método HOST</a></li>
+            <li><a href="<?= $base_path ?>empleo"                   class="footer__link">Empleo 3.0</a></li>
           </ul>
         </nav>
 
@@ -53,12 +53,12 @@ $base_path = str_repeat('../', $depth);
         <nav aria-label="Empresa">
           <div class="footer__col-title">Empresa</div>
           <ul class="footer__links" role="list">
-            <li><a href="<?= $base_path ?>que-es-host.php"              class="footer__link">¿Qué es HOST?</a></li>
-            <li><a href="<?= $base_path ?>consultoria.php"              class="footer__link">Consultoría 3.0</a></li>
-            <li><a href="<?= $base_path ?>networking.php"               class="footer__link">Networking efectivo</a></li>
+            <li><a href="<?= $base_path ?>que-es-host"              class="footer__link">¿Qué es HOST?</a></li>
+            <li><a href="<?= $base_path ?>consultoria"              class="footer__link">Consultoría 3.0</a></li>
+            <li><a href="<?= $base_path ?>networking"               class="footer__link">Networking efectivo</a></li>
             <li><a href="<?= $base_path ?>blog/"                        class="footer__link">Blog</a></li>
-            <li><a href="<?= $base_path ?>contacto.php"                 class="footer__link">Contacto</a></li>
-            <li><a href="<?= $base_path ?>contacto.php#unirse"          class="footer__link">Unirse al HOST</a></li>
+            <li><a href="<?= $base_path ?>contacto"                 class="footer__link">Contacto</a></li>
+            <li><a href="<?= $base_path ?>contacto#unirse"          class="footer__link">Unirse al HOST</a></li>
           </ul>
         </nav>
 
@@ -81,7 +81,7 @@ $base_path = str_repeat('../', $depth);
                 <path d="M2 5l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
               <div class="footer__contact-text">
-                <a href="<?= $base_path ?>contacto.php">Formulario de contacto</a>
+                <a href="<?= $base_path ?>contacto">Formulario de contacto</a>
               </div>
             </div>
 
@@ -108,9 +108,9 @@ $base_path = str_repeat('../', $depth);
           Todos los derechos reservados.
         </p>
         <nav class="footer__legal" aria-label="Legal">
-          <a href="<?= $base_path ?>privacidad.php"  class="footer__legal-link">Política de privacidad</a>
-          <a href="<?= $base_path ?>aviso-legal.php" class="footer__legal-link">Aviso legal</a>
-          <a href="<?= $base_path ?>cookies.php"     class="footer__legal-link">Cookies</a>
+          <a href="<?= $base_path ?>privacidad"  class="footer__legal-link">Política de privacidad</a>
+          <a href="<?= $base_path ?>aviso-legal" class="footer__legal-link">Aviso legal</a>
+          <a href="<?= $base_path ?>cookies"     class="footer__legal-link">Cookies</a>
         </nav>
       </div>
 

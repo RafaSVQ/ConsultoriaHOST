@@ -59,9 +59,9 @@ include APP_ROOT . '/includes/nav.php';
     <div class="container page-header__inner">
 
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
-        <a href="../index.php">Inicio</a>
+        <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="index.php">Blog</a>
+        <a href="/">Blog</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Mujer rural y emprendimiento</span>
       </nav>
@@ -449,10 +449,10 @@ include APP_ROOT . '/includes/nav.php';
             border-top:1px solid var(--color-border);
             flex-wrap:wrap;
           ">
-            <a href="../contacto.php" class="btn btn--primary btn--lg">
+            <a href="../contacto" class="btn btn--primary btn--lg">
               Contactar con HOST
             </a>
-            <a href="../servicios/humano.php" class="btn btn--outline btn--lg">
+            <a href="../servicios/humano" class="btn btn--outline btn--lg">
               Ver el programa #MujerRural
             </a>
           </div>
@@ -604,10 +604,10 @@ include APP_ROOT . '/includes/nav.php';
                 Acompañamiento personalizado para emprendedoras en entornos rurales.
                 Puede acogerse a ayudas económicas.
               </p>
-              <a href="../servicios/humano.php" class="btn btn--outline-white btn--sm" style="width:100%;justify-content:center;margin-bottom:var(--space-3);">
+              <a href="../servicios/humano" class="btn btn--outline-white btn--sm" style="width:100%;justify-content:center;margin-bottom:var(--space-3);">
                 Ver el programa
               </a>
-              <a href="../contacto.php" class="btn btn--sm" style="
+              <a href="../contacto" class="btn btn--sm" style="
                 width:100%;justify-content:center;
                 background:white;color:var(--color-green);border:none;
               ">
@@ -644,8 +644,8 @@ include APP_ROOT . '/includes/nav.php';
             y el camino más corto para convertirlo en negocio.
           </p>
           <div class="cta-banner__actions">
-            <a href="../contacto.php" class="btn btn--primary btn--xl">Hablar con HOST</a>
-            <a href="index.php" class="btn btn--outline-white btn--xl">Volver al blog</a>
+            <a href="../contacto" class="btn btn--primary btn--xl">Hablar con HOST</a>
+            <a href="/" class="btn btn--outline-white btn--xl">Volver al blog</a>
           </div>
         </div>
       </div>
