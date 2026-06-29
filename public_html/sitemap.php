@@ -19,20 +19,20 @@ header('Cache-Control: public, max-age=3600');
 $base       = 'https://consultoriahost.es';
 $publicados = array_filter($articulos, fn(array $a): bool => $a['publicado'] ?? false);
 
-/* Páginas estáticas: [ruta, lastmod, changefreq, priority] */
+/* Páginas estáticas: [ruta final, archivo .php, changefreq, priority] */
 $paginas = [
-  ['/',                         '2026-06-13', 'monthly', '1.0'],
-  ['/consultoria',              '2026-06-13', 'monthly', '0.9'],
-  ['/que-es-host',              '2026-06-13', 'monthly', '0.9'],
-  ['/metodo-host',              '2026-06-13', 'monthly', '0.8'],
-  ['/empleo',                   '2026-06-13', 'monthly', '0.8'],
-  ['/networking',               '2026-06-13', 'monthly', '0.7'],
-  ['/contacto',                 '2026-06-13', 'yearly',  '0.7'],
-  ['/servicios/humano',         '2026-06-13', 'monthly', '0.7'],
-  ['/servicios/organizacional', '2026-06-13', 'monthly', '0.7'],
-  ['/servicios/social',         '2026-06-13', 'monthly', '0.7'],
-  ['/servicios/tecnologico',    '2026-06-13', 'monthly', '0.7'],
-  ['/blog',                     '2026-06-13', 'weekly',  '0.6'],
+  ['/',                         'index.php',                    'monthly', '1.0'],
+  ['/consultoria',              'consultoria.php',               'monthly', '0.9'],
+  ['/que-es-host',              'que-es-host.php',                'monthly', '0.9'],
+  ['/metodo-host',              'metodo-host.php',               'monthly', '0.8'],
+  ['/empleo',                   'empleo.php',                    'monthly', '0.8'],
+  ['/networking',               'networking.php',                 'monthly', '0.7'],
+  ['/contacto',                 'contacto.php',                  'yearly',  '0.7'],
+  ['/servicios/humano',         'servicios/humano.php',           'monthly', '0.7'],
+  ['/servicios/organizacional', 'servicios/organizacional.php',   'monthly', '0.7'],
+  ['/servicios/social',         'servicios/social.php',            'monthly', '0.7'],
+  ['/servicios/tecnologico',    'servicios/tecnologico.php',       'monthly', '0.7'],
+  ['/blog/',                    'blog/index.php',                  'weekly',  '0.6'],
 ];
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
@@ -40,7 +40,10 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-<?php foreach ($paginas as [$path, $lastmod, $freq, $prio]): ?>
+<?php foreach ($paginas as [$path, $file, $freq, $prio]):
+  $mtime   = filemtime(__DIR__ . '/' . $file) ?: time();
+  $lastmod = date('Y-m-d', $mtime);
+?>
   <url>
     <loc><?= $base . $path ?></loc>
     <lastmod><?= $lastmod ?></lastmod>

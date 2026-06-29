@@ -7,7 +7,8 @@
  * La variable $depth (heredada de head.php) ajusta las rutas.
  * La variable $nav_active indica qué ítem marcar como activo.
  * Valores posibles de $nav_active: 'inicio' | 'que-es-host' |
- *   'consultoria' | 'servicios' | 'metodo' | 'empleo' | 'blog' | 'contacto'
+ *   'consultoria' | 'servicios' | 'metodo' | 'empleo' | 'networking' |
+ *   'blog' | 'contacto'
  */
 
 $depth      = $depth      ?? 0;

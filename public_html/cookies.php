@@ -107,7 +107,8 @@ include APP_ROOT . '/includes/nav.php';
         <p style="<?= $p ?>">
           Si aceptas las cookies analíticas, usamos Google Analytics 4 (Google Ireland Limited)
           para conocer de forma agregada y anónima cómo se usa el sitio: páginas visitadas,
-          tiempo de permanencia y origen del tráfico. Activamos la anonimización de IP.
+          tiempo de permanencia y origen del tráfico. Google Analytics 4 no recopila ni
+          almacena la dirección IP completa de los usuarios.
           Google puede transferir estos datos a servidores en Estados Unidos bajo las
           cláusulas contractuales tipo de la UE. Más información en la
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">

@@ -94,15 +94,21 @@ const NavModule = (() => {
   };
 
   /**
-   * Marca el enlace activo en la navegación según la URL actual.
+   * Marca el enlace activo en los ítems de navegación que el servidor
+   * no puede resolver (dropdown y menú móvil no usan navActive() en
+   * nav.php). Los .nav__link de escritorio ya llegan marcados desde
+   * el servidor — no se recalculan aquí para evitar la duplicación.
+   * Compara por pathname completo, no por el último segmento de la
+   * URL, para que funcione también en la portada ("/").
    */
   const setActiveLink = () => {
-    const current = window.location.pathname.split('/').pop() || 'index.php';
+    const current = window.location.pathname.replace(/\/$/, '') || '/';
 
-    document.querySelectorAll('.nav__link, .nav__dropdown-link, .nav__mobile-link')
+    document.querySelectorAll('.nav__dropdown-link, .nav__mobile-link')
       .forEach(link => {
-        const href = link.getAttribute('href')?.split('/').pop() || '';
-        link.classList.toggle('nav__link--active', href === current && href !== '');
+        if (!link.href) return;
+        const linkPath = new URL(link.href).pathname.replace(/\/$/, '') || '/';
+        link.classList.toggle('nav__link--active', linkPath === current);
       });
   };
 

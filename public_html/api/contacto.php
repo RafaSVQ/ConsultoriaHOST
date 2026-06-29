@@ -186,7 +186,10 @@ if (!hash_equals((string) ($_SESSION['csrf_token'] ?? ''), (string) ($_POST['csr
     jsonResponse(false, 'Solicitud no válida.');
 }
 
-// Rate limiting: máximo 3 envíos por IP cada 5 minutos (SEG-03)
+// Rate limiting: máximo 3 envíos por IP cada 5 minutos (SEG-03).
+// Solo se comprueba aquí; el contador se incrementa más abajo, una vez
+// superada la validación — un error de formulario no debe penalizar
+// a un usuario legítimo que simplemente corrige un campo.
 $ip_hash   = hash('sha256', $_SERVER['REMOTE_ADDR']);
 $rate_file = sys_get_temp_dir() . '/host_rate_' . $ip_hash;
 $now       = time();
@@ -195,7 +198,6 @@ if ($attempts >= 3 && ($now - filemtime($rate_file)) < 300) {
     http_response_code(429);
     jsonResponse(false, 'Demasiados intentos. Espera unos minutos e inténtalo de nuevo.');
 }
-file_put_contents($rate_file, $attempts >= 3 ? '1' : $attempts + 1);
 
 if (empty($nombre))                                    jsonResponse(false, 'El nombre es obligatorio.');
 if (empty($email))                                     jsonResponse(false, 'El email es obligatorio.');
@@ -206,6 +208,9 @@ if (strlen($nombre) > 100 || strlen($apellidos) > 100) jsonResponse(false, 'El n
 if (strlen($mensaje) > 5000)                           jsonResponse(false, 'El mensaje no puede superar los 5.000 caracteres.');
 if (!validarEmail($email))                             jsonResponse(false, 'La dirección de email no es válida.');
 if (!empty($telefono) && !validarTelefono($telefono))  jsonResponse(false, 'El número de teléfono no es válido.');
+
+// Validación superada: ahora sí cuenta para el límite de envíos.
+file_put_contents($rate_file, $attempts >= 3 ? '1' : $attempts + 1);
 
 /* ============================================================
    ENVÍO VÍA SMTP

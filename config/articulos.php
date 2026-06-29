@@ -21,7 +21,7 @@ $articulos = [
     'catcolor'  => 'badge--amber',
     'fecha'     => '2026-06-22',
     'lectura'   => '7 min',
-    'destacado' => false,
+    'destacado' => true,
     'publicado' => true,
   ],
   [
