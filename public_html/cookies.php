@@ -14,6 +14,10 @@ $page_robots      = 'noindex, follow';
 $page_title       = 'Política de Cookies';
 $page_description = 'Política de cookies de Consultoría HOST. Información sobre las cookies utilizadas en el sitio web.';
 $page_canonical   = 'https://consultoriahost.es/cookies';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Política de cookies', null],
+];
 
 require_once __DIR__ . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

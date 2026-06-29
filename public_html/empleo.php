@@ -14,6 +14,10 @@ $page_title       = 'Empleo 3.0 — Una nueva forma de entender el empleo';
 $page_description = 'HOST Empleo 3.0: orientación laboral, taller de empleo, ofertas en HOST, emprendimiento y colaboraciones. Para personas y empresas. Sevilla, España.';
 $page_keywords    = 'empleo, búsqueda empleo, taller de empleo, orientación laboral, ofertas empleo Sevilla, emprendimiento, HOST';
 $page_canonical   = 'https://consultoriahost.es/empleo';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Empleo 3.0', null],
+];
 
 require_once __DIR__ . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

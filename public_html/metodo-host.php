@@ -13,6 +13,10 @@ $page_title       = 'Método HOST — Evalúa la viabilidad de tu negocio en 3 p
 $page_description = 'El Método HOST es un método de evaluación 3.0 para verificar la viabilidad de un negocio antes de arriesgar. 3 pasos, grupos reducidos, talleres dinámicos. Sevilla, España.';
 $page_keywords    = 'método HOST, viabilidad negocio, emprendimiento, plan de empresa, evaluación proyecto, talleres emprendimiento, Sevilla';
 $page_canonical   = 'https://consultoriahost.es/metodo-host';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Método HOST', null],
+];
 
 require_once __DIR__ . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

@@ -14,6 +14,11 @@ $page_title       = '¿Qué es la gobernanza de la Inteligencia Artificial? Guí
 $page_description = 'La gobernanza de la IA es el conjunto de políticas, normas y controles que garantizan un uso seguro, transparente y responsable de la inteligencia artificial. Pilares, marcos de referencia y cómo aplicarla en tu empresa.';
 $page_keywords    = 'gobernanza inteligencia artificial, gobernanza IA empresas, AI Act, Ley de IA UE, NIST AI RMF, principios OCDE IA, transparencia algoritmos, sesgos IA, supervisión humana IA, HOST';
 $page_canonical   = 'https://consultoriahost.es/blog/gobernanza-inteligencia-artificial';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Blog', 'https://consultoriahost.es/blog/'],
+  ['Gobernanza de la IA', null],
+];
 
 $page_extra_head  = '
 <script type="application/ld+json">

@@ -14,6 +14,11 @@ $page_title       = 'Departamento (S) Social — Responsabilidad social y proyec
 $page_description = 'El Departamento Social de HOST: redes sociales, pobreza energética, Proyecto IRiS, economía colaborativa y empresa feminista. Responsabilidad social real. Sevilla.';
 $page_keywords    = 'responsabilidad social, redes sociales empresa, pobreza energética, economía colaborativa, feminismo empresarial, Sevilla';
 $page_canonical   = 'https://consultoriahost.es/servicios/social';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Servicios', 'https://consultoriahost.es/#servicios'],
+  ['Departamento (S) Social', null],
+];
 
 require_once dirname(__DIR__) . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

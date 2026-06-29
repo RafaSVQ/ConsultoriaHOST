@@ -16,6 +16,11 @@ $page_title       = 'Formación en IA obligatoria: lo que exige el Artículo 4 d
 $page_description = 'Desde el 2 de febrero de 2025 existe obligación legal de formar en IA a todo el personal que la use en el trabajo. Qué exige el Artículo 4, desde cuándo se sanciona y cómo cumplir sin perder tiempo ni dinero.';
 $page_keywords    = 'formación IA obligatoria, formación inteligencia artificial empresas, artículo 4 AI Act, alfabetización inteligencia artificial, AESIA, sanciones IA empresas, HOST';
 $page_canonical   = 'https://consultoriahost.es/blog/formacion-ia-obligatoria-articulo-4';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Blog', 'https://consultoriahost.es/blog/'],
+  ['Formación IA obligatoria', null],
+];
 $page_og_image    = 'https://consultoriahost.es/assets/img/formacion-ia-microempresa-evita-sanciones-og.jpg';
 
 $page_extra_head  = '

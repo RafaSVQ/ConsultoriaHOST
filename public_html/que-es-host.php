@@ -13,6 +13,10 @@ $page_title       = '¿Qué es Consultoría HOST?';
 $page_description = 'HOST significa Humana, Organizacional, Social y Tecnológica. Una consultoría integral con enfoque en el desarrollo sostenible de personas y empresas. Sevilla, España.';
 $page_keywords    = 'qué es HOST, consultoría humana, organizacional, social, tecnológica, desarrollo sostenible, Sevilla';
 $page_canonical   = 'https://consultoriahost.es/que-es-host';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['¿Qué es HOST?', null],
+];
 
 require_once __DIR__ . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

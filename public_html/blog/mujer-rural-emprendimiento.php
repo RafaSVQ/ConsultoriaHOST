@@ -14,6 +14,11 @@ $page_title       = 'Mujer rural y emprendimiento: oportunidades que no se ven';
 $page_description = 'La mujer en entornos rurales tiene menos acceso a recursos de desarrollo profesional, pero también ventajas competitivas únicas. HOST las ayuda a identificar y aprovechar.';
 $page_keywords    = 'mujer rural, emprendimiento rural, mujer emprendedora, España vaciada, empleo rural, oportunidades negocio rural, HOST';
 $page_canonical   = 'https://consultoriahost.es/blog/mujer-rural-emprendimiento';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Blog', 'https://consultoriahost.es/blog/'],
+  ['Mujer rural y emprendimiento', null],
+];
 
 $page_extra_head  = '
 <script type="application/ld+json">

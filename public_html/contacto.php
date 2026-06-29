@@ -15,6 +15,10 @@ $page_title       = 'Contacto — Habla con Consultoría HOST';
 $page_description = 'Contacta con ' . SITE_NAME . '. Teléfono: ' . SITE_PHONE . '. ' . SITE_HOURS_SHORT . '. ' . SITE_CITY . ', ' . SITE_COUNTRY . '. Primera consulta sin compromiso.';
 $page_keywords    = 'contacto consultoría HOST, teléfono, formulario contacto, Sevilla, España';
 $page_canonical   = 'https://consultoriahost.es/contacto';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Contacto', null],
+];
 
 $page_extra_head  = '
 <script type="application/ld+json">

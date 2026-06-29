@@ -14,6 +14,11 @@ $page_title       = '7 errores de emprendimiento que puedes evitar con el Métod
 $page_description = 'El 90% de quienes emprendan sin validar previamente su proyecto acaban en la ruina. Conoce los 7 errores más comunes y cómo el Método HOST te ayuda a esquivarlos.';
 $page_keywords    = 'errores emprendimiento, método HOST, validar negocio, plan de empresa, fracaso empresarial, emprender España, HOST';
 $page_canonical   = 'https://consultoriahost.es/blog/errores-emprendimiento-evitar';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Blog', 'https://consultoriahost.es/blog/'],
+  ['7 errores de emprendimiento', null],
+];
 
 $page_extra_head  = '
 <script type="application/ld+json">

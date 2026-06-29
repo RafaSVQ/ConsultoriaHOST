@@ -14,6 +14,11 @@ $page_title       = 'Interim Management: el servicio que España aún no conoce 
 $page_description = 'En otros países es la primera opción cuando una empresa necesita resolver una situación crítica. En España aún se desconoce. Te explicamos qué es y por qué puede salvarte el negocio.';
 $page_keywords    = 'interim management, qué es interim manager, dirección temporal empresa, crisis empresarial, consultoría empresarial, HOST';
 $page_canonical   = 'https://consultoriahost.es/blog/interim-management-espana';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Blog', 'https://consultoriahost.es/blog/'],
+  ['Interim Management', null],
+];
 
 $page_extra_head  = '
 <script type="application/ld+json">

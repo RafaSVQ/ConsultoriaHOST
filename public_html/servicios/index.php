@@ -17,6 +17,10 @@ $page_title       = 'Qué hacemos — Los 4 departamentos HOST';
 $page_description = 'Los servicios de Consultoría HOST: departamentos Humano, Organizacional, Social y Técnico. Cuatro perspectivas integradas para personas y empresas. Sevilla, España.';
 $page_keywords    = 'servicios consultoría HOST, departamento humano, organizacional, social, técnico, consultoría empresarial Sevilla';
 $page_canonical   = 'https://consultoriahost.es/servicios/';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Qué hacemos', null],
+];
 
 require_once dirname(__DIR__) . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

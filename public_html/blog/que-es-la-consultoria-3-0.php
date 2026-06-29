@@ -14,6 +14,11 @@ $page_title       = '¿Qué es la Consultoría 3.0 y por qué importa?';
 $page_description = 'La consultoría tradicional llena cajones de informes. La Consultoría 3.0 de HOST sale a la calle y genera resultados reales junto al cliente. Descubre la diferencia.';
 $page_keywords    = 'consultoría 3.0, qué es consultoría, consultoría empresarial, microempresa, consultoría activa, HOST';
 $page_canonical   = 'https://consultoriahost.es/blog/que-es-la-consultoria-3-0';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Blog', 'https://consultoriahost.es/blog/'],
+  ['Consultoría 3.0', null],
+];
 
 $page_extra_head  = '
 <script type="application/ld+json">

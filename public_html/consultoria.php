@@ -14,6 +14,10 @@ $page_title       = 'Consultoría 3.0 — La consultoría que actúa';
 $page_description = 'Consultoría HOST actúa codo con codo con sus clientes. Más de 40 años de experiencia. Descubre qué es la consultoría 3.0 y por qué es diferente. Sevilla, España.';
 $page_keywords    = 'consultoría 3.0, interim manager, consultoría empresarial, microempresa, pyme, Sevilla, España';
 $page_canonical   = 'https://consultoriahost.es/consultoria';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Consultoría 3.0', null],
+];
 
 require_once __DIR__ . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

@@ -18,6 +18,10 @@ $page_title       = 'Blog — Consultoría HOST';
 $page_description = 'El blog de Consultoría HOST: artículos sobre emprendimiento, empleo, medioambiente, responsabilidad social y consultoría 3.0. Sevilla, España.';
 $page_keywords    = 'blog consultoría, emprendimiento, empleo, medioambiente, responsabilidad social, HOST';
 $page_canonical   = 'https://consultoriahost.es/blog/';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Blog', null],
+];
 
 require_once dirname(__DIR__) . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

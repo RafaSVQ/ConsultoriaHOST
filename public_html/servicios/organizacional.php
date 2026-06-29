@@ -14,6 +14,11 @@ $page_title       = 'Departamento (O) Organizacional — Consultoría empresaria
 $page_description = 'Consultoría organizacional HOST: Interim Management, outplacement, optimización de procesos, atención al cliente y grandes soluciones para microempresas y pymes. Sevilla.';
 $page_keywords    = 'consultoría empresarial, interim manager, outplacement, optimización empresa, microempresa, pyme, Sevilla';
 $page_canonical   = 'https://consultoriahost.es/servicios/organizacional';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Servicios', 'https://consultoriahost.es/#servicios'],
+  ['Departamento (O) Organizacional', null],
+];
 
 require_once dirname(__DIR__) . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

@@ -12,6 +12,10 @@ $page_robots      = 'noindex, follow';
 $page_title       = 'Aviso Legal';
 $page_description = 'Aviso legal de Consultoría HOST. Información legal conforme a la LSSI-CE.';
 $page_canonical   = 'https://consultoriahost.es/aviso-legal';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Aviso legal', null],
+];
 
 require_once __DIR__ . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

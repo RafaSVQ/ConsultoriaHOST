@@ -14,6 +14,11 @@ $page_title       = 'Departamento (H) Humano — Personas y desarrollo profesion
 $page_description = 'El Departamento Humano de HOST acompaña a personas en su desarrollo profesional: orientación laboral, mujer comerciante, madres solteras, mujer rural, burnout y Empleo 3.0. Sevilla.';
 $page_keywords    = 'orientación laboral, mujer comerciante, madres solteras, mujer rural, burnout, empleo 3.0, Sevilla, consultoría humana';
 $page_canonical   = 'https://consultoriahost.es/servicios/humano';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Servicios', 'https://consultoriahost.es/#servicios'],
+  ['Departamento (H) Humano', null],
+];
 
 require_once dirname(__DIR__) . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

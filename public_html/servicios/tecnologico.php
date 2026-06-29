@@ -14,6 +14,11 @@ $page_title       = 'Departamento (T) Técnico — Ingeniería y proyectos medio
 $page_description = 'Ingeniería sostenible HOST: proyectos medioambientales I+D+i, tratamiento de residuos, energía renovable, depuración de aguas y seguridad informática. Sevilla, España.';
 $page_keywords    = 'ingeniería medioambiental, proyectos sostenibles, tratamiento residuos, energía renovable, seguridad informática, I+D+i, Sevilla';
 $page_canonical   = 'https://consultoriahost.es/servicios/tecnologico';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Servicios', 'https://consultoriahost.es/#servicios'],
+  ['Departamento (T) Técnico', null],
+];
 
 require_once dirname(__DIR__) . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

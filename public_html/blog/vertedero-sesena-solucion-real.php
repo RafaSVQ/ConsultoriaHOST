@@ -14,6 +14,11 @@ $page_title       = 'El vertedero de Seseña tiene solución. Y es gratuita para
 $page_description = 'El mayor vertedero de neumáticos de Europa lleva décadas esperando una solución real. HOST la tiene: retirada gratuita para la administración, recuperación del material y generación de empleo.';
 $page_keywords    = 'vertedero Seseña, neumáticos Seseña, residuos neumáticos España, medioambiente Seseña, solución vertedero, HOST medioambiente';
 $page_canonical   = 'https://consultoriahost.es/blog/vertedero-sesena-solucion-real';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Blog', 'https://consultoriahost.es/blog/'],
+  ['Vertedero de Seseña', null],
+];
 
 $page_extra_head  = '
 <script type="application/ld+json">

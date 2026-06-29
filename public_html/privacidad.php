@@ -14,6 +14,10 @@ $page_robots      = 'noindex, follow';
 $page_title       = 'Política de Privacidad';
 $page_description = 'Política de privacidad de Consultoría HOST. Información sobre el tratamiento de datos personales conforme al RGPD.';
 $page_canonical   = 'https://consultoriahost.es/privacidad';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Política de privacidad', null],
+];
 
 require_once __DIR__ . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

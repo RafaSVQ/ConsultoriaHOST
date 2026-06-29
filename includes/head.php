@@ -44,6 +44,37 @@ function asset_v(string $rel): string {
     $ts = @filemtime($_assets_root . '/' . $rel);
     return $ts ? '?v=' . $ts : '';
 }
+
+/**
+ * Genera el JSON-LD de BreadcrumbList a partir de las migas de pan
+ * visuales de la página (mismo orden, mismas etiquetas).
+ *
+ * @param  array $items  Pares [texto, url]. La url es null en el
+ *                        último elemento (página actual, sin enlace).
+ * @return string        <script type="application/ld+json">...</script>
+ */
+function breadcrumb_schema(array $items): string {
+    $lista = [];
+    foreach ($items as $i => [$nombre, $url]) {
+        $item = [
+            '@type'    => 'ListItem',
+            'position' => $i + 1,
+            'name'     => $nombre,
+        ];
+        if ($url !== null) {
+            $item['item'] = $url;
+        }
+        $lista[] = $item;
+    }
+    $schema = [
+        '@context'        => 'https://schema.org',
+        '@type'           => 'BreadcrumbList',
+        'itemListElement' => $lista,
+    ];
+    return '<script type="application/ld+json">'
+        . json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
+        . '</script>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -97,6 +128,9 @@ function asset_v(string $rel): string {
 
   <!-- Bloque extra en <head> (Schema.org, scripts adicionales, etc.) -->
   <?php if (!empty($page_extra_head)) echo $page_extra_head; ?>
+
+  <!-- BreadcrumbList — mismo orden que las migas de pan visuales -->
+  <?php if (!empty($page_breadcrumbs)) echo breadcrumb_schema($page_breadcrumbs); ?>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="<?= $base_path ?>assets/img/favicon.svg<?= asset_v('img/favicon.svg') ?>">

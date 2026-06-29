@@ -13,6 +13,10 @@ $page_title       = 'Networking efectivo — Conecta con quien importa';
 $page_description = 'Networking efectivo con HOST: no se trata de coleccionar tarjetas, sino de construir relaciones de valor real. Jornadas, eventos y metodología HOST. Sevilla, España.';
 $page_keywords    = 'networking efectivo, jornadas emprendedores, eventos empresariales, red contactos, Sevilla, HOST';
 $page_canonical   = 'https://consultoriahost.es/networking';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Networking efectivo', null],
+];
 
 require_once __DIR__ . '/bootstrap.php';
 include APP_ROOT . '/includes/head.php';

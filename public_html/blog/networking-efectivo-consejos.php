@@ -14,6 +14,11 @@ $page_title       = 'Networking efectivo: 5 claves que marcan la diferencia';
 $page_description = 'El networking mal entendido es publicidad de uno mismo. El networking efectivo construye relaciones de valor. Las 5 claves que HOST aplica en sus encuentros y que puedes aplicar desde hoy.';
 $page_keywords    = 'networking efectivo, cómo hacer networking, relaciones profesionales, red contactos, consejos networking, HOST';
 $page_canonical   = 'https://consultoriahost.es/blog/networking-efectivo-consejos';
+$page_breadcrumbs  = [
+  ['Inicio', 'https://consultoriahost.es/'],
+  ['Blog', 'https://consultoriahost.es/blog/'],
+  ['Networking efectivo', null],
+];
 
 $page_extra_head  = '
 <script type="application/ld+json">
