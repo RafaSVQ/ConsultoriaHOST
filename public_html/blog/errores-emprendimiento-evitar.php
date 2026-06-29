@@ -61,7 +61,7 @@ include APP_ROOT . '/includes/nav.php';
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
         <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="/">Blog</a>
+        <a href="/blog/">Blog</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">7 errores de emprendimiento</span>
       </nav>
@@ -385,14 +385,14 @@ include APP_ROOT . '/includes/nav.php';
               <?php
               $relacionados = [
                 [
-                  'que-es-la-consultoria-3-0.php',
+                  'que-es-la-consultoria-3-0',
                   'Consultoría',
                   'badge--orange',
                   '¿Qué es la Consultoría 3.0 y por qué importa?',
                   '5 min',
                 ],
                 [
-                  'interim-management-espana.php',
+                  'interim-management-espana',
                   'Empresas',
                   'badge--blue',
                   'Interim Management: el servicio que España aún no conoce bien',

@@ -61,7 +61,7 @@ include APP_ROOT . '/includes/nav.php';
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
         <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="/">Blog</a>
+        <a href="/blog/">Blog</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Mujer rural y emprendimiento</span>
       </nav>
@@ -467,14 +467,14 @@ include APP_ROOT . '/includes/nav.php';
               <?php
               $relacionados = [
                 [
-                  'errores-emprendimiento-evitar.php',
+                  'errores-emprendimiento-evitar',
                   'Emprendimiento',
                   'badge--blue',
                   '7 errores de emprendimiento que puedes evitar con el Método HOST',
                   '7 min',
                 ],
                 [
-                  'que-es-la-consultoria-3-0.php',
+                  'que-es-la-consultoria-3-0',
                   'Consultoría',
                   'badge--orange',
                   '¿Qué es la Consultoría 3.0 y por qué importa?',
@@ -645,7 +645,7 @@ include APP_ROOT . '/includes/nav.php';
           </p>
           <div class="cta-banner__actions">
             <a href="../contacto" class="btn btn--primary btn--xl">Hablar con HOST</a>
-            <a href="/" class="btn btn--outline-white btn--xl">Volver al blog</a>
+            <a href="/blog/" class="btn btn--outline-white btn--xl">Volver al blog</a>
           </div>
         </div>
       </div>

@@ -63,10 +63,10 @@ include APP_ROOT . '/includes/nav.php';
         ">
           <?php
           $quick_links = [
-            ['que-es-host.php','¿Qué es HOST?','🔤'],
-            ['consultoria.php','Consultoría 3.0','lightbulb'],
-            ['metodo-host.php','Método HOST','target'],
-            ['empleo.php','Empleo 3.0','rocket'],
+            ['que-es-host','¿Qué es HOST?','🔤'],
+            ['consultoria','Consultoría 3.0','lightbulb'],
+            ['metodo-host','Método HOST','target'],
+            ['empleo','Empleo 3.0','rocket'],
           ];
           foreach ($quick_links as $l): ?>
           <a href="<?= $l[0] ?>" class="hover-card-raise" style="

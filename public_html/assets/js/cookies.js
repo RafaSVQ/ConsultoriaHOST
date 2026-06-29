@@ -129,7 +129,7 @@ const CookiesBanner = (() => {
           🍪 Usamos <strong>cookies técnicas</strong> necesarias para el funcionamiento
           del sitio y, si lo aceptas, <strong>cookies analíticas</strong> (Google Analytics)
           para entender cómo se usa la web. Sin publicidad.
-          <a href="/cookies.php"
+          <a href="/cookies"
              style="color:#1A56A8;font-weight:600;"
              target="_blank" rel="noopener">
             Más información

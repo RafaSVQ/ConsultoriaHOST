@@ -61,7 +61,7 @@ include APP_ROOT . '/includes/nav.php';
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
         <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="/">Blog</a>
+        <a href="/blog/">Blog</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Consultoría 3.0</span>
       </nav>
@@ -417,12 +417,12 @@ include APP_ROOT . '/includes/nav.php';
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
               <?php
               $relacionados = [
-                ['errores-emprendimiento-evitar.php',
+                ['errores-emprendimiento-evitar',
                  'Emprendimiento',
                  'badge--blue',
                  '7 errores de emprendimiento que puedes evitar con el Método HOST',
                  '7 min'],
-                ['formacion-ia-obligatoria-articulo-4.php',
+                ['formacion-ia-obligatoria-articulo-4',
                  'Formación',
                  'badge--amber',
                  'Formación en IA obligatoria: lo que exige el Artículo 4',
@@ -593,7 +593,7 @@ include APP_ROOT . '/includes/nav.php';
           </p>
           <div class="cta-banner__actions">
             <a href="../contacto" class="btn btn--primary btn--xl">Hablar con HOST</a>
-            <a href="/" class="btn btn--outline-white btn--xl">Volver al blog</a>
+            <a href="/blog/" class="btn btn--outline-white btn--xl">Volver al blog</a>
           </div>
         </div>
       </div>

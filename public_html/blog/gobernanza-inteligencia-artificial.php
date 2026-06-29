@@ -61,7 +61,7 @@ include APP_ROOT . '/includes/nav.php';
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
         <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="/">Blog</a>
+        <a href="/blog/">Blog</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Gobernanza de la IA</span>
       </nav>
@@ -435,14 +435,14 @@ include APP_ROOT . '/includes/nav.php';
               <?php
               $relacionados = [
                 [
-                  'formacion-ia-obligatoria-articulo-4.php',
+                  'formacion-ia-obligatoria-articulo-4',
                   'Formación',
                   'badge--amber',
                   'Formación en IA obligatoria: lo que exige el Artículo 4 del Reglamento Europeo',
                   '8 min',
                 ],
                 [
-                  'que-es-la-consultoria-3-0.php',
+                  'que-es-la-consultoria-3-0',
                   'Consultoría',
                   'badge--orange',
                   '¿Qué es la Consultoría 3.0 y por qué importa?',
@@ -655,7 +655,7 @@ include APP_ROOT . '/includes/nav.php';
           </p>
           <div class="cta-banner__actions">
             <a href="../contacto" class="btn btn--primary btn--xl">Hablar con HOST</a>
-            <a href="/" class="btn btn--outline-white btn--xl">Volver al blog</a>
+            <a href="/blog/" class="btn btn--outline-white btn--xl">Volver al blog</a>
           </div>
         </div>
       </div>

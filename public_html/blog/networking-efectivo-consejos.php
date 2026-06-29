@@ -61,7 +61,7 @@ include APP_ROOT . '/includes/nav.php';
       <nav class="page-header__breadcrumb" aria-label="Migas de pan">
         <a href="/">Inicio</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="/">Blog</a>
+        <a href="/blog/">Blog</a>
         <span class="page-header__breadcrumb-sep" aria-hidden="true">›</span>
         <span class="page-header__breadcrumb-current">Networking efectivo</span>
       </nav>
@@ -370,9 +370,9 @@ Cuando llegue el momento en que sí necesites algo — o en que ellos necesiten 
             </h3>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
               <?php foreach ([
-                ['errores-emprendimiento-evitar.php', 'Emprendimiento', 'badge--blue',
+                ['errores-emprendimiento-evitar', 'Emprendimiento', 'badge--blue',
                  '7 errores de emprendimiento que puedes evitar con el Método HOST', '7 min'],
-                ['interim-management-espana.php', 'Empresas', 'badge--blue',
+                ['interim-management-espana', 'Empresas', 'badge--blue',
                  'Interim Management: el servicio que España aún no conoce bien', '6 min'],
               ] as [$href, $cat, $catcss, $titulo, $lectura]): ?>
               <a href="<?= $href ?>" style="
@@ -530,7 +530,7 @@ Cuando llegue el momento en que sí necesites algo — o en que ellos necesiten 
           </p>
           <div class="cta-banner__actions">
             <a href="../contacto" class="btn btn--primary btn--xl">Informarse sobre eventos</a>
-            <a href="/" class="btn btn--outline-white btn--xl">Volver al blog</a>
+            <a href="/blog/" class="btn btn--outline-white btn--xl">Volver al blog</a>
           </div>
         </div>
       </div>
