@@ -45,6 +45,7 @@ $page_extra_head  = '
 require_once dirname(__DIR__) . '/bootstrap.php';
 require_once APP_ROOT . '/config/site.php';
 require_once APP_ROOT . '/config/icons.php';
+require_once APP_ROOT . '/config/articulos.php';
 
 include APP_ROOT . '/includes/head.php';
 include APP_ROOT . '/includes/nav.php';
@@ -488,23 +489,11 @@ include APP_ROOT . '/includes/nav.php';
             </h3>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
               <?php
-              $relacionados = [
-                [
-                  'que-es-la-consultoria-3-0',
-                  'Consultoría',
-                  'badge--orange',
-                  '¿Qué es la Consultoría 3.0 y por qué importa?',
-                  '5 min',
-                ],
-                [
-                  'formacion-ia-obligatoria-articulo-4',
-                  'Formación',
-                  'badge--amber',
-                  'Formación en IA obligatoria: lo que exige el Artículo 4',
-                  '8 min',
-                ],
-              ];
-              foreach ($relacionados as [$href, $cat, $catcss, $titulo, $lectura]):
+              $relacionados_slugs = ['que-es-la-consultoria-3-0', 'formacion-ia-obligatoria-articulo-4'];
+              $articulos_por_slug = array_column($articulos, null, 'slug');
+              $relacionados = array_filter(array_map(fn($s) => $articulos_por_slug[$s] ?? null, $relacionados_slugs));
+              foreach ($relacionados as $art):
+                [$href, $cat, $catcss, $titulo, $lectura] = [$art['slug'], $art['categoria'], $art['catcolor'], $art['titulo'], $art['lectura']];
               ?>
               <a href="<?= $href ?>" style="
                 display:block;

@@ -45,6 +45,7 @@ $page_extra_head  = '
 require_once dirname(__DIR__) . '/bootstrap.php';
 require_once APP_ROOT . '/config/site.php';
 require_once APP_ROOT . '/config/icons.php';
+require_once APP_ROOT . '/config/articulos.php';
 
 include APP_ROOT . '/includes/head.php';
 include APP_ROOT . '/includes/nav.php';
@@ -369,12 +370,13 @@ Cuando llegue el momento en que sí necesites algo — o en que ellos necesiten 
               También puede interesarte
             </h3>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
-              <?php foreach ([
-                ['errores-emprendimiento-evitar', 'Emprendimiento', 'badge--blue',
-                 '7 errores de emprendimiento que puedes evitar con el Método HOST', '7 min'],
-                ['interim-management-espana', 'Empresas', 'badge--blue',
-                 'Interim Management: el servicio que España aún no conoce bien', '6 min'],
-              ] as [$href, $cat, $catcss, $titulo, $lectura]): ?>
+              <?php
+              $relacionados_slugs = ['errores-emprendimiento-evitar', 'interim-management-espana'];
+              $articulos_por_slug = array_column($articulos, null, 'slug');
+              $relacionados = array_filter(array_map(fn($s) => $articulos_por_slug[$s] ?? null, $relacionados_slugs));
+              foreach ($relacionados as $art):
+                [$href, $cat, $catcss, $titulo, $lectura] = [$art['slug'], $art['categoria'], $art['catcolor'], $art['titulo'], $art['lectura']];
+              ?>
               <a href="<?= $href ?>" style="
                 display:block;padding:var(--space-5);
                 background:var(--color-off-white);border:1px solid var(--color-border);
