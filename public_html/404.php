@@ -63,7 +63,7 @@ include APP_ROOT . '/includes/nav.php';
         ">
           <?php
           $quick_links = [
-            ['que-es-host','¿Qué es HOST?','🔤'],
+            ['que-es-host','¿Qué es HOST?','building'],
             ['consultoria','Consultoría 3.0','lightbulb'],
             ['metodo-host','Método HOST','target'],
             ['empleo','Empleo 3.0','rocket'],

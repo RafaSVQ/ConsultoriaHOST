@@ -17,7 +17,7 @@
  *   <?= icon('rocket', size: 32) ?>
  *
  * Uso con clases CSS adicionales:
- *   <?= icon('check', class: 'icon--green') ?>
+ *   <?= icon('check-circle', class: 'icon--green') ?>
  *
  * ACCESIBILIDAD:
  *   - Sin label → aria-hidden="true" (icono puramente decorativo)

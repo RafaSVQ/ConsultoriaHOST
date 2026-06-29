@@ -28,6 +28,19 @@ RewriteRule ^sitemap\.xml$ sitemap.php [L]
 # la petición a pagina.php (que sí existe) y esta redirección nunca se evalúa.
 # Excluido /api/ — esos endpoints reciben POST y un 301 rompería el envío
 # del formulario (los navegadores no reenvían el body POST tras un 301).
+
+# Caso especial: /index.php (raíz) -> / — debe ir antes que la regla
+# genérica, que de otro modo lo dejaría en "/index" en vez de "/".
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{THE_REQUEST} ^[A-Z]+\ /index\.php[\s?] [NC]
+RewriteRule ^ / [R=301,L,NE]
+
+# Caso especial: /carpeta/index.php -> /carpeta/ (mismo motivo).
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{THE_REQUEST} /([^.]+)/index\.php[\s?] [NC]
+RewriteRule ^ /%1/ [R=301,L,NE]
+
+# Caso general: cualquier otra /pagina.php -> /pagina
 RewriteCond %{REQUEST_METHOD} GET
 RewriteCond %{REQUEST_URI} !^/api/
 RewriteCond %{THE_REQUEST} /([^.]+)\.php[\s?/] [NC]
@@ -43,13 +56,13 @@ RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.+?)/?$ $1.php [L]
 
 # =============================================================
-# 3. DOCUMENTO POR DEFECTO Y ERROR 404
+# 4. DOCUMENTO POR DEFECTO Y ERROR 404
 # =============================================================
 DirectoryIndex index.php index.html
 ErrorDocument 404 /404.php
 
 # =============================================================
-# 4. PROTECCIÓN DE ARCHIVOS SENSIBLES
+# 5. PROTECCIÓN DE ARCHIVOS SENSIBLES
 # =============================================================
 # Bloquear archivos de configuración y sensibles
 <FilesMatch "\.(env|log|sql|bak|ini|cfg|conf|orig)$">
@@ -61,7 +74,7 @@ RewriteCond %{REQUEST_URI} !^/\.well-known/
 RewriteRule (^|/)\. - [F]
 
 # =============================================================
-# 5. CABECERAS DE SEGURIDAD
+# 6. CABECERAS DE SEGURIDAD
 # =============================================================
 <IfModule mod_headers.c>
     Header always set X-Frame-Options "SAMEORIGIN"
@@ -74,7 +87,7 @@ RewriteRule (^|/)\. - [F]
 </IfModule>
 
 # =============================================================
-# 6. CACHÉ DE ACTIVOS ESTÁTICOS
+# 7. CACHÉ DE ACTIVOS ESTÁTICOS
 # =============================================================
 <IfModule mod_expires.c>
     ExpiresActive On
@@ -99,7 +112,7 @@ RewriteRule (^|/)\. - [F]
 </IfModule>
 
 # =============================================================
-# 7. COMPRESIÓN GZIP
+# 8. COMPRESIÓN GZIP
 # =============================================================
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/css text/javascript

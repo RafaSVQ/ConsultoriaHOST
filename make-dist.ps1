@@ -25,7 +25,8 @@ Write-Host "[ 1/5 ] Sincronizando config/..." -ForegroundColor Yellow
 $src = Join-Path $root "config"
 $dst = Join-Path $dist "config"
 if (Test-Path $src) {
-    Copy-Item -Path "$src\*" -Destination $dst -Recurse -Force
+    if (Test-Path $dst) { Remove-Item -Path $dst -Recurse -Force }
+    Copy-Item -Path $src -Destination $dst -Recurse -Force
     Write-Host "        OK — config/" -ForegroundColor Green
 } else {
     Write-Host "        AVISO: config/ no encontrado" -ForegroundColor Red
@@ -36,7 +37,8 @@ Write-Host "[ 2/5 ] Sincronizando includes/..." -ForegroundColor Yellow
 $src = Join-Path $root "includes"
 $dst = Join-Path $dist "includes"
 if (Test-Path $src) {
-    Copy-Item -Path "$src\*" -Destination $dst -Recurse -Force
+    if (Test-Path $dst) { Remove-Item -Path $dst -Recurse -Force }
+    Copy-Item -Path $src -Destination $dst -Recurse -Force
     Write-Host "        OK — includes/" -ForegroundColor Green
 } else {
     Write-Host "        AVISO: includes/ no encontrado" -ForegroundColor Red
@@ -47,6 +49,7 @@ Write-Host "[ 3/5 ] Sincronizando docs/ (solo *.pdf)..." -ForegroundColor Yellow
 $src = Join-Path $root "docs"
 $dst = Join-Path $dist "docs"
 if (Test-Path $src) {
+    if (Test-Path $dst) { Remove-Item -Path $dst -Recurse -Force }
     New-Item -ItemType Directory -Force -Path $dst | Out-Null
     $pdfs = Get-ChildItem -Path $src -Filter "*.pdf" -File
     foreach ($pdf in $pdfs) {
@@ -62,8 +65,10 @@ Write-Host "[ 4/5 ] Sincronizando public_html/..." -ForegroundColor Yellow
 $src = Join-Path $root "public_html"
 $dst = Join-Path $dist "public_html"
 if (Test-Path $src) {
-    # Copiar todo primero
-    Copy-Item -Path "$src\*" -Destination $dst -Recurse -Force
+    # Limpiar destino primero para no acumular archivos que ya no
+    # existen en el origen (imágenes de prueba, borradores, etc.)
+    if (Test-Path $dst) { Remove-Item -Path $dst -Recurse -Force }
+    Copy-Item -Path $src -Destination $dst -Recurse -Force
 
     # Eliminar scripts de diagnóstico del DIST
     foreach ($patron in $excluir) {
@@ -79,7 +84,8 @@ Write-Host "[ 5/5 ] Sincronizando vendor/..." -ForegroundColor Yellow
 $src = Join-Path $root "vendor"
 $dst = Join-Path $dist "vendor"
 if (Test-Path $src) {
-    Copy-Item -Path "$src\*" -Destination $dst -Recurse -Force
+    if (Test-Path $dst) { Remove-Item -Path $dst -Recurse -Force }
+    Copy-Item -Path $src -Destination $dst -Recurse -Force
     Write-Host "        OK — vendor/" -ForegroundColor Green
 } else {
     Write-Host "        AVISO: vendor/ no encontrado — ejecuta: composer install" -ForegroundColor Red
