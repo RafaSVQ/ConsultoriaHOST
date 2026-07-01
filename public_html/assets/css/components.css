@@ -1044,6 +1044,21 @@
   max-width: none;
 }
 
+/* Layout artículo: columna principal + sidebar */
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* Grid de artículos relacionados dentro del sidebar */
+.article-related-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
 /* ============================================================
    11. ACCESIBILIDAD — Focus visible
    ============================================================ */
@@ -1155,6 +1170,11 @@ a:focus-visible {
   .page-header__title {
     font-size: var(--text-4xl);
   }
+
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
 }
 
 @media (max-width: 480px) {
@@ -1165,6 +1185,10 @@ a:focus-visible {
   .hero {
     min-height: auto;
     padding-block: var(--space-20) var(--space-12);
+  }
+
+  .article-related-grid {
+    grid-template-columns: 1fr;
   }
 }
 
