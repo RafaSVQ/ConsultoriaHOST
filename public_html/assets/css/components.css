@@ -1213,6 +1213,11 @@ a:focus-visible {
     gap: var(--space-2);
   }
 
+  .article-stats-grid > div > span:last-child {
+    font-size: var(--text-base) !important;
+    line-height: var(--line-height-loose);
+  }
+
   .article-layout > article .btn--lg,
   .article-layout > article .btn--xl {
     max-width: 100%;
