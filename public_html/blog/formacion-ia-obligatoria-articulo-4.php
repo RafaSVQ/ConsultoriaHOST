@@ -480,7 +480,7 @@ include APP_ROOT . '/includes/nav.php';
               font-size:var(--text-xl);color:white;
               margin-bottom:var(--space-6);
             ">Lo que nos diferencia</h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);">
+            <div class="article-stats-grid">
               <?php
               $diferencial = [
                 ['+30 años', 'de experiencia como formadores y consultores para el desarrollo de negocio'],

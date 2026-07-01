@@ -1044,6 +1044,13 @@
   max-width: none;
 }
 
+/* Grid 2 columnas para estadísticas dentro de artículo */
+.article-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
 /* Layout artículo: columna principal + sidebar */
 .article-layout {
   display: grid;
@@ -1193,6 +1200,10 @@ a:focus-visible {
   }
 
   .article-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-stats-grid {
     grid-template-columns: 1fr;
   }
 
