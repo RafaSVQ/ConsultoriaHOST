@@ -1178,6 +1178,7 @@ a:focus-visible {
 
   .article-layout > aside {
     order: -1;
+    position: static !important;
   }
 }
 
