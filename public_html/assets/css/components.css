@@ -1214,7 +1214,8 @@ a:focus-visible {
     line-height: var(--line-height-loose);
   }
 
-  .article-comparison-grid div[style*="font-size:var(--text-sm)"] {
+  .article-comparison-grid div[style*="font-size:var(--text-sm)"],
+  .article-comparison-grid p[style*="font-size:var(--text-sm)"] {
     font-size: var(--text-base) !important;
     line-height: var(--line-height-loose);
   }
