@@ -1203,6 +1203,17 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .service-stats > div {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: var(--space-2) !important;
+  }
+
+  .service-stats > div > span:last-child {
+    font-size: var(--text-base) !important;
+    line-height: var(--line-height-loose);
+  }
+
   .article-comparison-grid div[style*="font-size:var(--text-sm)"] {
     font-size: var(--text-base) !important;
     line-height: var(--line-height-loose);

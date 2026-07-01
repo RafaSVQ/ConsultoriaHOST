@@ -99,7 +99,7 @@ include APP_ROOT . '/includes/nav.php';
               background-image:radial-gradient(circle at 80% 20%, rgba(255,255,255,.08) 0%, transparent 50%);
               pointer-events:none;
             " aria-hidden="true"></div>
-            <div style="position:relative;z-index:1;">
+            <div class="service-stats" style="position:relative;z-index:1;">
               <h3 style="
                 font-family:var(--font-display);font-weight:800;
                 font-size:var(--text-2xl);color:white;
