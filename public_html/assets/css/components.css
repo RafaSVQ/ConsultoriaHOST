@@ -1051,6 +1051,11 @@
   gap: var(--space-6);
 }
 
+/* Contenedor de CTAs dentro del artículo: centrado siempre */
+.article-layout > article div:has(> .btn--lg, > .btn--xl) {
+  justify-content: center;
+}
+
 /* Layout artículo: columna principal + sidebar */
 .article-layout {
   display: grid;
