@@ -1195,6 +1195,13 @@ a:focus-visible {
   .article-related-grid {
     grid-template-columns: 1fr;
   }
+
+  .article-layout > article .btn--lg,
+  .article-layout > article .btn--xl {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
 }
 
 /* ============================================================
