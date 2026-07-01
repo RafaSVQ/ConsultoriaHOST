@@ -1209,9 +1209,10 @@ a:focus-visible {
 
   .article-layout > article .btn--lg,
   .article-layout > article .btn--xl {
-    width: 100%;
+    max-width: 100%;
     white-space: normal;
     text-align: center;
+    margin-inline: auto;
   }
 }
 
