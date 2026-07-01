@@ -1218,7 +1218,10 @@ a:focus-visible {
     max-width: 100%;
     white-space: normal;
     text-align: center;
-    margin-inline: auto;
+  }
+
+  .article-layout > article div:has(> .btn--lg, > .btn--xl) {
+    justify-content: center;
   }
 }
 
