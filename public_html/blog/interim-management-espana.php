@@ -98,7 +98,7 @@ include APP_ROOT . '/includes/nav.php';
        ===================================================== -->
   <section class="section section--white">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 320px;gap:var(--space-16);align-items:start;">
+      <div class="article-layout">
 
         <!-- Columna principal -->
         <article aria-label="Contenido del artículo" style="min-width:0;">
@@ -146,10 +146,7 @@ include APP_ROOT . '/includes/nav.php';
           </p>
 
           <!-- Comparativa visual -->
-          <div style="
-            display:grid;grid-template-columns:1fr 1fr;
-            gap:var(--space-4);margin-bottom:var(--space-8);
-          ">
+          <div class="article-comparison-grid" style="gap:var(--space-4);margin-bottom:var(--space-8);">
             <div style="
               background:#FEF2F2;border:1px solid #FECACA;
               border-radius:var(--radius-xl);padding:var(--space-6);
@@ -396,12 +393,12 @@ include APP_ROOT . '/includes/nav.php';
           </p>
 
           <!-- Bloque de impacto -->
-          <div style="
+          <div class="article-comparison-grid" style="
             background:var(--color-navy);
             border-radius:var(--radius-2xl);
             padding:var(--space-8) var(--space-10);
             margin-bottom:var(--space-8);
-            display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);
+            gap:var(--space-8);
           ">
             <div>
               <div style="
@@ -492,7 +489,7 @@ include APP_ROOT . '/includes/nav.php';
             <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-6);color:var(--color-navy);">
               También puede interesarte
             </h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+            <div class="article-related-grid">
               <?php
               $relacionados_slugs = ['que-es-la-consultoria-3-0', 'formacion-ia-obligatoria-articulo-4'];
               $articulos_por_slug = array_column($articulos, null, 'slug');

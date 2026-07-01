@@ -676,7 +676,40 @@
 }
 
 /* ============================================================
-   7. PAGE HEADER — Cabecera interior de páginas
+   7. PROGRAM BANNER — Banner destacado con texto + botón lateral
+   ============================================================ */
+.program-banner {
+  background: var(--gradient-hero);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-8);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.program-banner__deco {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 80% 50%, rgba(232, 98, 26, 0.25) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.program-banner__content {
+  position: relative;
+  z-index: 1;
+}
+
+.program-banner__cta {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   8. PAGE HEADER — Cabecera interior de páginas
    ============================================================ */
 .page-header {
   background: var(--gradient-hero);
@@ -1011,6 +1044,39 @@
   max-width: none;
 }
 
+/* Grid 2 columnas para estadísticas dentro de artículo */
+.article-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+/* Grid 2 columnas para comparativas dentro de artículo */
+.article-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Contenedor de CTAs dentro del artículo: centrado siempre */
+.article-layout > article div:has(> .btn--lg, > .btn--xl) {
+  justify-content: center;
+}
+
+/* Layout artículo: columna principal + sidebar */
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* Grid de artículos relacionados dentro del sidebar */
+.article-related-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
 /* ============================================================
    11. ACCESIBILIDAD — Focus visible
    ============================================================ */
@@ -1102,6 +1168,15 @@ a:focus-visible {
     flex-direction: column;
   }
 
+  .program-banner {
+    grid-template-columns: 1fr;
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .program-banner__cta {
+    justify-self: start;
+  }
+
   .contact-form {
     padding: var(--space-6);
   }
@@ -1113,6 +1188,48 @@ a:focus-visible {
   .page-header__title {
     font-size: var(--text-4xl);
   }
+
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .article-layout > aside {
+    order: -1;
+    position: static !important;
+  }
+
+  .article-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-stats > div {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: var(--space-2) !important;
+  }
+
+  .service-stats > div > span:last-child {
+    font-size: var(--text-base) !important;
+    line-height: var(--line-height-loose);
+  }
+
+  .article-comparison-grid div[style*="font-size:var(--text-sm)"] {
+    font-size: var(--text-base) !important;
+    line-height: var(--line-height-loose);
+  }
+
+  .article-layout > article .btn--lg,
+  .article-layout > article .btn--xl {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .article-layout > article div:has(> .btn--lg, > .btn--xl) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1121,9 +1238,29 @@ a:focus-visible {
   }
 
   .hero {
-    min-height: auto;
+    min-height: 0;
     padding-block: var(--space-20) var(--space-12);
   }
+
+  .article-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-stats-grid > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .article-stats-grid > div > span:last-child {
+    font-size: var(--text-base) !important;
+    line-height: var(--line-height-loose);
+  }
+
 }
 
 /* ============================================================

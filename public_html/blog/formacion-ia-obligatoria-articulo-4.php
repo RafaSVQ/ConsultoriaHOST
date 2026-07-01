@@ -114,7 +114,7 @@ include APP_ROOT . '/includes/nav.php';
        ===================================================== -->
   <section class="section section--white">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 320px;gap:var(--space-16);align-items:start;">
+      <div class="article-layout">
 
         <!-- Columna principal -->
         <article aria-label="Contenido del artículo" style="min-width:0;">
@@ -480,7 +480,7 @@ include APP_ROOT . '/includes/nav.php';
               font-size:var(--text-xl);color:white;
               margin-bottom:var(--space-6);
             ">Lo que nos diferencia</h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);">
+            <div class="article-stats-grid">
               <?php
               $diferencial = [
                 ['+30 años', 'de experiencia como formadores y consultores para el desarrollo de negocio'],
@@ -544,7 +544,7 @@ include APP_ROOT . '/includes/nav.php';
             <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-6);color:var(--color-navy);">
               También puede interesarte
             </h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+            <div class="article-related-grid">
               <?php
               $relacionados_slugs = ['gobernanza-inteligencia-artificial', 'que-es-la-consultoria-3-0'];
               $articulos_por_slug = array_column($articulos, null, 'slug');
