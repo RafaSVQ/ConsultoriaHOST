@@ -1238,7 +1238,7 @@ a:focus-visible {
   }
 
   .hero {
-    min-height: auto;
+    min-height: 0;
     padding-block: var(--space-20) var(--space-12);
   }
 
