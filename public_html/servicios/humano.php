@@ -232,24 +232,10 @@ include APP_ROOT . '/includes/nav.php';
   <!-- EMPLEO 3.0 — DESTACADO -->
   <section class="section section--white" aria-labelledby="empleo-h-title">
     <div class="container">
-      <div style="
-        background: var(--gradient-hero);
-        border-radius: var(--radius-2xl);
-        padding: var(--space-12);
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: var(--space-8);
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-      ">
-        <div style="
-          position:absolute;inset:0;
-          background-image:radial-gradient(circle at 80% 50%, rgba(232,98,26,.25) 0%, transparent 50%);
-          pointer-events:none;
-        " aria-hidden="true"></div>
+      <div class="program-banner">
+        <div class="program-banner__deco" aria-hidden="true"></div>
 
-        <div style="position:relative;z-index:1;" class="reveal">
+        <div class="program-banner__content reveal">
           <span class="badge" style="background:rgba(245,166,35,.2);color:var(--color-amber);margin-bottom:var(--space-4);">
             Programa estrella
           </span>
@@ -263,7 +249,7 @@ include APP_ROOT . '/includes/nav.php';
             HOST acompaña a personas y empresas con una visión moderna, humana y efectiva.
           </p>
         </div>
-        <div style="position:relative;z-index:1;flex-shrink:0;" class="reveal reveal--delay-1">
+        <div class="program-banner__cta reveal reveal--delay-1">
           <a href="../empleo" class="btn btn--primary btn--xl">
             Ver Empleo 3.0
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">

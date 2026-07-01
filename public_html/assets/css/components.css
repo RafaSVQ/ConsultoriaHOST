@@ -676,7 +676,40 @@
 }
 
 /* ============================================================
-   7. PAGE HEADER — Cabecera interior de páginas
+   7. PROGRAM BANNER — Banner destacado con texto + botón lateral
+   ============================================================ */
+.program-banner {
+  background: var(--gradient-hero);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-8);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.program-banner__deco {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 80% 50%, rgba(232, 98, 26, 0.25) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.program-banner__content {
+  position: relative;
+  z-index: 1;
+}
+
+.program-banner__cta {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   8. PAGE HEADER — Cabecera interior de páginas
    ============================================================ */
 .page-header {
   background: var(--gradient-hero);
@@ -1100,6 +1133,15 @@ a:focus-visible {
 
   .cta-banner__actions {
     flex-direction: column;
+  }
+
+  .program-banner {
+    grid-template-columns: 1fr;
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .program-banner__cta {
+    justify-self: start;
   }
 
   .contact-form {
