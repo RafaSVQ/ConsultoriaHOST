@@ -1051,6 +1051,12 @@
   gap: var(--space-6);
 }
 
+/* Grid 2 columnas para comparativas dentro de artículo */
+.article-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 /* Contenedor de CTAs dentro del artículo: centrado siempre */
 .article-layout > article div:has(> .btn--lg, > .btn--xl) {
   justify-content: center;
@@ -1191,6 +1197,10 @@ a:focus-visible {
   .article-layout > aside {
     order: -1;
     position: static !important;
+  }
+
+  .article-comparison-grid {
+    grid-template-columns: 1fr;
   }
 
   .article-layout > article .btn--lg,
