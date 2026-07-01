@@ -186,10 +186,7 @@ include APP_ROOT . '/includes/nav.php';
           </p>
 
           <!-- Bloque fecha clave -->
-          <div style="
-            display:grid;grid-template-columns:1fr 1fr;
-            gap:var(--space-4);margin-bottom:var(--space-8);
-          ">
+          <div class="article-comparison-grid" style="gap:var(--space-4);margin-bottom:var(--space-8);">
             <div style="
               background:var(--color-off-white);
               border:1px solid var(--color-border);
